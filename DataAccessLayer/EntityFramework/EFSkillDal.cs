@@ -7,7 +7,7 @@ using System.Text;
 
 namespace DataAccessLayer.EntityFramework
 {
-    internal class EFSkillDal : GenericRepository<Skill> , ISkillDal
+    public class EFSkillDal : GenericRepository<Skill> , ISkillDal
     {
     }
 }

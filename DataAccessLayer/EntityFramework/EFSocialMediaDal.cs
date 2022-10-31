@@ -7,7 +7,7 @@ using System.Text;
 
 namespace DataAccessLayer.EntityFramework
 {
-    internal class EFSocialMediaDal: GenericRepository<SocialMedia> , ISocialMediaDal
+    public class EFSocialMediaDal: GenericRepository<SocialMedia> , ISocialMediaDal
     {
     }
 }

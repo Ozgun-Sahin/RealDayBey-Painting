@@ -7,7 +7,7 @@ using System.Text;
 
 namespace DataAccessLayer.EntityFramework
 {
-    internal class EFMessageDal: GenericRepository<Message>, IMessageDal
+    public class EFMessageDal: GenericRepository<Message>, IMessageDal
     {
     }
 }

@@ -7,7 +7,7 @@ using System.Text;
 
 namespace DataAccessLayer.EntityFramework
 {
-    internal class EFExperienceDal : GenericRepository<Experience> , IExperienceDal
+    public class EFExperienceDal : GenericRepository<Experience> , IExperienceDal
     {
     }
 }

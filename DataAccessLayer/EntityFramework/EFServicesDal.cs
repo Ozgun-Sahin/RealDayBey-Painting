@@ -7,7 +7,7 @@ using System.Text;
 
 namespace DataAccessLayer.EntityFramework
 {
-    internal class EFServicesDal : GenericRepository<Service> , IServiceDal
+    public class EFServicesDal : GenericRepository<Service> , IServiceDal
     {
     }
 }

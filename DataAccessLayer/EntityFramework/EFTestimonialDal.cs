@@ -7,7 +7,7 @@ using System.Text;
 
 namespace DataAccessLayer.EntityFramework
 {
-    internal class EFTestimonialDal : GenericRepository<Testimonial> , ITestimonialDal
+    public class EFTestimonialDal : GenericRepository<Testimonial> , ITestimonialDal
     {
     }
 }

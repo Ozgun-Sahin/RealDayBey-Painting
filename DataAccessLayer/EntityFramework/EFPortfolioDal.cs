@@ -7,7 +7,7 @@ using System.Text;
 
 namespace DataAccessLayer.EntityFramework
 {
-    internal class EFPortfolio : GenericRepository<Portfolio> , IPortfoiloDal
+    public class EFPortfolioDal : GenericRepository<Portfolio> , IPortfoiloDal
     {
     }
 }

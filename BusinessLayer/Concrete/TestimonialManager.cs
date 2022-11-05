@@ -15,7 +15,7 @@ namespace BusinessLayer.Concrete
             _testimonialDal = testimonialDal;
         }
 
-        public Testimonial GetById(int id)
+        public Testimonial TGetById(int id)
         {
             return _testimonialDal.GetByID(id);
         }

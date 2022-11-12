@@ -2,7 +2,7 @@
 @model List<Portfolio>
 @{
     ViewData["Title"] = "Index";
-    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    Layout = "~/Views/Shared/_NewAdminLayout.cshtml";
 }
 
 <div class="row">
@@ -60,7 +60,7 @@
                                     </div>
                                 </td>
                                 @*<td><a href="/Portfolio/DeletePortfolio/@item.PortfolioID" class="btn btn-outline-danger">Sil</a></td>*@
-                                <td><a class="btn btn-danger btn-sm text-white" href="/Portfolio/DeletePortfolio/@item.PortfolioID" id="DeleteBtn" onclick="return confirm('Silmek istediğinize emin misiniz?');"><i class="ni ni-fat-remove"></i> Sil</a></td>
+                                <td><a class="btn btn-outline-danger" href="/Portfolio/DeletePortfolio/@item.PortfolioID" id="DeleteBtn" onclick="return confirm('Silmek istediğinize emin misiniz?');"><i class="ni ni-fat-remove"></i> Sil</a></td>
                                 <td><a href="/Portfolio/EditPortfolio/@item.PortfolioID" class="btn btn-outline-warning">Düzenle</a></td>
                             </tr>
                         }
@@ -73,4 +73,4 @@
         </div>
     </div>
 </div>
-<a href="/Portfolio/AddPortfolio/" class="btn btn-primary">Yeni Proje Girişi</a>
+<a href="/Portfolio/AddPortfolio/" class="btn btn-outline-info">Yeni Proje Girişi</a>

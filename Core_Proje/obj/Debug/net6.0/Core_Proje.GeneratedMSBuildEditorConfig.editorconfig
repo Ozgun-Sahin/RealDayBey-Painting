@@ -23,6 +23,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cTmF2aWdhdGlvblBhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/ozgun/Desktop/NetCoreWebApiProject/Core_Proje/Core_Proje/Views/Admin/NewSideBar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cTmV3U2lkZUJhci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/ozgun/Desktop/NetCoreWebApiProject/Core_Proje/Core_Proje/Views/Admin/PartialFooter.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cUGFydGlhbEZvb3Rlci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
@@ -131,8 +135,20 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcRmVhdHVyZVN0YXRpc3RpY3NcRGVmYXVsdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/ozgun/Desktop/NetCoreWebApiProject/Core_Proje/Core_Proje/Views/Shared/Components/Last5Projects/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcTGFzdDVQcm9qZWN0c1xEZWZhdWx0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ozgun/Desktop/NetCoreWebApiProject/Core_Proje/Core_Proje/Views/Shared/Components/MessageList/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcTWVzc2FnZUxpc3RcRGVmYXVsdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/ozgun/Desktop/NetCoreWebApiProject/Core_Proje/Core_Proje/Views/Shared/Components/PortfolioList/Default.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcUG9ydGZvbGlvTGlzdFxEZWZhdWx0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ozgun/Desktop/NetCoreWebApiProject/Core_Proje/Core_Proje/Views/Shared/Components/ProjectList/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcUHJvamVjdExpc3RcRGVmYXVsdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/ozgun/Desktop/NetCoreWebApiProject/Core_Proje/Core_Proje/Views/Shared/Components/SendMessage/Default.cshtml]
@@ -147,8 +163,24 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcU2tpbGxMaXN0XERlZmF1bHQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/ozgun/Desktop/NetCoreWebApiProject/Core_Proje/Core_Proje/Views/Shared/Components/SlideList/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcU2xpZGVMaXN0XERlZmF1bHQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ozgun/Desktop/NetCoreWebApiProject/Core_Proje/Core_Proje/Views/Shared/Components/StatisticsDashboard2/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcU3RhdGlzdGljc0Rhc2hib2FyZDJcRGVmYXVsdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/ozgun/Desktop/NetCoreWebApiProject/Core_Proje/Core_Proje/Views/Shared/Components/TestimonialList/Default.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcVGVzdGltb25pYWxMaXN0XERlZmF1bHQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ozgun/Desktop/NetCoreWebApiProject/Core_Proje/Core_Proje/Views/Shared/Components/ToDoListPanel/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcVG9Eb0xpc3RQYW5lbFxEZWZhdWx0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ozgun/Desktop/NetCoreWebApiProject/Core_Proje/Core_Proje/Views/Shared/Components/VisitorMap/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcVmlzaXRvck1hcFxEZWZhdWx0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/ozgun/Desktop/NetCoreWebApiProject/Core_Proje/Core_Proje/Views/Shared/Error.cshtml]

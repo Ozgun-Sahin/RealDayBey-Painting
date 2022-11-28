@@ -39,5 +39,15 @@ namespace BusinessLayer.Concrete
         {
             _featureDal.Update(t);
         }
+
+        public List<Feature> TGetListByFilter()
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<Feature> TGetListByFilter(string p)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

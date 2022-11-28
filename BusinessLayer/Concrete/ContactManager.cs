@@ -40,5 +40,15 @@ namespace BusinessLayer.Concrete
         {
             _contactDal.Update(t);
         }
+
+        public List<Contact> TGetListByFilter()
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<Contact> TGetListByFilter(string p)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

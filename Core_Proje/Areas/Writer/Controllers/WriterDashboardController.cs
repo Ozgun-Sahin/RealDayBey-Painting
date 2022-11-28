@@ -24,8 +24,8 @@ namespace Core_Proje.Areas.Writer.Controllers
 
             //Weather API
 
-            string api = "da0f36b2a77fbd727ca163a09d1c00fd";
-            string connection = "https://api.openweathermap.org/data/2.5/weather?q=ankara&mode=xml&units=metric&appid=" + api;
+            string apikey = "da0f36b2a77fbd727ca163a09d1c00fd";
+            string connection = "https://api.openweathermap.org/data/2.5/weather?q=ankara&mode=xml&units=metric&appid=" + apikey;
             XDocument document = XDocument.Load(connection);
             ViewBag.v5 = document.Descendants("temperature").ElementAt(0).Attribute("value").Value;
 

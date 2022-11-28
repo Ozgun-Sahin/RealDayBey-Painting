@@ -39,5 +39,15 @@ namespace BusinessLayer.Concrete
         {
             _experienceDal.Update(t);
         }
+
+        public List<Experience> TGetListByFilter()
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<Experience> TGetListByFilter(string p)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

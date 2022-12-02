@@ -1,0 +1,41 @@
+﻿@model EntitiyLayer.Concrete.WriterMessage
+@{
+    ViewData["Title"] = "AdminMessageDetail";
+    Layout = "~/Views/Shared/_NewAdminLayout.cshtml";
+}
+
+<div class="col-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <p class="card-description"> Mesaj İçeriği </p>
+            <form class="forms-sample">
+                <div class="form-group">
+                    <label>ID</label>
+                    @Html.TextBoxFor(x=> x.WriterMessageID, new {@class="form-control"})
+                </div>
+                <div class="form-group">
+                    <label>Başlık</label>
+                    @Html.TextBoxFor(x=> x.Subject, new {@class="form-control"})
+                </div>
+                <div class="form-group">
+                    <label>Gönderen</label>
+                    @Html.TextBoxFor(x=> x.SenderName, new {@class="form-control"})
+                </div>
+                <div class="form-group">
+                    <label>Alıcı</label>
+                    @Html.TextBoxFor(x=> x.RecieverName, new {@class="form-control"})
+                </div>
+                <div class="form-group">
+                    <label>Tarih</label>
+                    @Html.TextBoxFor(x=> x.Date, new {@class="form-control"})
+                </div>
+                <div class="form-group">
+                    <label>Mesaj</label>
+                    @Html.TextAreaFor(x=> x.MessageContent,6,3, new {@class="form-control"})
+                </div>
+                <a asp-action="ReceieverMessageList" class="btn btn-primary mr-2">Gelen mesajlara git</a>
+                <a asp-action="SenderMessageList" class="btn btn-warning mr-2">Giden mesajlara git</a>
+            </form>
+        </div>
+    </div>
+</div>

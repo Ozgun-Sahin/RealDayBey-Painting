@@ -1,7 +1,7 @@
 ﻿@model EntitiyLayer.Concrete.Service
 @{
     ViewData["Title"] = "AddService";
-    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    Layout = "~/Views/Shared/_NewAdminLayout.cshtml";
 }
 
 <div class="card-header border-0">
@@ -10,14 +10,22 @@
 
 @using (Html.BeginForm("AddService", "Service", FormMethod.Post))
 {
-
-    <br />
-    @Html.Label("Başlık")
-    @Html.TextBoxFor(x=>x.Title, new {@class="form-control"})
-    <br />
-    <label>Görsel</label>
-    @Html.TextBoxFor(x=>x.ImageUrl, new {@class="form-control"})
-    <br />
-    <button class="btn btn-info">Kaydet</button>
+    <div class="col-12 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <p class="card-description"> Yeni Proje Ekleme Paneli </p>
+                <form class="forms-sample">
+                    <br />
+                    @Html.Label("Başlık")
+                    @Html.TextBoxFor(x=>x.Title, new {@class="form-control"})
+                    <br />
+                    <label>Görsel</label>
+                    @Html.TextBoxFor(x=>x.ImageUrl, new {@class="form-control"})
+                    <br />
+                    <button class="btn btn-info">Kaydet</button>
+                </form>
+            </div>
+        </div>
+    </div>
 }
 

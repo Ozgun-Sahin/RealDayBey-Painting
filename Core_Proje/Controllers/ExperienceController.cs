@@ -11,9 +11,6 @@ namespace Core_Proje.Controllers
 
         public IActionResult Index()
         {
-            ViewBag.v1 = "Deneyim Listesi";
-            ViewBag.v2 = "Deneyimler";
-            ViewBag.v3 = "Deneyim Listesi";
             var values = experienceManager.TGetList();
             return View(values);
         }
@@ -22,9 +19,6 @@ namespace Core_Proje.Controllers
 
         public IActionResult AddExperience()
         {
-            ViewBag.v1 = "Deneyim Ekle";
-            ViewBag.v2 = "Deneyimler";
-            ViewBag.v3 = "Deneyim Ekle";
             return View();
         }
 

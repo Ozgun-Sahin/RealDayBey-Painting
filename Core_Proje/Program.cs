@@ -20,18 +20,10 @@ builder.Services.AddMvc();
 builder.Services.ConfigureApplicationCookie(options =>
 {
     options.Cookie.HttpOnly = true;
-    options.ExpireTimeSpan = TimeSpan.FromMinutes(10);
+    options.ExpireTimeSpan = TimeSpan.FromMinutes(100);
     options.AccessDeniedPath = "/ErrorPage/Index";
     options.LoginPath = "/Writer/Login/Index/";
 });
-
-
-
-
-
-
-
-
 
 var app = builder.Build();
 
@@ -43,6 +35,8 @@ if (!app.Environment.IsDevelopment())
     app.UseHsts();
 }
 
+
+app.UseStatusCodePagesWithReExecute("/ErrorPage/Error404");
 app.UseHttpsRedirection();
 app.UseStaticFiles();
 app.UseAuthentication();

@@ -22,7 +22,7 @@ namespace Core_Proje.Controllers
         }
 
         [HttpPost]
-        public IActionResult AddUser(WriterUser p)
+        public IActionResult AddUser(ClientUser p)
         {
             userManager.TAdd(p);
             var value = JsonConvert.SerializeObject(p);

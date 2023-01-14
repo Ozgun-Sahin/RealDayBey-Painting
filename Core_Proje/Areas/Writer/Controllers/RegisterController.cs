@@ -9,9 +9,9 @@ namespace Core_Proje.Areas.Writer.Controllers
     [Route("Writer/[controller]/[action]")]
     public class RegisterController : Controller
     {
-        private readonly UserManager<WriterUser> _userManager;
+        private readonly UserManager<ClientUser> _userManager;
 
-        public RegisterController(UserManager<WriterUser> userManager)
+        public RegisterController(UserManager<ClientUser> userManager)
         {
             _userManager = userManager;
         }
@@ -26,7 +26,7 @@ namespace Core_Proje.Areas.Writer.Controllers
         public async Task<IActionResult> Index(UserRegisterViewModel p)
         {
 
-            WriterUser wrtr = new WriterUser()
+            ClientUser wrtr = new ClientUser()
             {
                 Name = p.Name,
                 Surname = p.Surname,

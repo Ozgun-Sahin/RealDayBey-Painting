@@ -10,9 +10,9 @@ namespace Core_Proje.Areas.Writer.Controllers
     [Route("Writer/[controller]/[action]")]
     public class ProfileController : Controller
     {
-        private readonly UserManager<WriterUser> _userManager;
+        private readonly UserManager<ClientUser> _userManager;
 
-        public ProfileController(UserManager<WriterUser> userManager)
+        public ProfileController(UserManager<ClientUser> userManager)
         {
             _userManager = userManager;
         }

@@ -9,7 +9,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddDbContext<Context>();
-builder.Services.AddIdentity<WriterUser, WriterRole>().AddEntityFrameworkStores<Context>();
+builder.Services.AddIdentity<ClientUser, WriterRole>().AddEntityFrameworkStores<Context>();
 builder.Services.AddControllersWithViews();
 
 builder.Services.AddMvc(config => { var policy = new AuthorizationPolicyBuilder().RequireAuthenticatedUser().Build(); config.Filters.Add(new AuthorizeFilter(policy)); });

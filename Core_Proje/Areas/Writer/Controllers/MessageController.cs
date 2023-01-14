@@ -13,9 +13,9 @@ namespace Core_Proje.Areas.Writer.Controllers
     {
         WriterMessageManager writerMessageManager = new WriterMessageManager(new EFWriterMessageDal());
 
-        private readonly UserManager<WriterUser> _userManager;
+        private readonly UserManager<ClientUser> _userManager;
 
-        public MessageController(UserManager<WriterUser> userManager)
+        public MessageController(UserManager<ClientUser> userManager)
         {
             _userManager = userManager;
         }
@@ -66,12 +66,19 @@ namespace Core_Proje.Areas.Writer.Controllers
 
         }
 
+
+
+        [Route("")]
+        [Route("SendMessage")]
         [HttpGet]
         public IActionResult SendMessage()
         {
             return View();  
         }
 
+
+        [Route("")]
+        [Route("SendMessage")]
         [HttpPost]
         public async Task<IActionResult> SendMessage(WriterMessage p)
         {

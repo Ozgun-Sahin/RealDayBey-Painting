@@ -6,9 +6,9 @@ namespace Core_Proje.Areas.Writer.ViewComponents
 {
     public class Navbar :ViewComponent
     {
-        private readonly UserManager<WriterUser> _userManager;
+        private readonly UserManager<ClientUser> _userManager;
 
-        public Navbar(UserManager<WriterUser> userManager)
+        public Navbar(UserManager<ClientUser> userManager)
         {
             _userManager = userManager;
         }

@@ -11,9 +11,9 @@ namespace Core_Proje.Areas.Writer.Controllers
     [Route("Writer/[controller]/[action]")]
     public class LoginController : Controller
     {
-        private readonly SignInManager<WriterUser> _signInManager;
+        private readonly SignInManager<ClientUser> _signInManager;
 
-        public LoginController(SignInManager<WriterUser> signInManager)
+        public LoginController(SignInManager<ClientUser> signInManager)
         {
             _signInManager = signInManager;
         }

@@ -7,7 +7,7 @@ using System.Xml.Linq;
 namespace Core_Proje.Areas.Writer.Controllers
 {
     [Area("Writer")]
-    [Route("Writer/[controller]/[action]")]
+    [Route("Writer/[controller]/[action]/")]
     public class WriterDashboardController : Controller
     {
         private readonly UserManager<ClientUser> _userManager;
@@ -17,7 +17,7 @@ namespace Core_Proje.Areas.Writer.Controllers
             _userManager = userManager;
         }
 
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> DashboardIndex()
         {
             var value = await _userManager.FindByNameAsync(User.Identity.Name);
 

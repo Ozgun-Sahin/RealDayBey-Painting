@@ -303,7 +303,13 @@ namespace DataAccessLayer.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<int>("ClientUserID")
+                        .HasColumnType("int");
+
                     b.Property<string>("Comment")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Description")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<bool>("IsComfirmed")
@@ -322,6 +328,8 @@ namespace DataAccessLayer.Migrations
                         .HasColumnType("int");
 
                     b.HasKey("ProjectID");
+
+                    b.HasIndex("ClientUserID");
 
                     b.HasIndex("ServiceID");
 
@@ -613,11 +621,19 @@ namespace DataAccessLayer.Migrations
 
             modelBuilder.Entity("EntitiyLayer.Concrete.Project", b =>
                 {
+                    b.HasOne("EntitiyLayer.Concrete.ClientUser", "ClientUser")
+                        .WithMany()
+                        .HasForeignKey("ClientUserID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.HasOne("EntitiyLayer.Concrete.Service", "Service")
                         .WithMany()
                         .HasForeignKey("ServiceID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.Navigation("ClientUser");
 
                     b.Navigation("Service");
                 });

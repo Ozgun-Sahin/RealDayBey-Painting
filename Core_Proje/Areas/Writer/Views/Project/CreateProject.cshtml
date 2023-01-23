@@ -1,0 +1,21 @@
+﻿@model EntitiyLayer.Concrete.Project
+@{
+    ViewData["Title"] = "CreateProject";
+    Layout = "~/Views/Shared/_WriterLayout.cshtml";
+
+    var servicesList = ((List<SelectListItem>)ViewBag.Services);
+}
+
+<h1>Yeni Proje Talebi Oluştur</h1>
+<form class="form-form" method="post">
+    @Html.Label("Proje Başlığı")
+    @Html.TextBoxFor(x=>x.ProjectName, new{@class="form-control"})
+    <br />
+    @Html.Label("Proje Tipi")
+    @Html.DropDownListFor(x=> x.ServiceID, ((List<SelectListItem>)ViewBag.Services) , new { @class = "btn btn-outline-primary dropdown-toggle" })
+    <br />
+    @Html.Label("Açıklama")
+    @Html.TextAreaFor(x=>x.Description, 10, 3, new{@class="form-control"})
+    <button class="btn btn-outline-primary">Gönder</button>
+</form>
+

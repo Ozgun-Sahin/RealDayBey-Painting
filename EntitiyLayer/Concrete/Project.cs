@@ -16,6 +16,8 @@ namespace EntitiyLayer.Concrete
         public double Price { get; set; }
         public bool IsComfirmed { get; set; }
         public string Comment { get; set; }
-
+        public string Description { get; set; }
+        public int ClientUserID { get; set; }
+        public ClientUser ClientUser { get; set; }
     }
 }

@@ -18,7 +18,7 @@ namespace BusinessLayer.Concrete
         
         public void TAdd(Project t)
         {
-            throw new NotImplementedException();
+           _projectDal.Insert(t);
         }
 
         public void TDelete(Project t)

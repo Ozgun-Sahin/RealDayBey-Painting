@@ -10,7 +10,6 @@ namespace Core_Proje.Controllers
         ServiceManager serviceManager = new ServiceManager(new EFServicesDal());
         public IActionResult Index()
         {
-
             var value = serviceManager.TGetList();
             return View(value);
         }
@@ -18,7 +17,6 @@ namespace Core_Proje.Controllers
         [HttpGet]
         public IActionResult AddService()
         {
-
             return View();
         }
 

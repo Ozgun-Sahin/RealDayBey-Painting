@@ -18,7 +18,7 @@ namespace Core_Proje.Areas.Writer.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> ProfileIndex()
         {
             var value = await _userManager.FindByNameAsync(User.Identity.Name);
             UserEditViewModel model = new UserEditViewModel();
@@ -29,7 +29,7 @@ namespace Core_Proje.Areas.Writer.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Index(UserEditViewModel p)
+        public async Task<IActionResult> ProfileIndex(UserEditViewModel p)
         {
             var user = await _userManager.FindByNameAsync(User.Identity.Name);
 

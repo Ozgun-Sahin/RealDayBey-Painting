@@ -15,7 +15,22 @@ namespace BusinessLayer.Concrete
         {
             _projectDal = projectDal;
         }
-        
+
+        public List<Project> GetListCompletedProject()
+        {
+            return _projectDal.GetByFilter(x => x.IsComfirmed == true && x.Progress == 100);
+        }
+
+        public List<Project> GetListPendingProject()
+        {
+            return _projectDal.GetByFilter(x => x.IsComfirmed == false);
+        }
+
+        public List<Project> GetListWorkInProgressProject()
+        {
+            return _projectDal.GetByFilter(x => x.IsComfirmed == true && x.Progress <= 99);
+        }
+
         public void TAdd(Project t)
         {
            _projectDal.Insert(t);
@@ -33,7 +48,7 @@ namespace BusinessLayer.Concrete
 
         public List<Project> TGetList()
         {
-            throw new NotImplementedException();
+            return _projectDal.GetList();
         }
 
         public List<Project> TGetListByFilter(string p)

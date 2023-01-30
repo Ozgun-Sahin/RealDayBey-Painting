@@ -34,7 +34,7 @@ namespace Core_Proje.Areas.Writer.Controllers
                 if (result.Succeeded)
                 {
                     //return RedirectToAction("Index", "Profile", new { area = "Writer" });
-                    return RedirectToAction("Index", "WriterDashboard");
+                    return RedirectToAction("DashboardIndex", "WriterDashboard");
                 }
                 else
                 {

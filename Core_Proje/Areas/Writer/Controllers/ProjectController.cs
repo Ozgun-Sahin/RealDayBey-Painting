@@ -43,12 +43,35 @@ namespace Core_Proje.Areas.Writer.Controllers
                 ProjectName = p.ProjectName,
                 ServiceID = p.ServiceID,
                 Description = p.Description,
+                IsComfirmed = true
             };
 
             projectManager.TAdd(newProject);
 
             return RedirectToAction("DashboardIndex", "WriterDashboard");
         }
+
+        [HttpGet]
+        public IActionResult PendingProjectList()
+        {
+            var values = projectManager.GetListPendingProject();
+            return View(values);
+        }
+
+        [HttpGet]
+        public IActionResult WorkInProgressProjectList()
+        {
+            var values = projectManager.GetListWorkInProgressProject();
+            return View(values);
+        }
+
+        [HttpGet]
+        public IActionResult CompletedProjectList()
+        {
+            var values = projectManager.GetListCompletedProject();
+            return View(values);
+        }
+
 
     }
 }

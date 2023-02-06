@@ -43,7 +43,7 @@ namespace BusinessLayer.Concrete
 
         public Project TGetById(int id)
         {
-            throw new NotImplementedException();
+            return _projectDal.GetByID(id);
         }
 
         public List<Project> TGetList()

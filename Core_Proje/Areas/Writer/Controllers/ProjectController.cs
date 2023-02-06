@@ -1,4 +1,5 @@
 ﻿using BusinessLayer.Concrete;
+using Core_Proje.Areas.Writer.Models;
 using DataAccessLayer.Concrete;
 using DataAccessLayer.EntityFramework;
 using EntitiyLayer.Concrete;
@@ -9,10 +10,11 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 namespace Core_Proje.Areas.Writer.Controllers
 {
     [Area("Writer")]
-    [Route("Writer/[controller]/[action]")]
+    [Route("Writer/[controller]/[action]/")]
     public class ProjectController : Controller
     {
         ProjectManager projectManager = new ProjectManager(new EFProjectDal());
+        ServiceManager serviceManager = new ServiceManager(new EFServicesDal());
 
         private readonly UserManager<ClientUser> _userManager;
 
@@ -52,26 +54,29 @@ namespace Core_Proje.Areas.Writer.Controllers
         }
 
         [HttpGet]
-        public IActionResult PendingProjectList()
+        public IActionResult ProjectList()
         {
-            var values = projectManager.GetListPendingProject();
+            var values = projectManager.TGetList();
             return View(values);
         }
 
-        [HttpGet]
-        public IActionResult WorkInProgressProjectList()
+         
+        [HttpGet("{id}")]
+        public  IActionResult ProjectDetails(int id)
         {
-            var values = projectManager.GetListWorkInProgressProject();
-            return View(values);
+            ProjectDetailModel model = new ProjectDetailModel();
+
+            var project =  projectManager.TGetById(id);
+            var service = serviceManager.TGetById(project.ServiceID);
+            
+            
+            model.ProjectID = project.ProjectID;
+            model.ProjectName = project.ProjectName;
+            model.ServiceType = service.Title;
+            model.Description = project.Description;
+            model.Progress = project.Progress;
+
+            return View(model);
         }
-
-        [HttpGet]
-        public IActionResult CompletedProjectList()
-        {
-            var values = projectManager.GetListCompletedProject();
-            return View(values);
-        }
-
-
     }
 }

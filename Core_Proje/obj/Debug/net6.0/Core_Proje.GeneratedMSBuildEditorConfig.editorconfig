@@ -79,20 +79,16 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcV3JpdGVyXFZpZXdzXFByb2ZpbGVcUHJvZmlsZUluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/ozgun/Desktop/NetCoreWebApiProject/Core_Proje/Core_Proje/Areas/Writer/Views/Project/CompletedProjectList.cshtml]
-build_metadata.AdditionalFiles.TargetPath = QXJlYXNcV3JpdGVyXFZpZXdzXFByb2plY3RcQ29tcGxldGVkUHJvamVjdExpc3QuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
 [C:/Users/ozgun/Desktop/NetCoreWebApiProject/Core_Proje/Core_Proje/Areas/Writer/Views/Project/CreateProject.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcV3JpdGVyXFZpZXdzXFByb2plY3RcQ3JlYXRlUHJvamVjdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/ozgun/Desktop/NetCoreWebApiProject/Core_Proje/Core_Proje/Areas/Writer/Views/Project/PendingProjectList.cshtml]
-build_metadata.AdditionalFiles.TargetPath = QXJlYXNcV3JpdGVyXFZpZXdzXFByb2plY3RcUGVuZGluZ1Byb2plY3RMaXN0LmNzaHRtbA==
+[C:/Users/ozgun/Desktop/NetCoreWebApiProject/Core_Proje/Core_Proje/Areas/Writer/Views/Project/ProjectDetails.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcV3JpdGVyXFZpZXdzXFByb2plY3RcUHJvamVjdERldGFpbHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/ozgun/Desktop/NetCoreWebApiProject/Core_Proje/Core_Proje/Areas/Writer/Views/Project/WorkInProgressProjectList.cshtml]
-build_metadata.AdditionalFiles.TargetPath = QXJlYXNcV3JpdGVyXFZpZXdzXFByb2plY3RcV29ya0luUHJvZ3Jlc3NQcm9qZWN0TGlzdC5jc2h0bWw=
+[C:/Users/ozgun/Desktop/NetCoreWebApiProject/Core_Proje/Core_Proje/Areas/Writer/Views/Project/ProjectList.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcV3JpdGVyXFZpZXdzXFByb2plY3RcUHJvamVjdExpc3QuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/ozgun/Desktop/NetCoreWebApiProject/Core_Proje/Core_Proje/Areas/Writer/Views/Register/Index.cshtml]

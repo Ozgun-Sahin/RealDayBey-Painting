@@ -6,16 +6,25 @@
     var servicesList = ((List<SelectListItem>)ViewBag.Services);
 }
 
-<h1>Yeni Proje Talebi Oluştur</h1>
-<form class="form-form" method="post">
-    @Html.Label("Proje Başlığı")
-    @Html.TextBoxFor(x=>x.ProjectName, new{@class="form-control"})
-    <br />
-    @Html.Label("Proje Tipi")
-    @Html.DropDownListFor(x=> x.ServiceID, ((List<SelectListItem>)ViewBag.Services) , new { @class = "btn btn-outline-primary dropdown-toggle" })
-    <br />
-    @Html.Label("Açıklama")
-    @Html.TextAreaFor(x=>x.Description, 10, 3, new{@class="form-control"})
-    <button class="btn btn-outline-primary">Gönder</button>
-</form>
+
+
+<div class="col-md-6 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Yeni Proje Talebi Oluştur</h4>
+            <form class="form-form" method="post">
+                @Html.Label("Proje Başlığı")
+                @Html.TextBoxFor(x=>x.ProjectName, new{@class="form-control"})
+                <br />
+                @Html.Label("Proje Tipi")
+                @Html.DropDownListFor(x=> x.ServiceID, ((List<SelectListItem>)ViewBag.Services) , new { @class = "btn btn-primary btn-sm dropdown-toggle" })
+                <br />
+                @Html.Label("Açıklama")
+                @Html.TextAreaFor(x=>x.Description, 10, 3, new{@class="form-control"})
+                <br />
+                <button class="btn btn-primary btn-sm">Gönder</button>
+            </form>
+        </div>
+    </div>
+</div>
 

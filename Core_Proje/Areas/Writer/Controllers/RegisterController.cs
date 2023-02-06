@@ -37,7 +37,7 @@ namespace Core_Proje.Areas.Writer.Controllers
                 ImageUrl = p.ImageUrl,
             };
 
-            if (p.Password == p.ConfirmPassword)
+            if (p.Password == p.ConfirmPassword && p.Password !=null)
             {
                 var result = await _userManager.CreateAsync(wrtr, p.Password);
 

@@ -84,10 +84,10 @@ namespace Core_Proje.Areas.Writer.Controllers
         {
             var value = await _userManager.FindByNameAsync(User.Identity.Name);
             string mail = value.Email;
-            string name = value.Name + " " + value.Surname;
+            string fullName = value.Name + " " + value.Surname;
             p.Date = Convert.ToDateTime(DateTime.Now.ToShortDateString());
             p.Sender = mail;
-            p.SenderName = name;
+            p.SenderName = fullName;
             Context c = new Context();
 
             var userFullName = c.Users.Where(x => x.Email == p.Reciever).Select(y => y.Name + " " + y.Surname).FirstOrDefault();

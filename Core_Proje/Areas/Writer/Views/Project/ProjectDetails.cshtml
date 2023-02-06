@@ -4,25 +4,33 @@
     Layout = "~/Views/Shared/_WriterLayout.cshtml";
 }
 
-<h1>Proje Detayları</h1>
-<form class="form-form">
-    @Html.Label("ID")
-    @Html.HiddenFor(x=>x.ProjectID)
-    <br />
-    @Html.Label("Başlık")
-    @Html.TextBoxFor(x=>x.ProjectName, new{@class="form-control"})
-    <br />
-    @Html.Label("Hizmet Tipi")
-    @Html.TextBoxFor(x=>x.ServiceType, new{@class="form-control"})
-    <br />
-    @Html.Label("Açıklama")
-    @Html.TextAreaFor(x=>x.Description, 10, 3, new{@class="form-control"})
-</form>
+<div class="col-md-6 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h1 class="card-title">Proje Detayları</h1>
+            <form class="form-form">
+                @Html.HiddenFor(x=>x.ProjectID)
+                <br />
+                @Html.Label("Başlık")
+                @Html.TextBoxFor(x=>x.ProjectName, new{@class="form-control"})
+                <br />
+                @Html.Label("Hizmet Tipi")
+                @Html.TextBoxFor(x=>x.ServiceType, new{@class="form-control"})
+                <br />
+                @Html.Label("Açıklama")
+                @Html.TextAreaFor(x=>x.Description, 10, 3, new{@class="form-control"})
+            </form>
 
-<div class="py-1">
-    <div class="d-flex text-small fw-bolder"><span class="me-auto">İlerleme Durumu : % </span>@Model.Progress<span></span></div>
-    <div class="progress my-1">
-        <div class="progress-bar bg-primary" role="progressbar" data-aos="zoom-in-right" data-aos-delay="300" data-aos-anchor=".skills-section" style="width: @Model.Progress%" aria-valuenow="@Model.Progress" aria-valuemin="0" aria-valuemax="100"></div>
+            <div class="py-1">
+                <div class="d-flex text-small fw-bolder"><span class="me-auto">İlerleme Durumu : % </span>@Model.Progress<span></span></div>
+                <div class="progress my-1">
+                    <div class="progress-bar bg-primary" role="progressbar" data-aos="zoom-in-right" data-aos-delay="300" data-aos-anchor=".skills-section" style="width: @Model.Progress%" aria-valuenow="@Model.Progress" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+            </div>
+
+            <div>
+                <a href="" class="btn btn-warning btn-sm">Yorum Yap</a>
+            </div>
+        </div>
     </div>
 </div>
-

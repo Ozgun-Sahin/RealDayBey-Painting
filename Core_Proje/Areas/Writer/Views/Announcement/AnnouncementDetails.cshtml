@@ -5,11 +5,18 @@
     Layout = "~/Views/Shared/_WriterLayout.cshtml";
 }
 
-<h1>Duyuru Detayları</h1>
-<form class="form-form">
-    @Html.Label("ID")
-    @Html.TextBoxFor(x=>x.ID)
-    <br />
-    @Html.Label("İçerik")
-    @Html.TextAreaFor(x=>x.Content, 10, 3, new{@class="form-control"})
-</form>
+
+
+
+<div class="col-md-6 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4>Duyuru Detayları</h4>
+            <form class="form-form">
+                <br />
+                @Html.Label(Model.Title)
+                @Html.TextAreaFor(x=>x.Content, 10, 3, new{@class="form-control"})
+            </form>
+        </div>
+    </div>
+</div>

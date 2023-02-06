@@ -5,7 +5,7 @@
     Layout = "~/Views/Shared/_WriterLayout.cshtml";
 }
 
-<div class="col-lg-12 grid-margin stretch-card">
+<div class="col-md-6 grid-margin stretch-card">
     <div class="card">
         <div class="card-body">
             <h4 class="card-title">Gelen Kutusu</h4>
@@ -30,7 +30,7 @@
                             <td>@item.Subject</td>
                             <td>@item.Sender</td>
                             <td>@(((DateTime)item.Date).ToString("dd-MMM-yyyy"))</td>
-                                <td><a href="/Writer/Message/MessageDetails/@item.WriterMessageID" class="btn btn-outline-primary btn-sm">Detaylar</a></td>
+                                <td><a href="/Writer/Message/MessageDetails/@item.WriterMessageID" class="btn btn-primary btn-sm">Detaylar</a></td>
                         </tr>
 
                         }

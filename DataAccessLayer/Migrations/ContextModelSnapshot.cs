@@ -336,6 +336,35 @@ namespace DataAccessLayer.Migrations
                     b.ToTable("Projects");
                 });
 
+            modelBuilder.Entity("EntitiyLayer.Concrete.Role", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("ConcurrencyStamp")
+                        .IsConcurrencyToken()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
+                        .HasMaxLength(256)
+                        .HasColumnType("nvarchar(256)");
+
+                    b.Property<string>("NormalizedName")
+                        .HasMaxLength(256)
+                        .HasColumnType("nvarchar(256)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("NormalizedName")
+                        .IsUnique()
+                        .HasDatabaseName("RoleNameIndex")
+                        .HasFilter("[NormalizedName] IS NOT NULL");
+
+                    b.ToTable("AspNetRoles");
+                });
+
             modelBuilder.Entity("EntitiyLayer.Concrete.Service", b =>
                 {
                     b.Property<int>("ServiceID")
@@ -474,35 +503,6 @@ namespace DataAccessLayer.Migrations
                     b.ToTable("WriterMessages");
                 });
 
-            modelBuilder.Entity("EntitiyLayer.Concrete.WriterRole", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("ConcurrencyStamp")
-                        .IsConcurrencyToken()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Name")
-                        .HasMaxLength(256)
-                        .HasColumnType("nvarchar(256)");
-
-                    b.Property<string>("NormalizedName")
-                        .HasMaxLength(256)
-                        .HasColumnType("nvarchar(256)");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("NormalizedName")
-                        .IsUnique()
-                        .HasDatabaseName("RoleNameIndex")
-                        .HasFilter("[NormalizedName] IS NOT NULL");
-
-                    b.ToTable("AspNetRoles");
-                });
-
             modelBuilder.Entity("EntitiyLayer.Concrete.test1", b =>
                 {
                     b.Property<int>("ID")
@@ -593,11 +593,17 @@ namespace DataAccessLayer.Migrations
                     b.Property<int>("RoleId")
                         .HasColumnType("int");
 
+                    b.Property<string>("Discriminator")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.HasKey("UserId", "RoleId");
 
                     b.HasIndex("RoleId");
 
                     b.ToTable("AspNetUserRoles");
+
+                    b.HasDiscriminator<string>("Discriminator").HasValue("IdentityUserRole<int>");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<int>", b =>
@@ -617,6 +623,23 @@ namespace DataAccessLayer.Migrations
                     b.HasKey("UserId", "LoginProvider", "Name");
 
                     b.ToTable("AspNetUserTokens");
+                });
+
+            modelBuilder.Entity("EntitiyLayer.Concrete.WriterRole", b =>
+                {
+                    b.HasBaseType("Microsoft.AspNetCore.Identity.IdentityUserRole<int>");
+
+                    b.Property<int?>("ClientUserId")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("RoleId1")
+                        .HasColumnType("int");
+
+                    b.HasIndex("ClientUserId");
+
+                    b.HasIndex("RoleId1");
+
+                    b.HasDiscriminator().HasValue("WriterRole");
                 });
 
             modelBuilder.Entity("EntitiyLayer.Concrete.Project", b =>
@@ -640,7 +663,7 @@ namespace DataAccessLayer.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<int>", b =>
                 {
-                    b.HasOne("EntitiyLayer.Concrete.WriterRole", null)
+                    b.HasOne("EntitiyLayer.Concrete.Role", null)
                         .WithMany()
                         .HasForeignKey("RoleId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -667,7 +690,7 @@ namespace DataAccessLayer.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserRole<int>", b =>
                 {
-                    b.HasOne("EntitiyLayer.Concrete.WriterRole", null)
+                    b.HasOne("EntitiyLayer.Concrete.Role", null)
                         .WithMany()
                         .HasForeignKey("RoleId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -687,6 +710,31 @@ namespace DataAccessLayer.Migrations
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("EntitiyLayer.Concrete.WriterRole", b =>
+                {
+                    b.HasOne("EntitiyLayer.Concrete.ClientUser", "ClientUser")
+                        .WithMany("WriterRoles")
+                        .HasForeignKey("ClientUserId");
+
+                    b.HasOne("EntitiyLayer.Concrete.Role", "Role")
+                        .WithMany("WriterRoles")
+                        .HasForeignKey("RoleId1");
+
+                    b.Navigation("ClientUser");
+
+                    b.Navigation("Role");
+                });
+
+            modelBuilder.Entity("EntitiyLayer.Concrete.ClientUser", b =>
+                {
+                    b.Navigation("WriterRoles");
+                });
+
+            modelBuilder.Entity("EntitiyLayer.Concrete.Role", b =>
+                {
+                    b.Navigation("WriterRoles");
                 });
 #pragma warning restore 612, 618
         }

@@ -11,7 +11,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataAccessLayer", "DataAcce
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EntitiyLayer", "EntitiyLayer\EntitiyLayer.csproj", "{BE615D86-E979-4011-BCD6-56662A3BBCE5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core_Proje_Api", "Core_Proje_Api\Core_Proje_Api.csproj", "{0E450E41-CF9C-4690-9220-1DCA2EC1F47A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Core_Proje_Api", "Core_Proje_Api\Core_Proje_Api.csproj", "{0E450E41-CF9C-4690-9220-1DCA2EC1F47A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -10,12 +10,11 @@
         <div class="card-body">
             <h4 class="card-title">Giden Kutusu</h4>
             <div class="table-responsive">
-                <table class="table">
+                <table class="table table-striped">
                     <thead>
                         <tr>
                             <th>#</th>
                             <th>Konu</th>
-                            <th>Alıcı</th>
                             <th>Tarih</th>
                             <th>Detaylar</th>
                         </tr>
@@ -28,9 +27,8 @@
                             <tr>
                                 <th>@item.WriterMessageID</th>
                                 <td>@item.Subject</td>
-                                <td>@item.RecieverName</td>
                                 <td>@(((DateTime)item.Date).ToString("dd-MMM-yyyy"))</td>
-                                <td><a href="/Writer/Message/ReceiverMessageDetails/@item.WriterMessageID" class="btn btn-primary btn-sm">Detaylar</a></td>
+                                <td><a href="/Writer/Message/MessageDetails/@item.WriterMessageID" class="btn btn-primary btn-sm">Detaylar</a></td>
                             </tr>
 
                         }

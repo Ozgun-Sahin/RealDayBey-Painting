@@ -4,6 +4,7 @@ using DataAccessLayer.EntityFramework;
 using EntitiyLayer.Concrete;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace Core_Proje.Areas.Writer.Controllers
 {
@@ -91,7 +92,9 @@ namespace Core_Proje.Areas.Writer.Controllers
             Context c = new Context();
 
             var userFullName = c.Users.Where(x => x.Email == p.Reciever).Select(y => y.Name + " " + y.Surname).FirstOrDefault();
-            p.RecieverName = userFullName;
+            var admins = await _userManager.GetUsersInRoleAsync("Admin");
+
+            p.RecieverName = admins.FirstOrDefault().Surname;
             writerMessageManager.TAdd(p);
 
             return RedirectToAction("SenderMessage");

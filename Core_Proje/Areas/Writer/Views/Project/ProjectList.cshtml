@@ -1,7 +1,7 @@
 ﻿@using EntitiyLayer.Concrete
 @using DataAccessLayer.EntityFramework
 @using BusinessLayer.Concrete
-@model List<Project>
+@model List<Project> 
 
 @{
     ViewData["Title"] = "ProjectList";
@@ -37,11 +37,12 @@
                                 <th>@item.ProjectID</th>
                                 <td>@item.ProjectName</td>
                                 <td>@serviceTitle</td>
-                                @if (item.Progress ==0 )
+                                @if (item.Progress == 0)
                                 {
-                                    
+
                                     <td>Onay Bekliyor</td>
-                                }else
+                                }
+                                else
                                 {
                                     <td>
                                         <div class="progress">
@@ -49,8 +50,12 @@
                                         </div>
                                     </td>
                                 }
-                                <td><a href="/Writer/Project/ProjectDetails/@item.ProjectID" class="btn btn-primary btn-sm">Detaylar</a></td>
+
+                                <td>
+                                    <a href="/Writer/Project/ProjectDetails/@item.ProjectID" class="btn btn-primary btn-sm"> Detaylar</a>
+                                </td>
                             </tr>
+
                         }
 
                     </tbody>
@@ -59,4 +64,6 @@
         </div>
     </div>
 </div>
+
+
 

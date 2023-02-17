@@ -28,7 +28,7 @@
                                 <th>@item.ID</th>
                                 <td>@item.Title</td>
                                 <td>@(((DateTime)item.Date).ToString("dd-MMM-yyyy"))</td>
-                                <td><a href="/Writer/Announcement/AnnouncementDetails/@item.ID" class="btn btn-primary btn-sm">Detaylar</a></td>
+                                <td><a href="#" class="btn btn-outline-primary btn-sm" data-target="/Writer/Announcement/AnnouncementDetailsInModal/@item.ID">Detaylar</a></td>
                             </tr>
                         }
 
@@ -39,3 +39,20 @@
     </div>
 </div>
 
+<!--Deneme Modal'ı-->
+
+<div class="modal fade" id="modelView" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            @*<div class="modal-header">
+            <h5 class="modal-title">Modal title</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>*@
+            <div class="modal-body">
+                <!--Modal içeriği-->
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--Deneme Modal'ı-->

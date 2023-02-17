@@ -20,6 +20,7 @@ namespace Core_Proje.Areas.Writer.Controllers
         public async Task<IActionResult> DashboardIndex()
         {
             var value = await _userManager.FindByNameAsync(User.Identity.Name);
+            
 
             ViewBag.v = value.Name + " "+ value.Surname;
 
@@ -33,10 +34,10 @@ namespace Core_Proje.Areas.Writer.Controllers
             //burası çok gereksiz
             Context c = new Context();
 
-            ViewBag.v1 = c.WriterMessages.Where(x=>x.Reciever==value.Email).Count();
-            ViewBag.v2 = c.Announcements.Count();
-            ViewBag.v3 = c.Users.Count();
-            ViewBag.v4 = c.Skills.Count();
+            ViewBag.v1 = c.Projects.Where(x => x.ClientUserID == value.Id && x.Progress < 100).Count();
+            ViewBag.v2 = c.Projects.Where(x => x.ClientUserID == value.Id && x.Progress == 100).Count();
+            ViewBag.v3 = c.WriterMessages.Where(x => x.Sender == value.Email).Count();
+            ViewBag.v4 = c.WriterMessages.Where(x => x.Reciever == value.Email).Count();
 
             return View();
         }

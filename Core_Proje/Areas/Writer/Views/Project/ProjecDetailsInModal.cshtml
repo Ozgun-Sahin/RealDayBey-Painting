@@ -1,0 +1,41 @@
+﻿@using Core_Proje.Areas.Writer.Models
+@using EntitiyLayer.Concrete
+@using DataAccessLayer.EntityFramework
+@using BusinessLayer.Concrete
+
+@model Project
+
+@using (Html.BeginForm("ProjecUpdateInModal", "Project", FormMethod.Post))
+{
+    <div class="card">
+        <div class="card-header">
+            @Model.ProjectName
+        </div>
+        <div class="card-body">
+            <form class="form-form" method="post">
+                @Html.HiddenFor(x=>x.ProjectID)
+                @Html.HiddenFor(x=>x.ProjectName)
+                @Html.HiddenFor(x=>x.Progress)
+                @Html.HiddenFor(x=>x.Price)
+                @Html.HiddenFor(x=>x.IsComfirmed)
+                @Html.HiddenFor(x=>x.Description)
+                @Html.HiddenFor(x=>x.ClientUserID)
+                @Html.HiddenFor(x=>x.ServiceID)
+                <h5 class="card-title">İlerleme Durumu : % @Model.Progress</h5>
+                <div class="progress">
+                    <div class="progress-bar bg-warning" role="progressbar" style="width: @Model.Progress%" aria-valuenow="@Model.Progress" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+                <p class="card-text">@Model.Description</p>
+
+                @if (Model.Progress==100 && Model.Comment ==null)
+                {
+                    @Html.TextAreaFor(x=>x.Comment, 10, 3, new{@class="form-control"})
+                    <br />
+                    <button type="submit" class="btn btn-primary btn-sm" data-bs-dismiss="modal">Yorums</button>
+                }
+            </form>
+        </div>
+    </div>
+}
+
+

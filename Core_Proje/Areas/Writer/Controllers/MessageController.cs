@@ -99,5 +99,19 @@ namespace Core_Proje.Areas.Writer.Controllers
 
             return RedirectToAction("SenderMessage");
         }
+
+
+        //Modal Denemeleri
+
+        [Route("MessageDetailsInModal/{id}")]
+        [HttpGet]
+        public IActionResult MessageDetailsInModal(int id)
+        {
+            var message = writerMessageManager.TGetById(id);
+
+            return PartialView(message);
+        }
+
+
     }
 }

@@ -6,8 +6,10 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Core_Proje.Areas.Writer.Controllers
 {
-    [Area("Writer")]
     [Authorize]
+    [Area("Writer")]
+    [Route("Writer/[controller]/[action]/")]
+
     public class AnnouncementController : Controller
     {
         AnnouncementManager announcementManager = new AnnouncementManager(new EFAnnouncementDal());
@@ -27,5 +29,16 @@ namespace Core_Proje.Areas.Writer.Controllers
             return View(announcement);
 
         }
+
+        [HttpGet("{id}")]
+        public IActionResult AnnouncementDetailsInModal(int id)
+        {
+            Announcement announcement = announcementManager.TGetById(id);
+
+            return PartialView(announcement);
+        }
+
+
+
     }
 }

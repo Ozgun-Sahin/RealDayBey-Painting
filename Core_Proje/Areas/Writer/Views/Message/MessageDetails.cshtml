@@ -5,18 +5,29 @@
 }
 
 <div class="col-md-6 grid-margin stretch-card">
-    <div class="card">
-        <div class="card-body">
-            <h4>Mesaj Detayları</h4>
-            <form class="form-form">
-                @Html.HiddenFor(x=>x.WriterMessageID)
-                <br />
-                @Html.Label("Konu")
-                @Html.TextBoxFor(x=>x.Subject , new{@class="form-control"})
-                <br />
-                @Html.Label("Mesaj")
-                @Html.TextAreaFor(x=>x.MessageContent, 10, 3, new{@class="form-control"})
-            </form>
+    <div class="card card-tale">
+        <div>
+            <div class="card-body">
+                <h5 class="card-title">@Model.Subject</h5>
+                <p class="card-text">@Model.Date</p>
+                @*<a href="/Writer/Message/MessageList" class="btn btn-primary btn-sm">Geri Dön</a>*@
+            </div>
         </div>
     </div>
 </div>
+
+<div class="col-md-6 grid-margin stretch-card">
+    <div class="card card-tale">
+        <div class="card-body">
+            <p class="font-weight-500">@Model.MessageContent</p>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+

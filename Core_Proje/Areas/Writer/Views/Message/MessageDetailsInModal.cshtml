@@ -1,0 +1,15 @@
+﻿@using Core_Proje.Areas.Writer.Models
+@using EntitiyLayer.Concrete
+@using DataAccessLayer.EntityFramework
+@using BusinessLayer.Concrete
+
+@model WriterMessage
+
+<div class="card">
+    <div class="card-header">
+        @Model.Subject
+    </div>
+    <div class="card-body">
+            @Model.MessageContent
+    </div>
+</div>

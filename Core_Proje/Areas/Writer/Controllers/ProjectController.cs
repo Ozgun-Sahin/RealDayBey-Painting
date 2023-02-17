@@ -80,7 +80,23 @@ namespace Core_Proje.Areas.Writer.Controllers
             return View(model);
         }
 
-        
+        //Modal denemeleri
 
+        [HttpGet("{id}")]
+        public IActionResult ProjecDetailsInModal(int id)
+        {
+            var project = projectManager.TGetById(id);
+            return PartialView(project);
+        }
+
+
+        [HttpPost]
+        public  IActionResult ProjecUpdateInModal(Project proje)
+        {
+            projectManager.TUpdate(proje);
+
+            return RedirectToAction("ProjectList", "Project");
+            
+        }
     }
 }

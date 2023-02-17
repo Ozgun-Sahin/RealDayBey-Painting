@@ -58,7 +58,7 @@ namespace BusinessLayer.Concrete
 
         public void TUpdate(Project t)
         {
-            throw new NotImplementedException();
+            _projectDal.Update(t);
         }
     }
 }

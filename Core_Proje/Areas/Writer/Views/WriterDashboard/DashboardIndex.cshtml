@@ -1,6 +1,9 @@
-﻿@{
+﻿@using EntitiyLayer.Concrete
+@{
     ViewData["Title"] = "DashboardIndex";
     Layout = "~/Views/Shared/_WriterLayout.cshtml";
+
+    List<Announcement> liste = ViewBag.v6;
 }
 
 <div class="row">
@@ -12,9 +15,9 @@
             <div class="col-12 col-xl-4">
                 <div class="justify-content-end d-flex">
                     @*<div class="dropdown flex-md-grow-1 flex-xl-grow-0">
-                        <button class="btn btn-sm btn-light bg-white dropdown-toggle" type="button" id="dropdownMenuDate2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                            <i class="mdi mdi-calendar"></i> @DateTime.Now.ToShortDateString()
-                        </button>
+                    <button class="btn btn-sm btn-light bg-white dropdown-toggle" type="button" id="dropdownMenuDate2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                    <i class="mdi mdi-calendar"></i> @DateTime.Now.ToShortDateString()
+                    </button>
                     </div>*@
                 </div>
             </div>
@@ -22,20 +25,16 @@
     </div>
 </div>
 <div class="row">
-    <div class="col-md-6 grid-margin stretch-card">
-        <div class="card tale-bg">
-            <div class="card-people mt-auto">
-                <img src="~/skydash/images/dashboard/people.png">
-                <div class="weather-info">
-                    <div class="d-flex">
-                        <div>
-                            <h2 class="mb-0 font-weight-normal"><i class="icon-sun mr-2"></i>@ViewBag.v5<sup>C</sup></h2>
-                        </div>
-                        <div class="ml-2">
-                            <h4 class="location font-weight-normal">Ankara</h4>
-                            <h6 class="font-weight-normal">Türkiye</h6>
-                        </div>
-                    </div>
+    <div class="col-md-4 grid-margin special-card">
+        <img src="~/skydash/images/dashboard/OzgunLogo.png">
+        <div class="weather-info">
+            <div class="d-flex">
+                <div>
+                    <h2 class="mb-0 font-weight-normal"><i class="icon-sun mr-2"></i>@ViewBag.v5<sup>C</sup></h2>
+                </div>
+                <div class="ml-2">
+                    <h4 class="location font-weight-normal">Ankara</h4>
+                    <h6 class="font-weight-normal">Türkiye</h6>
                 </div>
             </div>
         </div>
@@ -43,7 +42,7 @@
     <div class="col-md-6 grid-margin transparent">
         <div class="row">
             <div class="col-md-6 mb-4 stretch-card transparent">
-                <div class="card card-tale">
+                <div class="card card-dark-blue">
                     <div class="card-body">
                         <p class="mb-4">Devam Eden Projeler</p>
                         <p class="fs-30 mb-2">@ViewBag.v1</p>
@@ -61,26 +60,85 @@
         </div>
         <div class="row">
             <div class="col-md-6 mb-4 mb-lg-0 stretch-card transparent">
-                <div class="card card-light-blue">
+                <div class="card card-dark-blue">
                     <div class="card-body">
                         <p class="mb-4">Giden Mesajlar</p>
                         <p class="fs-30 mb-2">@ViewBag.v3</p>
-                        
+
                     </div>
                 </div>
             </div>
             <div class="col-md-6 stretch-card transparent">
-                <div class="card card-light-danger">
+                <div class="card card-dark-blue">
                     <div class="card-body">
                         <p class="mb-4">Gelen Mesajlar</p>
                         <p class="fs-30 mb-2">@ViewBag.v4</p>
-                        
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br />
+
+        <div class="row">
+            <div class="col-md-12 grid-margin stretch-card">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">Duyurular</h4>
+                        <div class="table-responsive">
+                            <table class="table table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>Başlık</th>
+                                        <th>Tarih</th>
+                                        <th>Detaylar</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+
+                                    @foreach (var item in liste)
+                                    {
+                                        <tr>
+                                            <th>@item.ID</th>
+                                            <td>@item.Title</td>
+                                            <td>@(((DateTime)item.Date).ToString("dd-MMM-yyyy"))</td>
+                                            <td><a href="#" class="btn btn-outline-primary btn-sm" data-target="/Writer/Announcement/AnnouncementDetailsInModal/@item.ID">Detaylar</a></td>
+                                        </tr>
+                                    }
+
+                                </tbody>
+                            </table>
+                            <a href="/Writer/Announcement/AnnouncementIndex">Tümünü gör</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--Deneme Modal'ı-->
+
+            <div class="modal fade" id="modelView" tabindex="-1">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        @*<div class="modal-header">
+                        <h5 class="modal-title">Modal title</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>*@
+                        <div class="modal-body">
+                            <!--Modal içeriği-->
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
+
+
+
+
+
+
 @*<div class="row">
     <div class="col-md-6 grid-margin stretch-card">
         <div class="card">

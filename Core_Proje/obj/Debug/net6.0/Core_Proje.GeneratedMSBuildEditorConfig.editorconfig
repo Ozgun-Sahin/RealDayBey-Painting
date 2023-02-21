@@ -27,6 +27,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcV3JpdGVyXFZpZXdzXEFubm91bmNlbWVudFxBbm5vdW5jZW1lbnRJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/ozgun/Desktop/NetCoreWebApiProject/Core_Proje/Core_Proje/Areas/Writer/Views/ClientTesimonial/AddTestimony.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcV3JpdGVyXFZpZXdzXENsaWVudFRlc2ltb25pYWxcQWRkVGVzdGltb255LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/ozgun/Desktop/NetCoreWebApiProject/Core_Proje/Core_Proje/Areas/Writer/Views/Default/AnnouncementDetails.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcV3JpdGVyXFZpZXdzXERlZmF1bHRcQW5ub3VuY2VtZW50RGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 

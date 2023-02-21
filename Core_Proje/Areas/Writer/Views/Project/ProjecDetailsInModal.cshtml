@@ -26,13 +26,6 @@
                     <div class="progress-bar bg-warning" role="progressbar" style="width: @Model.Progress%" aria-valuenow="@Model.Progress" aria-valuemin="0" aria-valuemax="100"></div>
                 </div>
                 <p class="card-text">@Model.Description</p>
-
-                @if (Model.Progress==100 && Model.Comment ==null)
-                {
-                    @Html.TextAreaFor(x=>x.Comment, 10, 3, new{@class="form-control"})
-                    <br />
-                    <button type="submit" class="btn btn-primary btn-sm" data-bs-dismiss="modal">Yorums</button>
-                }
             </form>
         </div>
     </div>

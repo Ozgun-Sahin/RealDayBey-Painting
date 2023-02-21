@@ -1,0 +1,14 @@
+﻿[
+  {
+    "outputFile": "wwwroot/skydash/scss/common/light/components/_cards.css",
+    "inputFile": "wwwroot/skydash/scss/common/light/components/_cards.scss"
+  },
+  {
+    "outputFile": "wwwroot/skydash/scss/vertical-layout-light/style.css",
+    "inputFile": "wwwroot/skydash/scss/vertical-layout-light/style.scss"
+  },
+  {
+    "outputFile": "wwwroot/corona-free-dark-bootstrap-admin-template-1.0.0/template/assets/scss/style.css",
+    "inputFile": "wwwroot/corona-free-dark-bootstrap-admin-template-1.0.0/template/assets/scss/style.scss"
+  }
+]

@@ -306,9 +306,6 @@ namespace DataAccessLayer.Migrations
                     b.Property<int>("ClientUserID")
                         .HasColumnType("int");
 
-                    b.Property<string>("Comment")
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<string>("Description")
                         .HasColumnType("nvarchar(max)");
 

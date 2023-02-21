@@ -276,3 +276,4 @@ C:\Users\ozgun\Desktop\NetCoreWebApiProject\Core_Proje\Core_Proje\bin\Debug\net6
 C:\Users\ozgun\Desktop\NetCoreWebApiProject\Core_Proje\Core_Proje\obj\Debug\net6.0\Core_Proje.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\ozgun\Desktop\NetCoreWebApiProject\Core_Proje\Core_Proje\bin\Debug\net6.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
 C:\Users\ozgun\Desktop\NetCoreWebApiProject\Core_Proje\Core_Proje\bin\Debug\net6.0\System.Reflection.MetadataLoadContext.dll
+C:\Users\ozgun\Desktop\NetCoreWebApiProject\Core_Proje\Core_Proje\bin\Debug\net6.0\libman.json

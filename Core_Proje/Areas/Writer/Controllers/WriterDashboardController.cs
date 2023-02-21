@@ -38,6 +38,7 @@ namespace Core_Proje.Areas.Writer.Controllers
             ViewBag.v2 = c.Projects.Where(x => x.ClientUserID == value.Id && x.Progress == 100).Count();
             ViewBag.v3 = c.WriterMessages.Where(x => x.Sender == value.Email).Count();
             ViewBag.v4 = c.WriterMessages.Where(x => x.Reciever == value.Email).Count();
+            ViewBag.v6 = c.Announcements.ToList();
 
             return View();
         }

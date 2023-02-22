@@ -6,11 +6,21 @@ namespace Core_Proje.ViewComponents.Dashboard
 {
     public class ProjectList :ViewComponent
     {
-        PortfolioManager portfolioManager = new PortfolioManager(new EFPortfolioDal());
+        //PortfolioManager portfolioManager = new PortfolioManager(new EFPortfolioDal());
+        //public IViewComponentResult Invoke()
+        //{
+        //    var values = portfolioManager.TGetList();
+        //    return View(values);
+        //}
+
+        ProjectManager projectManager = new ProjectManager(new EFProjectDal());
+
         public IViewComponentResult Invoke()
         {
-            var values = portfolioManager.TGetList();
+            var values = projectManager.TGetList();
             return View(values);
         }
+
+
     }
 }

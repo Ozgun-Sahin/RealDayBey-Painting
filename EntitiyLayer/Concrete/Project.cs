@@ -13,6 +13,8 @@ namespace EntitiyLayer.Concrete
         public string ProjectName { get; set; }
         public int Progress { get; set; }
         public double Price { get; set; }
+        public double Expence { get; set; }
+        public DateTime CompletionDate { get; set; }
         public bool IsComfirmed { get; set; }
         public string Description { get; set; }
         public  ClientUser ClientUser { get; set; }

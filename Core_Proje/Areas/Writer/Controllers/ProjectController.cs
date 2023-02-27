@@ -4,9 +4,12 @@ using DataAccessLayer.Concrete;
 using DataAccessLayer.EntityFramework;
 using EntitiyLayer.Concrete;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Razor;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using System.Security.Claims;
+using System.Security.Principal;
 
 namespace Core_Proje.Areas.Writer.Controllers
 {
@@ -37,12 +40,11 @@ namespace Core_Proje.Areas.Writer.Controllers
         [HttpPost]
         public async Task<IActionResult> CreateProject(Project p)
         {
-            var value = await _userManager.FindByNameAsync(User.Identity.Name);
-            int clientUserId = value.Id;
+            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
 
             Project newProject = new Project()
             {
-                ClientUserID = clientUserId,
+                ClientUserID = Convert.ToInt32(userId),
                 ProjectName = p.ProjectName,
                 ServiceID = p.ServiceID,
                 Description = p.Description,
@@ -55,9 +57,13 @@ namespace Core_Proje.Areas.Writer.Controllers
         }
 
         [HttpGet]
-        public IActionResult ProjectList()
+        public async Task<IActionResult> ProjectList()
         {
-            var values = projectManager.TGetList();
+
+            int userId = Convert.ToInt32(User.FindFirstValue(ClaimTypes.NameIdentifier));
+            var values = projectManager.TGetListByFilter(userId);
+
+
             return View(values);
         }
 
@@ -80,7 +86,7 @@ namespace Core_Proje.Areas.Writer.Controllers
             return View(model);
         }
 
-        //Modal denemeleri
+        //Detayları modal'a yansıtma
 
         [HttpGet("{id}")]
         public IActionResult ProjecDetailsInModal(int id)

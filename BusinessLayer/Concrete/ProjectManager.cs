@@ -3,6 +3,7 @@ using DataAccessLayer.Abstract;
 using EntitiyLayer.Concrete;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace BusinessLayer.Concrete
@@ -38,7 +39,7 @@ namespace BusinessLayer.Concrete
 
         public void TDelete(Project t)
         {
-            throw new NotImplementedException();
+            _projectDal.Delete(t);
         }
 
         public Project TGetById(int id)
@@ -51,9 +52,11 @@ namespace BusinessLayer.Concrete
             return _projectDal.GetList();
         }
 
-        public List<Project> TGetListByFilter(string p)
+        public List<Project> TGetListByFilter(int p)
         {
-            throw new NotImplementedException();
+            //throw new NotImplementedException();
+
+            return _projectDal.GetByFilter(x => x.ClientUserID == p).ToList();
         }
 
         public void TUpdate(Project t)

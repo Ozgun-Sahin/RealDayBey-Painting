@@ -45,6 +45,11 @@ namespace BusinessLayer.Concrete
             throw new NotImplementedException();
         }
 
+        public List<ToDoList> TGetListByFilter(int p)
+        {
+            throw new NotImplementedException();
+        }
+
         public void TUpdate(ToDoList t)
         {
             throw new NotImplementedException();

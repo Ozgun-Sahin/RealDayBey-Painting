@@ -51,6 +51,11 @@ namespace BusinessLayer.Concrete
             throw new NotImplementedException();
         }
 
+        public List<WriterMessage> TGetListByFilter(int p)
+        {
+            throw new NotImplementedException();
+        }
+
         public void TUpdate(WriterMessage t)
         {
             throw new NotImplementedException();

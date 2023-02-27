@@ -40,6 +40,11 @@ namespace BusinessLayer.Concrete
             throw new NotImplementedException();
         }
 
+        public List<ClientUser> TGetListByFilter(int p)
+        {
+            throw new NotImplementedException();
+        }
+
         public void TUpdate(ClientUser t)
         {
             throw new NotImplementedException();

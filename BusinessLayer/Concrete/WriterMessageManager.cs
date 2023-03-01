@@ -18,12 +18,12 @@ namespace BusinessLayer.Concrete
 
         public List<WriterMessage> GetListReceiverMessage(string p)
         {
-            return _writerMessageDal.GetByFilter(x => x.Reciever == p);
+            return _writerMessageDal.GetByFilter(x => x.RecieverUserName == p);
         }
 
         public List<WriterMessage> GetListSenderMessage(string p)
         {
-            return _writerMessageDal.GetByFilter(x => x.Sender == p);
+            return _writerMessageDal.GetByFilter(x => x.SenderUserName == p);
         }
 
         public void TAdd(WriterMessage t)

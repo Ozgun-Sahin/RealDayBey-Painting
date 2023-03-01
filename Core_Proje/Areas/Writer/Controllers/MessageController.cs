@@ -5,6 +5,7 @@ using EntitiyLayer.Concrete;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using System.Security.Claims;
 
 namespace Core_Proje.Areas.Writer.Controllers
 {
@@ -25,7 +26,13 @@ namespace Core_Proje.Areas.Writer.Controllers
         [Route("RecieverMessage")]
         public async Task<IActionResult> RecieverMessage(string p)
         {
-            var value = await _userManager.FindByNameAsync(User.Identity.Name);
+            //var value = await _userManager.FindByNameAsync(User.Identity.Name);
+
+            ClaimsPrincipal currentUser = this.User;
+
+            var id =  _userManager.GetUserId(currentUser);
+
+            var value = await _userManager.FindByIdAsync(id);
 
             p = value.Email;
 
@@ -39,6 +46,8 @@ namespace Core_Proje.Areas.Writer.Controllers
         public async Task<IActionResult> SenderMessage(string p)
         {
             var value = await _userManager.FindByNameAsync(User.Identity.Name);
+
+
 
             p = value.Email;
 
@@ -87,14 +96,14 @@ namespace Core_Proje.Areas.Writer.Controllers
             string mail = value.Email;
             string fullName = value.Name + " " + value.Surname;
             p.Date = Convert.ToDateTime(DateTime.Now.ToShortDateString());
-            p.Sender = mail;
-            p.SenderName = fullName;
+            p.SenderUserName = mail;
+            p.SenderFullName = fullName;
             Context c = new Context();
 
-            var userFullName = c.Users.Where(x => x.Email == p.Reciever).Select(y => y.Name + " " + y.Surname).FirstOrDefault();
+            var userFullName = c.Users.Where(x => x.Email == p.RecieverUserName).Select(y => y.Name + " " + y.Surname).FirstOrDefault();
             var admins = await _userManager.GetUsersInRoleAsync("Admin");
 
-            p.RecieverName = admins.FirstOrDefault().Surname;
+            p.RecieverFullName = admins.FirstOrDefault().Surname;
             writerMessageManager.TAdd(p);
 
             return RedirectToAction("SenderMessage");

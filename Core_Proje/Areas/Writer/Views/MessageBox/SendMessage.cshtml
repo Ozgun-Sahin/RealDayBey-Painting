@@ -1,0 +1,22 @@
+﻿@model EntitiyLayer.Concrete.WriterMessage
+@{
+    ViewData["Title"] = "SendMessage";
+    Layout = "~/Views/Shared/_WriterLayout.cshtml";
+}
+
+<div class="col-md-6 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Yeni Mesaj</h4>
+            <form class="form-form" method="post">
+                @Html.Label("Konu")
+                @Html.TextBoxFor(x=>x.Subject, new{@class="form-control"})
+                <br />
+                @Html.Label("Mesaj")
+                @Html.TextAreaFor(x=>x.MessageContent, 10, 3, new{@class="form-control"})
+                <br />
+                <button class="btn btn-primary btn-sm">Gönder</button>
+            </form>
+        </div>
+    </div>
+</div>

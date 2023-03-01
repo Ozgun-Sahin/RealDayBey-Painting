@@ -46,14 +46,16 @@ namespace Core_Proje.Controllers
             return View();
         }
 
+
+        //Burası bir revize edilecek
         public IActionResult AdminMessageSend(WriterMessage p)
         {
-            p.Sender = "admin@mail.com";
-            p.SenderName = "Admin";
+            p.SenderUserName = "admin@mail.com";
+            p.SenderFullName = "Admin";
             p.Date = DateTime.Parse(DateTime.Now.ToShortDateString());
             Context c = new Context();
-            var recieverFullName = c.Users.Where(x => x.Email == p.Reciever).Select(y => y.Name + " " + y.Surname).FirstOrDefault();
-            p.RecieverName = recieverFullName;
+            var recieverFullName = c.Users.Where(x => x.UserName == p.RecieverUserName).Select(y => y.Name + " " + y.Surname).FirstOrDefault();
+            p.RecieverFullName = recieverFullName;
             writerMessageManager.TAdd(p);
             return RedirectToAction("SenderMessageList");
         }

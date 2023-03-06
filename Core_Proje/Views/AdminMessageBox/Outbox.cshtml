@@ -1,15 +1,14 @@
 ﻿@using EntitiyLayer.Concrete
-@*@model List<WriterMessage>*@
 @model IEnumerable<WriterMessage>
 @{
-    ViewData["Title"] = "Inbox";
-    Layout = "~/Views/Shared/_WriterLayout.cshtml";
+    ViewData["Title"] = "Outbox";
+    Layout = "~/Views/Shared/_NewAdminLayout.cshtml";
 }
 
 <div class="col-md-6 grid-margin stretch-card">
     <div class="card">
         <div class="card-body">
-            <h4 class="card-title">Gelen Kutusu</h4>
+            <h4 class="card-title">Giden Kutusu</h4>
             <div class="table-responsive">
                 <table class="table table-striped">
                     <thead>
@@ -29,7 +28,7 @@
                                 <th>@item.WriterMessageID</th>
                                 <td>@item.Subject</td>
                                 <td>@(((DateTime)item.Date).ToString("dd-MMM-yyyy"))</td>
-                                <td><a href="#" class="btn btn-outline-primary btn-sm" data-target="/Writer/MessageBox/MessageDetailsInModal/@item.WriterMessageID">Detaylar</a></td>
+                                <td><a href="#" class="btn btn-outline-primary btn-sm" data-target="/Writer/Message/MessageDetailsInModal/@item.WriterMessageID">Detaylar</a></td>
                             </tr>
 
                         }
@@ -39,6 +38,7 @@
         </div>
     </div>
 </div>
+
 
 <!--Deneme Modal'ı-->
 

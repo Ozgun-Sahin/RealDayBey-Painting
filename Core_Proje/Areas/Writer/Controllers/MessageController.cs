@@ -110,7 +110,7 @@ namespace Core_Proje.Areas.Writer.Controllers
         }
 
 
-        //Modal Denemeleri
+        //Modal
 
         [Route("MessageDetailsInModal/{id}")]
         [HttpGet]

@@ -67,6 +67,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcV3JpdGVyXFZpZXdzXE1lc3NhZ2VCb3hcSW5ib3guY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/ozgun/Desktop/NetCoreWebApiProject/Core_Proje/Core_Proje/Areas/Writer/Views/MessageBox/MessageDetailsInModal.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcV3JpdGVyXFZpZXdzXE1lc3NhZ2VCb3hcTWVzc2FnZURldGFpbHNJbk1vZGFsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/ozgun/Desktop/NetCoreWebApiProject/Core_Proje/Core_Proje/Areas/Writer/Views/MessageBox/Outbox.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcV3JpdGVyXFZpZXdzXE1lc3NhZ2VCb3hcT3V0Ym94LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
@@ -141,6 +145,22 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/ozgun/Desktop/NetCoreWebApiProject/Core_Proje/Core_Proje/Views/About/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWJvdXRcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ozgun/Desktop/NetCoreWebApiProject/Core_Proje/Core_Proje/Views/AdminMessageBox/Inbox.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5NZXNzYWdlQm94XEluYm94LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ozgun/Desktop/NetCoreWebApiProject/Core_Proje/Core_Proje/Views/AdminMessageBox/MessageDetailsInModal.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5NZXNzYWdlQm94XE1lc3NhZ2VEZXRhaWxzSW5Nb2RhbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ozgun/Desktop/NetCoreWebApiProject/Core_Proje/Core_Proje/Views/AdminMessageBox/Outbox.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5NZXNzYWdlQm94XE91dGJveC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ozgun/Desktop/NetCoreWebApiProject/Core_Proje/Core_Proje/Views/AdminMessageBox/SendMessage.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5NZXNzYWdlQm94XFNlbmRNZXNzYWdlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/ozgun/Desktop/NetCoreWebApiProject/Core_Proje/Core_Proje/Views/AdminMessage/AdminMessageDetail.cshtml]

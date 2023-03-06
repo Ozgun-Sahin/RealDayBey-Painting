@@ -5,23 +5,19 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using System.Security.Claims;
 
-namespace Core_Proje.Areas.Writer.Controllers
+namespace Core_Proje.Controllers
 {
-    [Area("Writer")]
-    [Route("Writer/MessageBox")]
-    public class MessageBoxController : Controller
+    public class AdminMessageBoxController : Controller
     {
         WriterMessageManager writerMessageManager = new WriterMessageManager(new EFWriterMessageDal());
 
         private readonly UserManager<ClientUser> _userManager;
 
-        public MessageBoxController( UserManager<ClientUser> userManager)
+        public AdminMessageBoxController(UserManager<ClientUser> userManager)
         {
             _userManager = userManager;
         }
 
-        [Route("")]
-        [Route("Inbox")]
         public async Task<IActionResult> Inbox()
         {
             ClaimsPrincipal currentUser = this.User;
@@ -33,11 +29,9 @@ namespace Core_Proje.Areas.Writer.Controllers
             return View(messageList);
         }
 
-        [Route("")]
-        [Route("Outbox")]
         public async Task<IActionResult> Outbox()
         {
-            ClaimsPrincipal currentUser =this.User;
+            ClaimsPrincipal currentUser = this.User;
 
             string userName = _userManager.GetUserName(currentUser);
 
@@ -46,44 +40,34 @@ namespace Core_Proje.Areas.Writer.Controllers
             return View(messageList);
         }
 
-        [Route("")]
-        [Route("SendMessage")]
+
+
         [HttpGet]
         public IActionResult SendMessage()
         {
             return View();
         }
 
-        [Route("")]
-        [Route("SendMessage")]
         [HttpPost]
         public async Task<IActionResult> SendMessage(WriterMessage p)
         {
-            ClaimsPrincipal currentUser = this.User;
+            ClaimsPrincipal Admin = this.User;
+            var admin = await _userManager.GetUserAsync(Admin);
+            var user = _userManager.Users.Where(x => x.UserName == p.RecieverUserName).FirstOrDefault();
 
-            string userName = _userManager.GetUserName(currentUser);
-
-            var admin = await _userManager.GetUsersInRoleAsync("Admin");
-
-            var user = await _userManager.GetUserAsync(currentUser);
-
-
-            p.SenderFullName = user.Name + " " + user.Surname;
-            p.RecieverFullName = admin.FirstOrDefault().Name + " " + admin.FirstOrDefault().Surname;
-
+            p.SenderFullName = admin.Name + " " + admin.Surname;
+            p.RecieverFullName = user.Name + " " + user.Surname;
             p.Date = Convert.ToDateTime(DateTime.Now.ToShortDateString());
+            p.SenderUserName = admin.UserName;
 
-            p.RecieverUserName = admin.FirstOrDefault().UserName;
-            p.SenderUserName = user.UserName;
 
-           
             writerMessageManager.TAdd(p);
 
             return RedirectToAction("Inbox");
         }
 
+
         //Modal
-        [Route("MessageDetailsInModal/{id}")]
         [HttpGet]
         public IActionResult MessageDetailsInModal(int id)
         {
@@ -91,5 +75,8 @@ namespace Core_Proje.Areas.Writer.Controllers
 
             return PartialView(message);
         }
+
+
+
     }
 }

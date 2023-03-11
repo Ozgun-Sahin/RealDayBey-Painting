@@ -10,7 +10,7 @@ namespace Core_Proje.Controllers
         AboutManager aboutManager = new AboutManager(new EFAboutDal());
 
         [HttpGet]
-        public IActionResult Index()
+        public IActionResult AboutIndex()
         {
             ViewBag.v1 = "Düzenleme";
             ViewBag.v2 = "Hakkımda";

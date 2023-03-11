@@ -324,6 +324,9 @@ namespace DataAccessLayer.Migrations
                     b.Property<int>("Progress")
                         .HasColumnType("int");
 
+                    b.Property<string>("ProjectImage")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("ProjectName")
                         .HasColumnType("nvarchar(max)");
 

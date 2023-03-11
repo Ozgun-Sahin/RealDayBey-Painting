@@ -10,7 +10,7 @@ namespace Core_Proje.Controllers
         ContactManager contactManager = new ContactManager(new EFContactDal());
 
         [HttpGet]
-        public IActionResult Index()
+        public IActionResult ContactSubplaceIndex()
         {
             var value = contactManager.TGetById(1);
             return View(value);

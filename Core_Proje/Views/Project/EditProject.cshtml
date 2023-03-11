@@ -1,34 +1,38 @@
-﻿@model EntitiyLayer.Concrete.Project
+﻿@model Core_Proje.Models.EditProjectViewModel
 @{
     ViewData["Title"] = "EditProject";
     Layout = "~/Views/Shared/_NewAdminLayout.cshtml";
 }
 
-@using (Html.BeginForm("EditProject", "Project", FormMethod.Post))
-{
-    <div class="col-12 grid-margin stretch-card">
-        <div class="card">
-            <div class="card-body">
-                <p class="card-description"> Yeni Proje Ekleme Paneli </p>
-                <form class="forms-sample">
-                    @Html.HiddenFor(x=> x.ProjectID)
-                    @Html.HiddenFor(x=>x.ServiceID)
-                    @Html.HiddenFor(x=>x.ClientUserID)
-                    <br />
-                    @Html.Label("Proje")
-                    @Html.LabelFor(x=>x.ProjectName, new {@class="form-control"})
-                    <br />
-                    <label>Fiyat</label>
-                    @Html.TextBoxFor(x=>x.Price, new {@class="form-control"})
-                    <br />
-                    <label>Tamamlanma Oranı</label>
-                    @Html.TextBoxFor(x=>x.Progress, new {@class="form-control"})
-                    <br />
-                    <label>Burda görsel ekleme butonu olacak</label>
-                    <br />
-                    <button class="btn btn-info">Güncelle</button>
-                </form>
-            </div>
+<div class="col-md-6 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Proje: @Html.DisplayFor(x=>x.ProjectName) </h4>
+            <form class="forms-sample" method="post" enctype="multipart/form-data">
+                @Html.HiddenFor(x=> x.ProjectID)
+                <div class="form-group">
+                    <label>ilerleme durumu</label>
+                    <input type="text" asp-for="Progress" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label>gider tutarı</label>
+                    <input type="text" asp-for="Expence" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label>ücret</label>
+                    <input type="text" asp-for="Price" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label>Resim Seç</label><br />
+                    <input type="file" asp-for="ProjectImage">
+                </div>
+                <div>
+                    <label>Projeyi Onayla</label>
+                    @Html.CheckBoxFor(x=>x.IsComfirmed, new {id="IsComfirmed"})
+                </div>
+                <button type="submit" class="btn btn-primary btn-sm mr-2">Güncelle</button>
+                <button class="btn btn-light">İptal</button>
+            </form>
         </div>
     </div>
-}
+</div>

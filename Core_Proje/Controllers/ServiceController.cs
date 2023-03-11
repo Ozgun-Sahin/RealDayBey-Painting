@@ -8,7 +8,7 @@ namespace Core_Proje.Controllers
     public class ServiceController : Controller
     {
         ServiceManager serviceManager = new ServiceManager(new EFServicesDal());
-        public IActionResult Index()
+        public IActionResult ServiceIndex()
         {
             var value = serviceManager.TGetList();
             return View(value);

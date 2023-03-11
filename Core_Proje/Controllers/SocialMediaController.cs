@@ -9,7 +9,7 @@ namespace Core_Proje.Controllers
     public class SocialMediaController : Controller
     {
         SocialMediaManager socialMediaManager = new SocialMediaManager(new EFSocialMediaDal());
-        public IActionResult Index()
+        public IActionResult SocialMediaIndex()
         {
             var values = socialMediaManager.TGetList();
             return View(values);

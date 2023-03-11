@@ -17,6 +17,7 @@ namespace EntitiyLayer.Concrete
         public DateTime CompletionDate { get; set; }
         public bool IsComfirmed { get; set; }
         public string Description { get; set; }
+        public string ProjectImage { get; set; }
         public  ClientUser ClientUser { get; set; }
         public int ClientUserID { get; set; }
         public Service Service { get; set; }

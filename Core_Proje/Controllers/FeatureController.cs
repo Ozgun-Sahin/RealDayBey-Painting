@@ -10,7 +10,7 @@ namespace Core_Proje.Controllers
         FeatureManager featureManager = new FeatureManager(new EFFeatureDal());
 
         [HttpGet]
-        public IActionResult Index()
+        public IActionResult FeatureIndex()
         {
             var value = featureManager.TGetById(1);
             return View(value);

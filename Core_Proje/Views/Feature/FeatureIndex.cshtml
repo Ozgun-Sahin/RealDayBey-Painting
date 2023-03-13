@@ -4,18 +4,26 @@
     Layout = "~/Views/Shared/_NewAdminLayout.cshtml";
 }
 
-@using (Html.BeginForm("Index", "Feature", FormMethod.Post))
-{
-    @Html.HiddenFor(x=> x.FeatureID)
-    <br />
-    <label>Başlık</label>
-    @Html.TextBoxFor(x=>x.Header, new {@class="form-control"})
-    <br />
-    <label>Ad Soyad</label>
-    @Html.TextBoxFor(x=>x.Name, new {@class="form-control"})
-    <br />
-    <label>Görev / Unvan</label>
-    @Html.TextBoxFor(x=>x.Title, new {@class="form-control"})
-    <br />
-    <button class="btn btn-success">Kaydet</button>
-}
+<div class="col-6 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title"> Kapak  </h4>
+
+            @using (Html.BeginForm("Index", "Feature", FormMethod.Post))
+            {
+                @Html.HiddenFor(x=> x.FeatureID)
+                <label>Başlık</label>
+                @Html.TextBoxFor(x=>x.Header, new {@class="form-control"})
+                <br />
+                <label>Ad Soyad</label>
+                @Html.TextBoxFor(x=>x.Name, new {@class="form-control"})
+                <br />
+                <label>Görev / Unvan</label>
+                @Html.TextBoxFor(x=>x.Title, new {@class="form-control"})
+                <br />
+                <button class="btn btn-success">Kaydet</button>
+            }
+
+        </div>
+    </div>
+</div>

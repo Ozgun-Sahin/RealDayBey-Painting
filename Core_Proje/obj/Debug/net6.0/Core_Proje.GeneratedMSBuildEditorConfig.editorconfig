@@ -147,6 +147,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWJvdXRcQWJvdXRJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/ozgun/Desktop/NetCoreWebApiProject/Core_Proje/Core_Proje/Views/AdminLogin/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5Mb2dpblxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/ozgun/Desktop/NetCoreWebApiProject/Core_Proje/Core_Proje/Views/AdminMessageBox/Inbox.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5NZXNzYWdlQm94XEluYm94LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
@@ -435,8 +439,12 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVzdGltb25pYWxcRWRpdFRlc3RpbW9uaWFsLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/ozgun/Desktop/NetCoreWebApiProject/Core_Proje/Core_Proje/Views/Testimonial/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVzdGltb25pYWxcSW5kZXguY3NodG1s
+[C:/Users/ozgun/Desktop/NetCoreWebApiProject/Core_Proje/Core_Proje/Views/Testimonial/TestimonialDetailsInModal.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVzdGltb25pYWxcVGVzdGltb25pYWxEZXRhaWxzSW5Nb2RhbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ozgun/Desktop/NetCoreWebApiProject/Core_Proje/Core_Proje/Views/Testimonial/TestimonialIndex.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVzdGltb25pYWxcVGVzdGltb25pYWxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/ozgun/Desktop/NetCoreWebApiProject/Core_Proje/Core_Proje/Views/Test/Index.cshtml]

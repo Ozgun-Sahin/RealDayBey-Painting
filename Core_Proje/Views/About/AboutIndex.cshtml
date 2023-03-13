@@ -4,16 +4,12 @@
     Layout = "~/Views/Shared/_NewAdminLayout.cshtml";
 }
 
-<div class="card-header border-0">
-    <h3 class="mb-0">Hakkımda Düzenleme Sayfası</h3>
-</div>
-
 @using (Html.BeginForm("Index", "About", FormMethod.Post))
 {
-    <div class="col-12 grid-margin stretch-card">
+    <div class="col-6 grid-margin stretch-card">
         <div class="card">
             <div class="card-body">
-                <p class="card-description"> Deneyim Güncelleme </p>
+                <h4 class="card-title"> Hakkımda </h4>
                 <form class="forms-sample">
                     <div class="form-group">
                         <label>ID</label>

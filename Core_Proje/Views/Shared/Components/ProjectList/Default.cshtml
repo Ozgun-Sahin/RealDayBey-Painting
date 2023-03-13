@@ -21,19 +21,21 @@
                     <tbody>
                         @foreach (var item in Model)
                         {
-
                             <tr>
                                 <td>@item.ProjectID</td>
                                 <td>@item.ProjectName</td>
                                 <td>@item.Price</td>
                                 <td>@item.Expence</td>
-                                <td>buraya durum gelcek</td>
+                                @if (item.IsComfirmed==false)
+                                {
+                                   <td>Onay Bekliyor</td>
+                                }else
+                                {
+                                    <td>Onaylandı</td>
+                                }
                                 <td>%@item.Progress</td>
-                                <td>
-                                    <div class="badge badge-outline-success">bir tuş</div>
-                                </td>
+                                <td><a class="btn btn-outline-warning" href="/Project/EditProject/@item.ProjectID">Düzenle</a></td>
                             </tr>
-
                         }
                     </tbody>
                 </table>

@@ -9,7 +9,7 @@ namespace Core_Proje.Controllers
     public class TestimonialController : Controller
     {
         TestimonialManager TestimonialManager = new TestimonialManager(new EFTestimonialDal());
-        public IActionResult Index()
+        public IActionResult TestimonialIndex()
         {
             var values = TestimonialManager.TGetList();
             return View(values);
@@ -37,5 +37,17 @@ namespace Core_Proje.Controllers
             return RedirectToAction("Index");
 
         }
+
+        //Modal
+        [HttpGet]
+        public IActionResult TestimonialDetailsInModal(int id)
+        {
+            var testimonial = TestimonialManager.TGetById(id);
+
+            return PartialView(testimonial);
+        }
+
+
+
     }
 }

@@ -4,16 +4,13 @@
     Layout = "~/Views/Shared/_NewAdminLayout.cshtml";
 }
 
-<div class="card-header border-0">
-    <h3 class="mb-0">Hizmet Düzenleme</h3>
-</div>
 
 @using (Html.BeginForm("EditService", "Service", FormMethod.Post))
 {
-    <div class="col-12 grid-margin stretch-card">
+    <div class="col-6 grid-margin stretch-card">
         <div class="card">
             <div class="card-body">
-                <p class="card-description"> Yeni Proje Ekleme Paneli </p>
+                <h4 class="card-title"> Yeni Hizmet Ekle </h4>
                 <form class="forms-sample">
                     <br />
                     @Html.HiddenFor(x=> x.ServiceID)
@@ -21,7 +18,7 @@
                     @Html.Label("Hizmet")
                     @Html.TextBoxFor(x=>x.Title, new {@class="form-control"})
                     <br />
-                    <label>Resim Yolu</label>
+                    <label>İkon</label>
                     @Html.TextBoxFor(x=>x.ImageUrl, new {@class="form-control"})
                     <br />
                     <button class="btn btn-info">Güncelle</button>

@@ -295,6 +295,14 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvamVjdFxFZGl0UHJvamVjdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/ozgun/Desktop/NetCoreWebApiProject/Core_Proje/Core_Proje/Views/Project/Portfolio.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvamVjdFxQb3J0Zm9saW8uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ozgun/Desktop/NetCoreWebApiProject/Core_Proje/Core_Proje/Views/Project/ProjectDetailsInModal.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvamVjdFxQcm9qZWN0RGV0YWlsc0luTW9kYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/ozgun/Desktop/NetCoreWebApiProject/Core_Proje/Core_Proje/Views/Project/ProjectIndex.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvamVjdFxQcm9qZWN0SW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
@@ -303,8 +311,16 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2VydmljZVxBZGRTZXJ2aWNlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/ozgun/Desktop/NetCoreWebApiProject/Core_Proje/Core_Proje/Views/Service/AddServiceInModal.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2VydmljZVxBZGRTZXJ2aWNlSW5Nb2RhbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/ozgun/Desktop/NetCoreWebApiProject/Core_Proje/Core_Proje/Views/Service/EditService.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2VydmljZVxFZGl0U2VydmljZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ozgun/Desktop/NetCoreWebApiProject/Core_Proje/Core_Proje/Views/Service/ServiceDetailsInModal.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2VydmljZVxTZXJ2aWNlRGV0YWlsc0luTW9kYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/ozgun/Desktop/NetCoreWebApiProject/Core_Proje/Core_Proje/Views/Service/ServiceIndex.cshtml]
@@ -429,6 +445,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/ozgun/Desktop/NetCoreWebApiProject/Core_Proje/Core_Proje/Views/SocialMedia/EditSocialMedia.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU29jaWFsTWVkaWFcRWRpdFNvY2lhbE1lZGlhLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ozgun/Desktop/NetCoreWebApiProject/Core_Proje/Core_Proje/Views/SocialMedia/EditSocialMediaInModal.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU29jaWFsTWVkaWFcRWRpdFNvY2lhbE1lZGlhSW5Nb2RhbC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/ozgun/Desktop/NetCoreWebApiProject/Core_Proje/Core_Proje/Views/SocialMedia/SocialMediaIndex.cshtml]

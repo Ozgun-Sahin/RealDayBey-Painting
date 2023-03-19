@@ -50,5 +50,21 @@ namespace Core_Proje.Controllers
             return RedirectToAction("Index");
         }
 
+        //Modal
+        [HttpGet]
+        public IActionResult EditSocialMediaInModal(int id)
+        {
+            var value = socialMediaManager.TGetById(id);
+            return PartialView(value);
+        }
+
+        [HttpPost]
+        public IActionResult EditSocialMediaInModal(SocialMedia p)
+        {
+            socialMediaManager.TUpdate(p);
+            return RedirectToAction("SocialMediaIndex");
+        }
+
+
     }
 }

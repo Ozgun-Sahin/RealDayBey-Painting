@@ -47,7 +47,13 @@ namespace Core_Proje.Controllers
             return PartialView(testimonial);
         }
 
+        [HttpPost]
+        public IActionResult TestimonialDetailsInModal(Testimonial testimonial)
+        {
+            TestimonialManager.TUpdate(testimonial);
 
+            return RedirectToAction("TestimonialIndex");
+        }
 
     }
 }

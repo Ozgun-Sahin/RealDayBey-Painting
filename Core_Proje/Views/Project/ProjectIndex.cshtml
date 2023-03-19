@@ -1,5 +1,6 @@
 ﻿@using EntitiyLayer.Concrete
 @model List<Project>
+
 @{
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_NewAdminLayout.cshtml";
@@ -54,8 +55,8 @@
                                         </div>
                                     </div>
                                 </td>
-                                <td><a class="btn btn-outline-danger" href="/Project/DeleteProject/@item.ProjectID" id="DeleteBtn" onclick="return confirm('Silmek istediğinize emin misiniz?');"><i class="ni ni-fat-remove"></i> Sil</a></td>
-                                <td><a class="btn btn-outline-warning" href="/Project/EditProject/@item.ProjectID">Düzenle</a></td>
+                                <td><a class="btn btn-outline-danger" href="/Project/DeleteProject/@item.ProjectID" id="DeleteBtn" onclick="return confirm('Silmek istediğinize emin misiniz?');"><i class="ni ni-fat-remove"></i>Sil</a></td>
+                                <td><a href="#" class="btn btn-outline-warning btn-sm" data-target="/Project/ProjectDetailsInModal/@item.ProjectID">Düzenle</a></td>
                             </tr>
                         }
                     </tbody>
@@ -64,4 +65,23 @@
         </div>
     </div>
 </div>
-<br />
+
+<!--Deneme Modal'ı-->
+
+<div class="modal fade" id="modelView" tabindex="-1" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            @*<div class="modal-header">
+            <h5 class="modal-title">Modal title</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>*@
+
+            <div class="modal-body">
+                <!--Modal içeriği-->
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!--Deneme Modal'ı-->

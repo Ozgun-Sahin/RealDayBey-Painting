@@ -5,6 +5,10 @@
     Layout = "~/Views/Shared/_NewAdminLayout.cshtml";
 }
 
+<div>
+    <h4>Hizmetlerim</h4>
+</div>
+
 <div class="row">
     <div class="col-6 grid-margin stretch-card">
         <div class="card bg-default shadow">
@@ -34,8 +38,8 @@
                                 </th>
                                 <td class="budget">@item.Title</td>
 
-                                <td><a class="btn btn-outline-danger" href="/Service/DeleteService/@item.ServiceID" id="DeleteBtn" onclick="return confirm('Silmek istediğinize emin misiniz?');"><i class="ni ni-fat-remove"></i> Sil</a></td>
-                                <td><a class="btn btn-outline-warning" href="/Service/EditService/@item.ServiceID">Düzenle</a></td>
+                                <td><a class="btn btn-outline-danger btn-sm" href="/Service/DeleteService/@item.ServiceID" id="DeleteBtn" onclick="return confirm('Silmek istediğinize emin misiniz?');"><i class="ni ni-fat-remove"></i> Sil</a></td>
+                                <td><a href="#" class="btn btn-outline-warning btn-sm" data-target="/Service/ServiceDetailsInModal/@item.ServiceID">Düzenle</a></td>
                                 
                             </tr>
                         }
@@ -43,29 +47,30 @@
                 </table>
             </div>
             <br />
-            <a class="btn btn-outline-success" href="/Service/#">Yeni Hizmet Ekle</a>
+            <a href="#" class="btn btn-outline-success btn-sm" data-target="/Service/AddServiceInModal">Yeni Hizmet Ekle</a>
         </div>
     </div>
 </div>
 
+<!--Deneme Modal'ı-->
 
+<div class="modal fade" id="modelView" tabindex="-1" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            @*<div class="modal-header">
+            <h5 class="modal-title">Modal title</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>*@
 
+            <div class="modal-body">
+                <!--Modal içeriği-->
+            </div>
 
+        </div>
+    </div>
+</div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+<!--Deneme Modal'ı-->
 @*<div class="card-header border-0">
     <h3 class="mb-0">Hizmet Listesi Tablosu</h3>
 </div>

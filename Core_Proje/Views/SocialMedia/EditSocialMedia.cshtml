@@ -4,9 +4,9 @@
     Layout = "~/Views/Shared/_NewAdminLayout.cshtml";
 }
 
-@using (Html.BeginForm("EditSocialMedia", "SocialMedia", FormMethod.Post))
+@using (Html.BeginForm("EditSocialMediaInModal", "SocialMedia", FormMethod.Post))
 {
-    <div class="col-6 grid-margin stretch-card">
+    <div class="col-12 grid-margin stretch-card">
         <div class="card">
             <div class="card-body">
                 <h4 class="card-title"> Sosyal Hesap Düzenle </h4>
@@ -30,8 +30,7 @@
                         <label>İkon</label>
                         @Html.TextBoxFor(x=> x.Icon, new {@class="form-control"})
                     </div>*@
-                    <button type="submit" class="btn btn-primary mr-2">Kaydet</button>
-                    <button class="btn btn-dark">İptal</button>
+                    <button type="submit" class="btn btn-outline-primary btn-sm">Kaydet</button>
                 </form>
             </div>
         </div>

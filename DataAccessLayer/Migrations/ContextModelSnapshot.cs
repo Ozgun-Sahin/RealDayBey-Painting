@@ -450,6 +450,9 @@ namespace DataAccessLayer.Migrations
                     b.Property<string>("ImageUrl")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<bool>("IsComfirmed")
+                        .HasColumnType("bit");
+
                     b.Property<string>("Title")
                         .HasColumnType("nvarchar(max)");
 

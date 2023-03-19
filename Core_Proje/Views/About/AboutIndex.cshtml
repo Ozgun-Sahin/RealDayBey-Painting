@@ -3,49 +3,44 @@
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_NewAdminLayout.cshtml";
 }
-
+<div>
+    <h4 class="card-title"> Hakkımda </h4>
+</div>
 @using (Html.BeginForm("Index", "About", FormMethod.Post))
 {
-    <div class="col-6 grid-margin stretch-card">
-        <div class="card">
-            <div class="card-body">
-                <h4 class="card-title"> Hakkımda </h4>
-                <form class="forms-sample">
-                    <div class="form-group">
-                        <label>ID</label>
-                        @Html.TextBoxFor(x=> x.AboutID, new {@class="form-control"})
-                    </div>
-                    <div class="form-group">
-                        <label>Başlık</label>
-                        @Html.TextBoxFor(x=> x.Title, new {@class="form-control"})
-                    </div>
-                    <div class="form-group">
-                        <label>Yaş</label>
-                        @Html.TextBoxFor(x=> x.Age, new {@class="form-control"})
-                    </div>
-                    <div class="form-group">
-                        <label>Email</label>
-                        @Html.TextBoxFor(x=> x.Email, new {@class="form-control"})
-                    </div>
-                    <div class="form-group">
-                        <label>Adres</label>
-                        @Html.TextBoxFor(x=> x.Address, new {@class="form-control"})
-                    </div>
-                    <div class="form-group">
-                        <label>Telefon</label>
-                        @Html.TextBoxFor(x=> x.Phone, new {@class="form-control"})
-                    </div>
-                    <div class="form-group">
-                        <label>Görsel URL</label>
-                        @Html.TextBoxFor(x=> x.ImageUrl, new {@class="form-control"})
-                    </div>
-                    <div class="form-group">
-                        <label>Açıklama</label>
-                        @Html.TextAreaFor(x=> x.Description,6,3, new {@class="form-control"})
-                    </div>
-                    <button type="submit" class="btn btn-primary mr-2">Kaydet</button>
-                    <button class="btn btn-dark">İptal</button>
-                </form>
+    <div class="row">
+        <div class="col-6 grid-margin stretch-card">
+            <div class="card">
+                <div class="card-body">
+
+                    <form class="forms-sample">
+                        <div class="form-group">
+                            <label>ID</label>
+                            @Html.TextBoxFor(x=> x.AboutID, new {@class="form-control"})
+                        </div>
+                        <div class="form-group">
+                            <label>Başlık</label>
+                            @Html.TextBoxFor(x=> x.Title, new {@class="form-control"})
+                        </div>
+                        <div class="form-group">
+                            <label>Email</label>
+                            @Html.TextBoxFor(x=> x.Email, new {@class="form-control"})
+                        </div>
+                        <div class="form-group">
+                            <label>Telefon</label>
+                            @Html.TextBoxFor(x=> x.Phone, new {@class="form-control"})
+                        </div>
+                        <div class="form-group">
+                            <label>Görsel URL</label>
+                            @Html.TextBoxFor(x=> x.ImageUrl, new {@class="form-control"})
+                        </div>
+                        <div class="form-group">
+                            <label>Açıklama</label>
+                            @Html.TextAreaFor(x=> x.Description,6,3, new {@class="form-control"})
+                        </div>
+                        <button type="submit" class="btn btn-outline-primary">Kaydet</button>
+                    </form>
+                </div>
             </div>
         </div>
     </div>

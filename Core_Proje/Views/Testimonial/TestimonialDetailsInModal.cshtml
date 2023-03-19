@@ -2,11 +2,59 @@
 
 @model Testimonial
 
-<div class="card">
+@*<div class="card">
     <div class="card-header">
         @Model.ClientName
     </div>
     <div class="card-body">
-        @Model.Comment
+        @Html.TextAreaFor(x => x.Comment, 8, 3, new { @class = "form-control" })
     </div>
+    <button type="submit" class="btn btn-primary mr-2">Kaydet</button>
+    <button class="btn btn-dark">İptal</button>
+    <a href="#" class="btn btn-outline-warning btn-sm" data-dismiss="modal">Detaylar</a>
+    <button type="submit" class="btn btn-outline-warning btn-sm" data-bs-dismiss="modal">bok</button>
+    <button id='closeModal' type="submit" class="btn btn-danger" data-bs-dismiss="modal">Save&Close</button>
 </div>
+*@
+
+
+<div class="card-header border-0">
+    <h3 class="mb-0">Referans Detay Sayfası</h3>
+</div>
+@using (Html.BeginForm("TestimonialDetailsInModal", "Testimonial", FormMethod.Post))
+{
+    <div class="col-12 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <p class="card-description"> Yetenek Düzenleme Paneli </p>
+                <form class="forms-sample">
+                    <div class="form-group">
+                        <label>ID</label>
+                        @Html.TextBoxFor(x => x.TestimonialID, new { @class = "form-control" })
+                    </div>
+                    <div class="form-group">
+                        <label>Ad Soyad</label>
+                        @Html.TextBoxFor(x => x.ClientName, new { @class = "form-control" })
+                    </div>
+                    <div class="form-group">
+                        <label>Şirket</label>
+                        @Html.TextBoxFor(x => x.Company, new { @class = "form-control" })
+                    </div>
+                    <div class="form-group">
+                        <label>Başlık</label>
+                        @Html.TextBoxFor(x => x.Title, new { @class = "form-control" })
+                    </div>
+                    <div class="form-group">
+                        <label>Resim Yolu</label>
+                        @Html.TextBoxFor(x => x.ImageUrl, new { @class = "form-control" })
+                    </div>
+                    <div class="form-group">
+                        <label>Yorum</label>
+                        @Html.TextAreaFor(x => x.Comment, 8, 3, new { @class = "form-control" })
+                    </div>
+                    <button id='modalClose' type="submit" class="btn btn-danger" data-bs-dismiss="modal">Save&Close</button>
+                </form>
+            </div>
+        </div>
+    </div>
+}

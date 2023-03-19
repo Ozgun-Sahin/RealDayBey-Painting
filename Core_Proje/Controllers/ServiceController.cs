@@ -50,5 +50,35 @@ namespace Core_Proje.Controllers
             return RedirectToAction("Index");
 
         }
+
+        //Modal
+        [HttpGet]
+        public IActionResult ServiceDetailsInModal(int id)
+        {
+            var value = serviceManager.TGetById(id);
+            return PartialView(value);
+        }
+
+        [HttpPost]
+        public IActionResult ServiceDetailsInModal(Service service)
+        {
+            serviceManager.TUpdate(service);
+            return RedirectToAction("ServiceIndex");
+        }
+
+        [HttpGet]
+        public IActionResult AddServiceInModal()
+        {
+            return PartialView();
+        }
+
+
+        [HttpPost]
+        public IActionResult AddServiceInModal(Service service)
+        {
+            serviceManager.TAdd(service);
+            return RedirectToAction("ServiceIndex");
+        }
+
     }
 }

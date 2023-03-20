@@ -32,10 +32,22 @@ namespace Core_Proje.Areas.Writer.Controllers
             {
                 Name = p.Name,
                 Surname = p.Surname,
-                Email = p.Email,
                 UserName = p.UserName,
-                ImageUrl = p.ImageUrl,
+                
             };
+
+            if(p.Picture != null)
+            {
+                var resoruce = Directory.GetCurrentDirectory();
+                var extension = Path.GetExtension(p.Picture.FileName);
+                var imageName = Guid.NewGuid() + extension;
+                var saveLocation = resoruce + "/wwwroot/userimage/" + imageName;
+                var stream = new FileStream(saveLocation, FileMode.Create);
+                await p.Picture.CopyToAsync(stream);
+                wrtr.ImageUrl = imageName;
+            }
+
+
 
             if (p.Password == p.ConfirmPassword && p.Password !=null)
             {

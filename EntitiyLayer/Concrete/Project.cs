@@ -16,6 +16,7 @@ namespace EntitiyLayer.Concrete
         public double Expence { get; set; }
         public DateTime CompletionDate { get; set; }
         public bool IsComfirmed { get; set; }
+        public bool Showcase { get; set; }
         public string Description { get; set; }
         public string ProjectImage { get; set; }
         public  ClientUser ClientUser { get; set; }

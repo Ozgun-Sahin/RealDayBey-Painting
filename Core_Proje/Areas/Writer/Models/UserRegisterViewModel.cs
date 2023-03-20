@@ -21,10 +21,14 @@ namespace Core_Proje.Areas.Writer.Models
         [Compare("Password", ErrorMessage = "Lütfen Şifrenizi doğru giriniz")]
         public string? ConfirmPassword { get; set; }
 
-        [Required(ErrorMessage = "Lütfen Email adresinizi Giriniz")]
-        public string? Email { get; set; }
+        //[Required(ErrorMessage = "Lütfen Email adresinizi Giriniz")]
+        //public string? Email { get; set; }
+
+        //[Required(ErrorMessage = "Lütfen resim Giriniz")]
+        //public string? ImageUrl { get; set; }
 
         [Required(ErrorMessage = "Lütfen resim Giriniz")]
-        public string? ImageUrl { get; set; }
+        public IFormFile? Picture { get; set; }
+
     }
 }

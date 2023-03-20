@@ -333,6 +333,9 @@ namespace DataAccessLayer.Migrations
                     b.Property<int>("ServiceID")
                         .HasColumnType("int");
 
+                    b.Property<bool>("Showcase")
+                        .HasColumnType("bit");
+
                     b.HasKey("ProjectID");
 
                     b.HasIndex("ClientUserID");

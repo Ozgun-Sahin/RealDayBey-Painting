@@ -9,6 +9,7 @@
         public double Expence { get; set; }
         public DateTime CompletionDate { get; set; }
         public bool IsComfirmed { get; set; }
+        public bool Showcase { get; set; }
         public string ProjectImageURL { get; set; }
         public IFormFile? ProjectImage { get; set; }
     }

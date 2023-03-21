@@ -54,5 +54,10 @@ namespace BusinessLayer.Concrete
         {
             throw new NotImplementedException();
         }
+
+        public List<Testimonial> GetListConfirmedTestimonials()
+        {
+            return _testimonialDal.GetByFilter(x => x.IsComfirmed == true);
+        }
     }
 }

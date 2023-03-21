@@ -20,7 +20,7 @@ namespace Core_Proje.Controllers
         public IActionResult Index(Contact contact)
         {
             contactManager.TUpdate(contact);
-            return RedirectToAction("Index", "Default");
+            return RedirectToAction("DashboardIndex", "Dashboard");
 
         }
     }

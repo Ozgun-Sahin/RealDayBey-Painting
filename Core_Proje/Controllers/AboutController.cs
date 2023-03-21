@@ -23,7 +23,7 @@ namespace Core_Proje.Controllers
         public IActionResult Index(About about)
         {
             aboutManager.TUpdate(about);
-            return RedirectToAction("Index", "Default");
+            return RedirectToAction("DashboardIndex", "Dashboard");
 
         }
     }

@@ -20,7 +20,7 @@ namespace Core_Proje.Controllers
         public IActionResult Index(Feature feature)
         {
             featureManager.TUpdate(feature);
-            return RedirectToAction("Index","Default");
+            return RedirectToAction("DashboardIndex", "Dashboard");
 
         }
 

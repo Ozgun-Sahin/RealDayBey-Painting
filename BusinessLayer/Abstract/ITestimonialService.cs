@@ -7,5 +7,6 @@ namespace BusinessLayer.Abstract
 {
     public interface ITestimonialService : IGenericServices<Testimonial>
     {
+        List<Testimonial> GetListConfirmedTestimonials();
     }
 }

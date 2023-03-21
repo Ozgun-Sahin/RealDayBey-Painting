@@ -16,6 +16,7 @@
                         <thead>
                             <tr>
                                 <th> Müşteri </th>
+                                <th> Onay Durumu </th>
                                 <th> Sil </th>
                                 <th> Detaylar </th>
                             </tr>
@@ -29,6 +30,13 @@
                                         <img src="@item.ImageUrl" alt="image" />
                                         <span class="pl-2">@item.ClientName</span>
                                     </td>
+                                    @if (item.IsComfirmed==true)
+                                    {
+                                        <td>Onaylandı</td>
+                                    }else
+                                    {
+                                        <td>Onaylanmadı</td>
+                                    }
                                     <td> <a href="/Testimonial/DeleteTestimonial/@item.TestimonialID" class="btn btn-outline-danger"> Sil</a>  </td>
                                     <td><a href="#" class="btn btn-outline-warning btn-sm" data-target="/Testimonial/TestimonialDetailsInModal/@item.TestimonialID">Detaylar</a></td>
                                 </tr>

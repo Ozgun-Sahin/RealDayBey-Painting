@@ -63,7 +63,7 @@ namespace Core_Proje.Controllers
 
             writerMessageManager.TAdd(p);
 
-            return RedirectToAction("Inbox");
+            return RedirectToAction("DashboardIndex", "Dashboard");
         }
 
 

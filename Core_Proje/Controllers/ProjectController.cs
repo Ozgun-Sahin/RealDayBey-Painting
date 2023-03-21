@@ -28,7 +28,7 @@ namespace Core_Proje.Controllers
         {
             var value = projectManager.TGetById(id);
             projectManager.TDelete(value);
-            return RedirectToAction("Index");
+            return RedirectToAction("ProjectIndex", "Project");
         }
 
         [HttpGet]
@@ -94,6 +94,7 @@ namespace Core_Proje.Controllers
             model.Progress = value.Progress;
             model.Expence = value.Expence;
             model.ProjectImageURL = value.ProjectImage;
+            model.IsComfirmed = value.IsComfirmed;
 
 
 

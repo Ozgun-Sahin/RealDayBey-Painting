@@ -54,8 +54,6 @@ namespace BusinessLayer.Concrete
 
         public List<Project> TGetListByFilter(int p)
         {
-            //throw new NotImplementedException();
-
             return _projectDal.GetByFilter(x => x.ClientUserID == p).ToList();
         }
 

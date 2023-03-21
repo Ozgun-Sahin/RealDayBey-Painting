@@ -19,7 +19,7 @@ namespace Core_Proje.Controllers
         {
             var value = TestimonialManager.TGetById(id);
             TestimonialManager.TDelete(value);
-            return RedirectToAction("Index");
+            return RedirectToAction("TestimonialIndex");
         }
 
         [HttpGet]
@@ -34,7 +34,7 @@ namespace Core_Proje.Controllers
         public IActionResult EditTestimonial(Testimonial testimonial)
         {
             TestimonialManager.TUpdate(testimonial);
-            return RedirectToAction("Index");
+            return RedirectToAction("TestimonialIndex");
 
         }
 

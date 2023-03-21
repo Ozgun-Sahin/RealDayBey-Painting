@@ -1,27 +1,56 @@
 ﻿@using EntitiyLayer.Concrete
 @model List<Testimonial>
 
-
 <div class="section px-3 px-lg-4 pt-5" id="testimonials">
     <div class="container-narrow">
         <div class="text-center mb-5">
             <h2 class="marker marker-center">Client Testimonials</h2>
         </div>
         <div class="row">
-
-            @foreach (var item in Model)
+            @if (Model.Count>0)
             {
-               <div class="col-md-12" data-aos="fade-right" data-aos-delay="100">
-                <div class="d-flex ms-md-3"><span><i class="fas fa-2x fa-quote-left"></i></span><span class="m-2">@item.Comment</span></div>
-                <div class="d-flex justify-content-end align-items-end">
-                    <div class="text-end me-2">
-                        <div class="fw-bolder">@item.ClientName</div>
-                        <div class="text-small">@item.Title / @item.Company</div>
-                    </div><img class="me-md-3 rounded" src="@item.ImageUrl" width="96" height="96" alt="client 1" />
+                <div class="col-md-6 mb-5" data-aos="fade-right" data-aos-delay="100">
+                    <div class="d-flex ms-md-3"><span><i class="fas fa-2x fa-quote-left"></i></span><span class="m-2">@Model[0].Comment</span></div>
+                    <div class="d-flex justify-content-end align-items-end">
+                        <div class="text-end me-2">
+                            <div class="fw-bolder">@Model[0].ClientName</div>
+                        </div><img class="me-md-3 rounded" src="@Model[0].ImageUrl" width="96" height="96" alt="client 1" />
+                    </div>
                 </div>
-            </div> 
             }
-            
+            @if (Model.Count>1)
+            {
+                <div class="col-md-6 mb-5" data-aos="fade-left" data-aos-delay="300">
+                    <div class="d-flex ms-md-3"><span><i class="fas fa-2x fa-quote-left"></i></span><span class="m-2">@Model[1].Comment</span></div>
+                    <div class="d-flex justify-content-end align-items-end">
+                        <div class="text-end me-2">
+                            <div class="fw-bolder">@Model[1].ClientName</div>
+                        </div><img class="me-md-3 rounded" src="@Model[1].ImageUrl" width="96" height="96" alt="client 1" />
+                    </div>
+                </div>
+            }
+            @if (Model.Count>2)
+            {
+                <div class="col-md-6 mb-5" data-aos="fade-right" data-aos-delay="200">
+                    <div class="d-flex ms-md-3"><span><i class="fas fa-2x fa-quote-left"></i></span><span class="m-2">@Model[2].Comment</span></div>
+                    <div class="d-flex justify-content-end align-items-end">
+                        <div class="text-end me-2">
+                            <div class="fw-bolder">@Model[2].ClientName</div>
+                        </div><img class="me-md-3 rounded" src="@Model[2].ImageUrl" width="96" height="96" alt="client 1" />
+                    </div>
+                </div>
+            }
+            @if (Model.Count>3)
+            {
+                <div class="col-md-6 mb-5" data-aos="fade-left" data-aos-delay="400">
+                    <div class="d-flex ms-md-3"><span><i class="fas fa-2x fa-quote-left"></i></span><span class="m-2">@Model[3].Comment</span></div>
+                    <div class="d-flex justify-content-end align-items-end">
+                        <div class="text-end me-2">
+                            <div class="fw-bolder">@Model[3].ClientName</div>
+                        </div><img class="me-md-3 rounded" src="@Model[3].ImageUrl" width="96" height="96" alt="client 1" />
+                    </div>
+                </div>
+            }
         </div>
     </div>
 </div>

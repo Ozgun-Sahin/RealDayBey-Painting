@@ -1,5 +1,6 @@
 ﻿@using EntitiyLayer.Concrete
-@model List<Portfolio>
+@*@model List<Portfolio>*@
+@model List<Project>
 
 <div class="section px-2 px-lg-4 pt-5" id="portfolio">
     <div class="container">
@@ -14,10 +15,10 @@
                 <div class="grid-item">
                     <a href="https://dribbble.com">
                         <figure class="portfolio-item">
-                            <img src="@item.ImageUrl" data-bp="@item.ImageUrl" />
+                            <img src="/projectImage/@item.ProjectImage" data-bp="/projectImage/@item.ProjectImage" />
                             <figcaption>
-                                <h4 class="h5 mb-0">@item.Name</h4>
-                                <div>@item.ProjectUrl</div>
+                                <h4 class="h5 mb-0">@item.ProjectName</h4>
+                                @*<div>@item.ProjectUrl</div>*@
                             </figcaption>
                         </figure>
                     </a>

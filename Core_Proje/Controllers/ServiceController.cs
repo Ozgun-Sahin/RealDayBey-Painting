@@ -24,7 +24,7 @@ namespace Core_Proje.Controllers
         public IActionResult AddService(Service service)
         {
             serviceManager.TAdd(service);
-            return RedirectToAction("Index");
+            return RedirectToAction("ServiceIndex");
         }
 
         public IActionResult DeleteService(int id)

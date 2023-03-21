@@ -10,7 +10,8 @@ namespace Core_Proje.ViewComponents.Testimonial
 
         public IViewComponentResult Invoke()
         {
-            var values = testimonialMaganer.TGetList();
+            var values = testimonialMaganer.GetListConfirmedTestimonials().OrderByDescending(x => x.TestimonialID).ToList();
+
             return View(values);
         }
     }

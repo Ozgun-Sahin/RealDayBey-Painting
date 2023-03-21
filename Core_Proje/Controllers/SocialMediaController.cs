@@ -26,14 +26,14 @@ namespace Core_Proje.Controllers
         {
             p.Status = true;
             socialMediaManager.TAdd(p);
-            return RedirectToAction("Index");
+            return RedirectToAction("SocialMediaIndex");
         }
 
         public IActionResult DeleteSocialMedia(int id)
         {
             var value = socialMediaManager.TGetById(id);
             socialMediaManager.TDelete(value);
-            return RedirectToAction("Index");
+            return RedirectToAction("SocialMediaIndex");
         }
 
         [HttpGet]

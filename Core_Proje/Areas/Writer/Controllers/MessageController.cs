@@ -47,8 +47,6 @@ namespace Core_Proje.Areas.Writer.Controllers
         {
             var value = await _userManager.FindByNameAsync(User.Identity.Name);
 
-
-
             p = value.Email;
 
             var mesageList = writerMessageManager.GetListSenderMessage(p);

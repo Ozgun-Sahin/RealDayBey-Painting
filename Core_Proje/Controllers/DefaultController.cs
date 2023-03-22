@@ -2,6 +2,7 @@
 using DataAccessLayer.EntityFramework;
 using EntitiyLayer.Concrete;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Core_Proje.Controllers
@@ -9,6 +10,13 @@ namespace Core_Proje.Controllers
     [AllowAnonymous]
     public class DefaultController : Controller
     {
+        private readonly UserManager<ClientUser> _userManager;
+
+        public DefaultController(UserManager<ClientUser> userManager)
+        {
+            _userManager = userManager;
+        }
+
         public IActionResult Index()
         {
             return View();
@@ -31,13 +39,24 @@ namespace Core_Proje.Controllers
         }
 
         [HttpPost]
-        public PartialViewResult SendMessage(Message p)
+        public async Task<IActionResult> SendMessage(WriterMessage p)
         {
-            MessageManager _messageManager = new MessageManager(new EFMessageDal());
+            //MessageManager _messageManager = new MessageManager(new EFMessageDal());
+            //p.Date = Convert.ToDateTime(DateTime.Now.ToShortDateString());
+            //p.Status = true;
+            //_messageManager.TAdd(p);
+           
+
+            WriterMessageManager _writerMessageManager = new WriterMessageManager(new EFWriterMessageDal());
+
+            var admin = await _userManager.GetUsersInRoleAsync("Admin");
+            p.RecieverFullName = admin.FirstOrDefault().Name + " " + admin.FirstOrDefault().Surname;
+            p.RecieverUserName = admin.FirstOrDefault().UserName;
             p.Date = Convert.ToDateTime(DateTime.Now.ToShortDateString());
-            p.Status = true;
-            _messageManager.TAdd(p);
-            return PartialView();
+
+            _writerMessageManager.TAdd(p);
+
+            return RedirectToAction("Index");
         }
 
     }

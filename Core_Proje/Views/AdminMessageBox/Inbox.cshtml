@@ -18,6 +18,7 @@
                     <thead class="thead-dark">
                         <tr>
                             <th>#</th>
+                            <th>Gönderen</th>
                             <th>Konu</th>
                             <th>Tarih</th>
                             <th>Detaylar</th>
@@ -30,6 +31,7 @@
 
                             <tr>
                                 <th>@item.WriterMessageID</th>
+                                <th>@item.SenderFullName</th>
                                 <td>@item.Subject</td>
                                 <td>@(((DateTime)item.Date).ToString("dd-MMM-yyyy"))</td>
                                 <td><a href="#" class="btn btn-outline-warning btn-sm" data-target="/Writer/Message/MessageDetailsInModal/@item.WriterMessageID">Detaylar</a></td>

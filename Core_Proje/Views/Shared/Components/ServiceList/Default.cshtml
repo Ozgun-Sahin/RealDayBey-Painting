@@ -13,8 +13,10 @@
             @foreach (var item in Model)
             {
                 <div class="col-md-3 text-center" data-aos="fade-up" data-aos-delay="100">
-                    <img class="mb-2" src="@item.ImageUrl" width="96" height="96" alt="web design" />
+                    <figure>
+                        <img class="mb-2" src="/Template/images/services/@item.ImageUrl" width="96" height="96" alt="web design" />
                     <div class="h5">@item.Title</div>
+                    </figure>
                 </div>
             }
         </div>

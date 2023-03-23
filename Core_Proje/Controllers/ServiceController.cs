@@ -1,4 +1,5 @@
 ﻿using BusinessLayer.Concrete;
+using Core_Proje.Models;
 using DataAccessLayer.EntityFramework;
 using EntitiyLayer.Concrete;
 using Microsoft.AspNetCore.Mvc;
@@ -40,6 +41,9 @@ namespace Core_Proje.Controllers
         public IActionResult EditService(int id)
         {
             var value = serviceManager.TGetById(id);
+
+              
+
             return View(value);
         }
 
@@ -56,12 +60,33 @@ namespace Core_Proje.Controllers
         public IActionResult ServiceDetailsInModal(int id)
         {
             var value = serviceManager.TGetById(id);
-            return PartialView(value);
+
+            EditServiceModel model = new EditServiceModel();
+            model.ServiceID = value.ServiceID;
+            model.Title = value.Title;
+
+            return PartialView(model);
         }
 
         [HttpPost]
-        public IActionResult ServiceDetailsInModal(Service service)
+        public async Task<IActionResult> ServiceDetailsInModal(EditServiceModel p)
         {
+            int id = p.ServiceID;
+            var service = serviceManager.TGetById(id);
+
+            if (p.ServiceIcon != null)
+            {
+                var resource = Directory.GetCurrentDirectory();
+                var extension = Path.GetExtension(p.ServiceIcon.FileName);
+                var imageName = Guid.NewGuid() + extension;
+                var saveLocation = resource + "/wwwroot/Template/images/services/" + imageName;
+                var stream = new FileStream(saveLocation, FileMode.Create);
+                await p.ServiceIcon.CopyToAsync(stream);
+                service.ImageUrl = imageName;
+            }
+
+            service.Title = p.Title;
+
             serviceManager.TUpdate(service);
             return RedirectToAction("ServiceIndex");
         }

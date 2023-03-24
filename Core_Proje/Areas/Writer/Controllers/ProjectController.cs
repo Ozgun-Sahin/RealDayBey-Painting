@@ -48,7 +48,8 @@ namespace Core_Proje.Areas.Writer.Controllers
                 ProjectName = p.ProjectName,
                 ServiceID = p.ServiceID,
                 Description = p.Description,
-                IsComfirmed = true
+                IsComfirmed = true,
+                CreationDate = DateTime.Now
             };
 
             projectManager.TAdd(newProject);

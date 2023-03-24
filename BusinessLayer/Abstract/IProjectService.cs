@@ -12,5 +12,6 @@ namespace BusinessLayer.Abstract
         List<Project> GetListWorkInProgressProject();
 
         List<Project> GetListCompletedProject();
+        List<Project> GetListProjectsByCreationDate();
     }
 }

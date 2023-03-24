@@ -12,7 +12,8 @@ namespace Core_Proje.ViewComponents.Dashboard
         public IViewComponentResult Invoke()
         {
             var values = projectManager.TGetList();
-            return View(values);
+            var values3 = projectManager.GetListProjectsByCreationDate();
+            return View(values3);
         }
 
 

@@ -14,6 +14,10 @@
     <link rel="stylesheet" href="~/corona-free-dark-bootstrap-admin-template-1.0.0/template/assets/vendors/css/vendor.bundle.base.css">
     <!-- endinject -->
     <!-- Plugin css for this page -->
+    <link rel="stylesheet" href="~/corona-free-dark-bootstrap-admin-template-1.0.0/template/assets/assets/vendors/jvectormap/jquery-jvectormap.css">
+    <link rel="stylesheet" href="~/corona-free-dark-bootstrap-admin-template-1.0.0/template/assets/assets/vendors/flag-icon-css/css/flag-icon.min.css">
+    <link rel="stylesheet" href="~/corona-free-dark-bootstrap-admin-template-1.0.0/template/assets/assets/vendors/owl-carousel-2/owl.carousel.min.css">
+    <link rel="stylesheet" href="~/corona-free-dark-bootstrap-admin-template-1.0.0/template/assets/assets/vendors/owl-carousel-2/owl.theme.default.min.css">
     <!-- End plugin css for this page -->
     <!-- inject:css -->
     <!-- endinject -->
@@ -21,15 +25,14 @@
     <link rel="stylesheet" href="~/corona-free-dark-bootstrap-admin-template-1.0.0/template/assets/css/style.css">
     <!-- End layout styles -->
     <link rel="shortcut icon" href="~/corona-free-dark-bootstrap-admin-template-1.0.0/template/assets/images/favicon.png" />
-    <script src="~/corona-free-dark-bootstrap-admin-template-1.0.0/template/assets/vendors/js/vendor.bundle.base.js"></script>
 </head>
 <body>
     <div class="container-scroller">
         <!-- partial:../../partials/_sidebar.html -->
         <nav class="sidebar sidebar-offcanvas" id="sidebar">
-           @* <div class="sidebar-brand-wrapper d-none d-lg-flex align-items-center justify-content-center fixed-top">
-                <a class="sidebar-brand brand-logo" href="corona-free-dark-bootstrap-admin-template-1.0.0/template/index.html"><img src="corona-free-dark-bootstrap-admin-template-1.0.0/template/assets/images/logo.svg" alt="logo" /></a>
-                <a class="sidebar-brand brand-logo-mini" href="corona-free-dark-bootstrap-admin-template-1.0.0/template/index.html"><img src="corona-free-dark-bootstrap-admin-template-1.0.0/template/assets/images/logo-mini.svg" alt="logo" /></a>
+            @* <div class="sidebar-brand-wrapper d-none d-lg-flex align-items-center justify-content-center fixed-top">
+            <a class="sidebar-brand brand-logo" href="corona-free-dark-bootstrap-admin-template-1.0.0/template/index.html"><img src="corona-free-dark-bootstrap-admin-template-1.0.0/template/assets/images/logo.svg" alt="logo" /></a>
+            <a class="sidebar-brand brand-logo-mini" href="corona-free-dark-bootstrap-admin-template-1.0.0/template/index.html"><img src="corona-free-dark-bootstrap-admin-template-1.0.0/template/assets/images/logo-mini.svg" alt="logo" /></a>
             </div>*@
             @await Html.PartialAsync("/Views/Admin/NewSideBar.cshtml")
         </nav>
@@ -79,9 +82,16 @@
     </div>
     <!-- container-scroller -->
     <!-- plugins:js -->
-    
+    <!-- endinject -->
+    <!-- plugins:js -->
+    <script src="~/corona-free-dark-bootstrap-admin-template-1.0.0/template/assets/vendors/js/vendor.bundle.base.js"></script>
     <!-- endinject -->
     <!-- Plugin js for this page -->
+    <script src="~/corona-free-dark-bootstrap-admin-template-1.0.0/template/assets/vendors/chart.js/Chart.min.js"></script>
+    <script src="~/corona-free-dark-bootstrap-admin-template-1.0.0/template/assets/vendors/progressbar.js/progressbar.min.js"></script>
+    <script src="~/corona-free-dark-bootstrap-admin-template-1.0.0/template/assets/vendors/jvectormap/jquery-jvectormap.min.js"></script>
+    <script src="~/corona-free-dark-bootstrap-admin-template-1.0.0/template/assets/vendors/jvectormap/jquery-jvectormap-world-mill-en.js"></script>
+    <script src="~/corona-free-dark-bootstrap-admin-template-1.0.0/template/assets/vendors/owl-carousel-2/owl.carousel.min.js"></script>
     <!-- End plugin js for this page -->
     <!-- inject:js -->
     <script src="~/corona-free-dark-bootstrap-admin-template-1.0.0/template/assets/js/off-canvas.js"></script>
@@ -91,6 +101,7 @@
     <script src="~/corona-free-dark-bootstrap-admin-template-1.0.0/template/assets/js/todolist.js"></script>
     <!-- endinject -->
     <!-- Custom js for this page -->
+ @*   <script src="~/corona-free-dark-bootstrap-admin-template-1.0.0/template/assets/js/dashboard.js"></script>*@
     <!-- End custom js for this page -->
 
     <script>
@@ -118,17 +129,260 @@
 
             });
         })
-
     </script>
+    <script>
+        (function ($) {
+            'use strict';
+            $.fn.andSelf = function () {
+                return this.addBack.apply(this, arguments);
+            }
+            $(function () {
+                if ($("#currentBalanceCircle").length) {
+                    var bar = new ProgressBar.Circle(currentBalanceCircle, {
+                        color: '#000',
+                        // This has to be the same size as the maximum width to
+                        // prevent clipping
+                        strokeWidth: 12,
+                        trailWidth: 12,
+                        trailColor: '#0d0d0d',
+                        easing: 'easeInOut',
+                        duration: 1400,
+                        text: {
+                            autoStyleContainer: false
+                        },
+                        from: { color: '#d53f3a', width: 12 },
+                        to: { color: '#d53f3a', width: 12 },
+                        // Set default step function for all animate calls
+                        step: function (state, circle) {
+                            circle.path.setAttribute('stroke', state.color);
+                            circle.path.setAttribute('stroke-width', state.width);
 
-    @*<script>
-        $(function () {
-            $('#modalClose').on('click', function () {
-                $('#myView').modal("hide");
-            })
-        })
+                            var value = Math.round(circle.value() * 100);
+                            circle.setText('');
+
+                        }
+                    });
+
+                    bar.text.style.fontSize = '1.5rem';
+                    bar.animate(0.4);  // Number from 0.0 to 1.0
+                }
+                if ($('#audience-map').length) {
+                    $('#audience-map').vectorMap({
+                        map: 'world_mill_en',
+                        backgroundColor: 'transparent',
+                        panOnDrag: true,
+                        focusOn: {
+                            x: 0.5,
+                            y: 0.5,
+                            scale: 1,
+                            animate: true
+                        },
+                        series: {
+                            regions: [{
+                                scale: ['#3d3c3c', '#f2f2f2'],
+                                normalizeFunction: 'polynomial',
+                                values: {
+
+                                    "BZ": 75.00,
+                                    "US": 56.25,
+                                    "AU": 15.45,
+                                    "GB": 25.00,
+                                    "RO": 10.25,
+                                    "GE": 33.25
+                                }
+                            }]
+                        }
+                    });
+                }
+                if ($("#transaction-history").length) {
+                    var areaData = {
+                        labels: ["Gelir", "Gider"],
+                        datasets: [{
+                            data: [@ViewBag.totalIncome, @ViewBag.totalOutcome],
+                            backgroundColor: [
+                                 "#00d25b", "#ffab00"
+                            ]
+                        }
+                        ]
+                    };
+                    var areaOptions = {
+                        responsive: true,
+                        maintainAspectRatio: true,
+                        segmentShowStroke: false,
+                        cutoutPercentage: 70,
+                        elements: {
+                            arc: {
+                                borderWidth: 0
+                            }
+                        },
+                        legend: {
+                            display: false
+                        },
+                        tooltips: {
+                            enabled: true
+                        }
+                    }
+                    var transactionhistoryChartPlugins = {
+                        beforeDraw: function (chart) {
+                            var width = chart.chart.width,
+                                height = chart.chart.height,
+                                ctx = chart.chart.ctx;
+
+                            ctx.restore();
+                            var fontSize = 1;
+                            ctx.font = fontSize + "rem sans-serif";
+                            ctx.textAlign = 'left';
+                            ctx.textBaseline = "middle";
+                            ctx.fillStyle = "#ffffff";
+
+                            var text = @ViewBag.net+" TL",
+                                textX = Math.round((width - ctx.measureText(text).width) / 2),
+                                textY = height / 2.4;
+
+                            ctx.fillText(text, textX, textY);
+
+                            ctx.restore();
+                            var fontSize = 0.75;
+                            ctx.font = fontSize + "rem sans-serif";
+                            ctx.textAlign = 'left';
+                            ctx.textBaseline = "middle";
+                            ctx.fillStyle = "#6c7293";
+
+                            var texts = "Total",
+                                textsX = Math.round((width - ctx.measureText(text).width) / 1.93),
+                                textsY = height / 1.7;
+
+                            ctx.fillText(texts, textsX, textsY);
+                            ctx.save();
+                        }
+                    }
+                    var transactionhistoryChartCanvas = $("#transaction-history").get(0).getContext("2d");
+                    var transactionhistoryChart = new Chart(transactionhistoryChartCanvas, {
+                        type: 'doughnut',
+                        data: areaData,
+                        options: areaOptions,
+                        plugins: transactionhistoryChartPlugins
+                    });
+                }
+                if ($("#transaction-history-arabic").length) {
+                    var areaData = {
+                        labels: ["Paypal", "Stripe", "Cash"],
+                        datasets: [{
+                            data: [55, 25, 20],
+                            backgroundColor: [
+                                "#111111", "#00d25b", "#ffab00"
+                            ]
+                        }
+                        ]
+                    };
+                    var areaOptions = {
+                        responsive: true,
+                        maintainAspectRatio: true,
+                        segmentShowStroke: false,
+                        cutoutPercentage: 70,
+                        elements: {
+                            arc: {
+                                borderWidth: 0
+                            }
+                        },
+                        legend: {
+                            display: false
+                        },
+                        tooltips: {
+                            enabled: true
+                        }
+                    }
+                    var transactionhistoryChartPlugins = {
+                        beforeDraw: function (chart) {
+                            var width = chart.chart.width,
+                                height = chart.chart.height,
+                                ctx = chart.chart.ctx;
+
+                            ctx.restore();
+                            var fontSize = 1;
+                            ctx.font = fontSize + "rem sans-serif";
+                            ctx.textAlign = 'left';
+                            ctx.textBaseline = "middle";
+                            ctx.fillStyle = "#ffffff";
+
+                            var text = "$1200",
+                                textX = Math.round((width - ctx.measureText(text).width) / 2),
+                                textY = height / 2.4;
+
+                            ctx.fillText(text, textX, textY);
+
+                            ctx.restore();
+                            var fontSize = 0.75;
+                            ctx.font = fontSize + "rem sans-serif";
+                            ctx.textAlign = 'left';
+                            ctx.textBaseline = "middle";
+                            ctx.fillStyle = "#6c7293";
+
+                            var texts = "مجموع",
+                                textsX = Math.round((width - ctx.measureText(text).width) / 1.93),
+                                textsY = height / 1.7;
+
+                            ctx.fillText(texts, textsX, textsY);
+                            ctx.save();
+                        }
+                    }
+                    var transactionhistoryChartCanvas = $("#transaction-history-arabic").get(0).getContext("2d");
+                    var transactionhistoryChart = new Chart(transactionhistoryChartCanvas, {
+                        type: 'doughnut',
+                        data: areaData,
+                        options: areaOptions,
+                        plugins: transactionhistoryChartPlugins
+                    });
+                }
+                if ($('#owl-carousel-basic').length) {
+                    $('#owl-carousel-basic').owlCarousel({
+                        loop: true,
+                        margin: 10,
+                        dots: false,
+                        nav: true,
+                        autoplay: true,
+                        autoplayTimeout: 4500,
+                        navText: ["<i class='mdi mdi-chevron-left'></i>", "<i class='mdi mdi-chevron-right'></i>"],
+                        responsive: {
+                            0: {
+                                items: 1
+                            },
+                            600: {
+                                items: 1
+                            },
+                            1000: {
+                                items: 1
+                            }
+                        }
+                    });
+                }
+                var isrtl = $("body").hasClass("rtl");
+                if ($('#owl-carousel-rtl').length) {
+                    $('#owl-carousel-rtl').owlCarousel({
+                        loop: true,
+                        margin: 10,
+                        dots: false,
+                        nav: true,
+                        rtl: isrtl,
+                        autoplay: true,
+                        autoplayTimeout: 4500,
+                        navText: ["<i class='mdi mdi-chevron-right'></i>", "<i class='mdi mdi-chevron-left'></i>"],
+                        responsive: {
+                            0: {
+                                items: 1
+                            },
+                            600: {
+                                items: 1
+                            },
+                            1000: {
+                                items: 1
+                            }
+                        }
+                    });
+                }
+            });
+        })(jQuery);
     </script>
-*@
-
+   
 </body>
 </html>

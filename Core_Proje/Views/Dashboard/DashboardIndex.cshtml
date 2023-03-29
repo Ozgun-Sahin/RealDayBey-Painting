@@ -1,4 +1,5 @@
-﻿@{
+﻿@using System.Globalization
+@{
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_NewAdminLayout.cshtml";
 }
@@ -15,10 +16,10 @@
     <link rel="stylesheet" href="~/corona-free-dark-bootstrap-admin-template-1.0.0/template/assets/vendors/css/vendor.bundle.base.css">*@
     <!-- endinject -->
     <!-- Plugin css for this page -->
-    <link rel="stylesheet" href="~/corona-free-dark-bootstrap-admin-template-1.0.0/template/assets/vendors/jvectormap/jquery-jvectormap.css">
+    @*<link rel="stylesheet" href="~/corona-free-dark-bootstrap-admin-template-1.0.0/template/assets/vendors/jvectormap/jquery-jvectormap.css">
     <link rel="stylesheet" href="~/corona-free-dark-bootstrap-admin-template-1.0.0/template/assets/vendors/flag-icon-css/css/flag-icon.min.css">
     <link rel="stylesheet" href="~/corona-free-dark-bootstrap-admin-template-1.0.0/template/assets/vendors/owl-carousel-2/owl.carousel.min.css">
-    <link rel="stylesheet" href="~/corona-free-dark-bootstrap-admin-template-1.0.0/template/assets/vendors/owl-carousel-2/owl.theme.default.min.css">
+    <link rel="stylesheet" href="~/corona-free-dark-bootstrap-admin-template-1.0.0/template/assets/vendors/owl-carousel-2/owl.theme.default.min.css">*@
     <!-- End plugin css for this page -->
     <!-- inject:css -->
     <!-- endinject -->
@@ -40,20 +41,29 @@
                     <canvas id="transaction-history" class="transaction-chart"></canvas>
                     <div class="bg-gray-dark d-flex d-md-block d-xl-flex flex-row py-3 px-4 px-md-3 px-xl-4 rounded mt-3">
                         <div class="text-md-center text-xl-left">
-                            <h6 class="mb-1">Toplam Proje Geliri</h6>
-                            <p class="text-muted mb-0">@DateTime.Now.ToShortDateString() - @DateTime.Now.AddMonths(1).ToShortDateString() Arası </p>
+                            <h6 class="mb-1">Aylık Proje Geliri</h6>
+                            <p class="text-muted mb-0">@DateTime.Now.ToString("MMMM",  new CultureInfo("tr-TR")) Ayı </p>
                         </div>
                         <div class="align-self-center flex-grow text-right text-md-center text-xl-right py-md-2 py-xl-0">
-                            <h6 class="font-weight-bold mb-0">0 TL</h6>
+                            <h6 class="font-weight-bold mb-0">@ViewBag.totalIncome TL</h6>
                         </div>
                     </div>
                     <div class="bg-gray-dark d-flex d-md-block d-xl-flex flex-row py-3 px-4 px-md-3 px-xl-4 rounded mt-3">
                         <div class="text-md-center text-xl-left">
-                            <h6 class="mb-1">Toplam Proje Maliyeti</h6>
-                            <p class="text-muted mb-0">@DateTime.Now.ToShortDateString() - @DateTime.Now.AddMonths(1).ToShortDateString() Arası </p>
+                            <h6 class="mb-1">Aylık Proje Maliyeti</h6>
+                            <p class="text-muted mb-0">@DateTime.Now.ToString("MMMM",  new CultureInfo("tr-TR")) Ayı </p>
                         </div>
                         <div class="align-self-center flex-grow text-right text-md-center text-xl-right py-md-2 py-xl-0">
-                            <h6 class="font-weight-bold mb-0">0 Tl</h6>
+                            <h6 class="font-weight-bold mb-0">@ViewBag.totalOutcome TL</h6>
+                        </div>
+                    </div>
+                    <div class="bg-gray-dark d-flex d-md-block d-xl-flex flex-row py-3 px-4 px-md-3 px-xl-4 rounded mt-3">
+                        <div class="text-md-center text-xl-left">
+                            <h6 class="mb-1">Aylık Net Gelir</h6>
+                            <p class="text-muted mb-0">@DateTime.Now.ToString("MMMM",  new CultureInfo("tr-TR")) Ayı </p>
+                        </div>
+                        <div class="align-self-center flex-grow text-right text-md-center text-xl-right py-md-2 py-xl-0">
+                            <h6 class="font-weight-bold mb-0">@ViewBag.net TL</h6>
                         </div>
                     </div>
                 </div>
@@ -83,25 +93,7 @@
     <!-- main-panel ends -->
     <!-- page-body-wrapper ends -->
     <!-- container-scroller -->
-    <!-- plugins:js -->
-    @*<script src="~/corona-free-dark-bootstrap-admin-template-1.0.0/template/assets/vendors/js/vendor.bundle.base.js"></script>*@
-    <!-- endinject -->
-    <!-- Plugin js for this page -->
-    <script src="~/corona-free-dark-bootstrap-admin-template-1.0.0/template/assets/vendors/chart.js/Chart.min.js"></script>
-    <script src="~/corona-free-dark-bootstrap-admin-template-1.0.0/template/assets/vendors/progressbar.js/progressbar.min.js"></script>
-    <script src="~/corona-free-dark-bootstrap-admin-template-1.0.0/template/assets/vendors/jvectormap/jquery-jvectormap.min.js"></script>
-    <script src="~/corona-free-dark-bootstrap-admin-template-1.0.0/template/assets/vendors/jvectormap/jquery-jvectormap-world-mill-en.js"></script>
-    <script src="~/corona-free-dark-bootstrap-admin-template-1.0.0/template/assets/vendors/owl-carousel-2/owl.carousel.min.js"></script>
-    <!-- End plugin js for this page -->
-    <!-- inject:js -->
-    @*<script src="~/corona-free-dark-bootstrap-admin-template-1.0.0/template/assets/js/off-canvas.js"></script>
-    <script src="~/corona-free-dark-bootstrap-admin-template-1.0.0/template/assets/js/hoverable-collapse.js"></script>
-    <script src="~/corona-free-dark-bootstrap-admin-template-1.0.0/template/assets/js/misc.js"></script>
-    <script src="~/corona-free-dark-bootstrap-admin-template-1.0.0/template/assets/js/settings.js"></script>
-    <script src="~/corona-free-dark-bootstrap-admin-template-1.0.0/template/assets/js/todolist.js"></script>*@
-    <!-- endinject -->
-    <!-- Custom js for this page -->
-    <script src="~/corona-free-dark-bootstrap-admin-template-1.0.0/template/assets/js/dashboard.js"></script>
-    <!-- End custom js for this page -->
+    
+   
 </body>
 </html>

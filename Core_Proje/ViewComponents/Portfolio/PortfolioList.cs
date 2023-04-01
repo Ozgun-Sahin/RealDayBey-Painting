@@ -11,9 +11,10 @@ namespace Core_Proje.ViewComponents.Portfolio
         public IViewComponentResult Invoke()
         {
             //var values = portfolioManager.TGetList();
-            //var values2 = projectManager.TGetList();
+            var values2 = projectManager.TGetList();
             var values3 = projectManager.GetListProjectsByCreationDate();
-            return View();
+            var values4 = projectManager.GetListShowCaseProjects();
+            return View(values4);
         }
     }
 }

@@ -32,6 +32,11 @@ namespace BusinessLayer.Concrete
             return _projectDal.GetList().Where(x => x.CreationDate.Month == DateTime.Now.Month).ToList();
         }
 
+        public List<Project> GetListShowCaseProjects()
+        {
+            return _projectDal.GetByFilter(x => x.Showcase == true);
+        }
+
         public List<Project> GetListWorkInProgressProject()
         {
             return _projectDal.GetByFilter(x => x.IsComfirmed == true && x.Progress <= 99);

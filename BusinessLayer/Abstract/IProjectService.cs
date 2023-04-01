@@ -8,10 +8,10 @@ namespace BusinessLayer.Abstract
     public interface IProjectService : IGenericServices<Project>
     {
         List<Project> GetListPendingProject();
-
         List<Project> GetListWorkInProgressProject();
-
         List<Project> GetListCompletedProject();
         List<Project> GetListProjectsByCreationDate();
+        List<Project> GetListShowCaseProjects();
+
     }
 }

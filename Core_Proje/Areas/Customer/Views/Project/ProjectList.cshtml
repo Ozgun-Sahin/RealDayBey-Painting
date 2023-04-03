@@ -1,0 +1,130 @@
+﻿@using EntitiyLayer.Concrete
+@using DataAccessLayer.EntityFramework
+@using BusinessLayer.Concrete
+@*@model List<Project>*@
+@model IEnumerable<Project>
+
+@{
+    ViewData["Title"] = "ProjectList";
+    Layout = "~/Views/Shared/_WriterLayout.cshtml";
+
+    ServiceManager serviceManager = new ServiceManager(new EFServicesDal());
+
+}
+
+
+<div class="col-md-6 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Projeler</h4>
+            <div class="table-responsive">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Proje</th>
+                            <th>Hizmet Tipi</th>
+                            <th>Durum</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        @foreach (var item in Model)
+                        {
+                            var service = serviceManager.TGetById(item.ServiceID);
+                            string serviceTitle = service.Title;
+
+                            <tr>
+                                <th>@item.ProjectID</th>
+                                <td>@item.ProjectName</td>
+                                <td>@service.Title</td>
+                                @if (item.IsComfirmed==false)
+                                {
+                                    <td>Onay Bekliyor</td>
+                                }
+                                else
+                                {
+                                    <td>
+                                        <div class="progress">
+                                            <div class="progress-bar bg-warning" role="progressbar" style="width: @item.Progress%" aria-valuenow="@item.Progress" aria-valuemin="0" aria-valuemax="100"></div>
+                                        </div>
+                                    </td>
+                                        
+                                }
+                                <td><a href="#" class="btn btn-outline-primary btn-sm" data-target="/Customer/Project/ProjecDetailsInModal/@item.ProjectID">Detaylar</a></td>
+                            </tr>
+
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!--Modal-->
+
+<div class="modal fade" id="modelView" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            @*<div class="modal-header">
+                <h5 class="modal-title">Modal title</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>*@
+            <div class="modal-body">
+                <!--Modal içeriği-->
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--Modal-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--çalışan modal-->
+
+@*<div class="modal fade" id="modelView" tabindex="-1" role="dialog" aria-labelledby="">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">x</span>
+                </button>
+                <h4 class="modal-title" id="myModalLabel">Project Detail</h4>
+            </div>
+            <form method="post">
+                <div class="modal-body">
+                    <!--buraya detalar gelecek-->
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+*@
+<!--çalışan modal-->

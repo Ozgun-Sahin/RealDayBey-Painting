@@ -5,17 +5,17 @@
 <!DOCTYPE html>
 <html lang="en">
 
-@await Html.PartialAsync("/Areas/Writer/Views/Default/_HeadPartial.cshtml")
+@await Html.PartialAsync("/Areas/Customer/Views/Default/_HeadPartial.cshtml")
 
 <body>
     <div class="container-scroller">
         <!-- partial:../../partials/_navbar.html -->
-        @await Html.PartialAsync("/Areas/Writer/Views/Default/_NavBarPartial.cshtml")
+        @await Html.PartialAsync("/Areas/Customer/Views/Default/_NavBarPartial.cshtml")
         <!-- partial -->
         <div class="container-fluid page-body-wrapper">
 
             <!-- partial:../../partials/_sidebar.html -->
-            @await Html.PartialAsync("/Areas/Writer/Views/Default/_SideBarPartial.cshtml")
+            @await Html.PartialAsync("/Areas/Customer/Views/Default/_SideBarPartial.cshtml")
             <!-- partial -->
             <div class="main-panel">
                 <div class="content-wrapper">
@@ -27,14 +27,14 @@
                 </div>
                 <!-- content-wrapper ends -->
                 <!-- partial:../../partials/_footer.html -->
-                @await Html.PartialAsync("/Areas/Writer/Views/Default/_FooterPartial.cshtml")
+                @await Html.PartialAsync("/Areas/Customer/Views/Default/_FooterPartial.cshtml")
                 <!-- partial -->
             </div>
             <!-- main-panel ends -->
         </div>
         <!-- page-body-wrapper ends -->
     </div>
-    @await Html.PartialAsync("/Areas/Writer/Views/Default/_ScriptsPartial.cshtml")
+    @await Html.PartialAsync("/Areas/Customer/Views/Default/_ScriptsPartial.cshtml")
 </body>
 
 </html>

@@ -1,0 +1,24 @@
+﻿@model Core_Proje.Areas.Customer.Models.ProjectDetailModel
+@{
+    ViewData["Title"] = "ProjectDetails";
+    Layout = "~/Views/Shared/_WriterLayout.cshtml";
+}
+
+<div class="col-md-6 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-header">
+            @Model.ProjectName
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">@Model.ServiceType</h5>
+            <p class="card-text">@Model.Description</p>
+            <div class="py-1">
+                <div class="d-flex text-small fw-bolder"><span class="me-auto">İlerleme Durumu : % </span>@Model.Progress<span></span></div>
+                <div class="progress my-1">
+                    <div class="progress-bar bg-primary" role="progressbar" data-aos="zoom-in-right" data-aos-delay="300" data-aos-anchor=".skills-section" style="width: @Model.Progress%" aria-valuenow="@Model.Progress" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+            </div>
+            <a href="/Customer/Project/ProjectList" class="btn btn-primary btn-sm">Geri Dön</a>
+        </div>
+    </div>
+</div>

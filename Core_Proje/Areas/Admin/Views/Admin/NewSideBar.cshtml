@@ -1,0 +1,228 @@
+﻿<div class="sidebar-brand-wrapper d-none d-lg-flex align-items-center justify-content-center fixed-top">
+    <a class="sidebar-brand brand-logo" href="corona-free-dark-bootstrap-admin-template-1.0.0/template/index.html"><img src="~/corona-free-dark-bootstrap-admin-template-1.0.0/template/assets/images/logo.svg" alt="logo" /></a>
+    <a class="sidebar-brand brand-logo-mini" href="corona-free-dark-bootstrap-admin-template-1.0.0/template/index.html"><img src="~/corona-free-dark-bootstrap-admin-template-1.0.0/template/assets/images/logo-mini.svg" alt="logo" /></a>
+</div>
+<ul class="nav">
+    <li class="nav-item menu-items">
+        <a class="nav-link" href="/Admin/Dashboard/DashboardIndex">
+            <span class="menu-icon">
+                <i class="mdi mdi-collage"></i>
+            </span>
+            <span class="menu-title">Dashboard</span>
+        </a>
+    </li>
+    <li class="nav-item menu-items">
+        <a class="nav-link" href="/Admin/Project/ProjectIndex">
+            <span class="menu-icon">
+                <i class="mdi mdi-chart-bubble"></i>
+            </span>
+            <span class="menu-title">Projeler</span>
+        </a>
+    </li>
+    <li class="nav-item menu-items">
+        <a class="nav-link" href="/Admin/AdminMessageBox/Inbox">
+            <span class="menu-icon">
+                <i class="mdi mdi-message-outline"></i>
+            </span>
+            <span class="menu-title">Gelen Mesajlar</span>
+        </a>
+    </li>
+    <li class="nav-item menu-items">
+        <a class="nav-link" href="/Admin/AdminMessageBox/Outbox">
+            <span class="menu-icon">
+                <i class="mdi mdi-message"></i>
+            </span>
+            <span class="menu-title">Giden Mesajlar</span>
+        </a>
+    </li>
+    <li class="nav-item menu-items">
+        <a class="nav-link" href="/Admin/AdminMessageBox/SendMessage">
+            <span class="menu-icon">
+                <i class="mdi mdi-message-draw"></i>
+            </span>
+            <span class="menu-title">Yeni Mesaj Yaz</span>
+        </a>
+    </li>
+    <li class="nav-item menu-items">
+        <a class="nav-link" href="/Admin/AdminAnnouncement/AdminAnnouncementIndex">
+            <span class="menu-icon">
+                <i class="mdi mdi-voice"></i>
+            </span>
+            <span class="menu-title">Duyurular</span>
+        </a>
+    </li>
+    <li class="nav-item menu-items">
+        <a class="nav-link" data-toggle="collapse" href="#auth" aria-expanded="false" aria-controls="auth">
+            <span class="menu-icon">
+                <i class="mdi mdi-format-float-left"></i>
+            </span>
+            <span class="menu-title">Ana Sayfa Düzenle</span>
+            <i class="menu-arrow"></i>
+        </a>
+        <div class="collapse" id="auth">
+            <ul class="nav flex-column sub-menu">
+                <li class="nav-item"> <a class="nav-link" href="/Admin/Feature/FeatureIndex"> Kapak </a></li>
+                <li class="nav-item"> <a class="nav-link" href="/Admin/About/AboutIndex"> Hakkımda </a></li>
+                <li class="nav-item"> <a class="nav-link" href="/Admin/Service/ServiceIndex"> Hizmetlerim </a></li>
+                <li class="nav-item"> <a class="nav-link" href="/Admin/Project/Portfolio"> Portföy </a></li>
+                <li class="nav-item"> <a class="nav-link" href="/Admin/Testimonial/TestimonialIndex"> Referanslar </a></li>
+                <li class="nav-item"> <a class="nav-link" href="/Admin/ContactSubplace/ContactSubplaceIndex"> İletişim </a></li>
+                <li class="nav-item"> <a class="nav-link" href="/Admin/SocialMedia/SocialMediaIndex"> Hesap Ekle / Çıkar </a></li>
+            </ul>
+        </div>
+    </li>
+    <li class="nav-item menu-items">
+        <a class="nav-link" href="/AdminLogin/LogOut">
+            <span class="menu-icon">
+                <i class="mdi mdi-power"></i>
+            </span>
+            <span class="menu-title">Çıkış Yap</span>
+        </a>
+    </li>
+    @*<li class="nav-item menu-items">
+        <a class="nav-link" href="/Skill">
+            <span class="menu-icon">
+                <i class="mdi mdi-chart-bubble"></i>
+            </span>
+            <span class="menu-title">Yeteneklerim</span>
+        </a>
+    </li>
+    <li class="nav-item menu-items">
+        <a class="nav-link" href="/Experience">
+            <span class="menu-icon">
+                <i class="mdi mdi-shape-circle-plus"></i>
+            </span>
+            <span class="menu-title">Deneyimlerim</span>
+        </a>
+    </li>
+    <li class="nav-item menu-items">
+        <a class="nav-link" href="/Experience2">
+            <span class="menu-icon">
+                <i class="mdi mdi-shape-circle-plus"></i>
+            </span>
+            <span class="menu-title">Ajax Denemeleri</span>
+        </a>
+    </li>
+    <li class="nav-item menu-items">
+        <a class="nav-link" href="corona-free-dark-bootstrap-admin-template-1.0.0/template/pages/tables/basic-table.html">
+            <span class="menu-icon">
+                <i class="mdi mdi-table-large"></i>
+            </span>
+            <span class="menu-title">Tablolar</span>
+        </a>
+    </li>
+    <li class="nav-item menu-items">
+        <a class="nav-link" href="corona-free-dark-bootstrap-admin-template-1.0.0/template/pages/charts/chartjs.html">
+            <span class="menu-icon">
+                <i class="mdi mdi-chart-bar"></i>
+            </span>
+            <span class="menu-title">Grafikler</span>
+        </a>
+    </li>
+    <li class="nav-item menu-items">
+        <a class="nav-link" href="/Service">
+            <span class="menu-icon">
+                <i class="mdi mdi-shape-plus"></i>
+            </span>
+            <span class="menu-title">Hizmetler</span>
+        </a>
+    </li>
+    <li class="nav-item menu-items">
+        <a class="nav-link" href="/Portfolio">
+            <span class="menu-icon">
+                <i class="mdi mdi-briefcase"></i>
+            </span>
+            <span class="menu-title">Projeler</span>
+        </a>
+    </li>
+    <li class="nav-item menu-items">
+        <a class="nav-link" href="/AdminMessage/ReceieverMessageList/">
+            <span class="menu-icon">
+                <i class="mdi mdi-message"></i>
+            </span>
+            <span class="menu-title">Gelen Mesajlar</span>
+        </a>
+    </li>
+    <li class="nav-item menu-items">
+        <a class="nav-link" href="/AdminMessage/SenderMessageList/">
+            <span class="menu-icon">
+                <i class="mdi mdi-message"></i>
+            </span>
+            <span class="menu-title">Giden Mesajlar</span>
+        </a>
+    </li>
+    <li class="nav-item menu-items">
+        <a class="nav-link" href="/Contact">
+            <span class="menu-icon">
+                <i class="mdi mdi-phone"></i>
+            </span>
+            <span class="menu-title">İletişim(Kaldırılacak)</span>
+        </a>
+    </li>
+    <li class="nav-item menu-items">
+        <a class="nav-link" href="/ContactSubplace">
+            <span class="menu-icon">
+                <i class="mdi mdi-phone"></i>
+            </span>
+            <span class="menu-title">İletişim</span>
+        </a>
+    </li>
+    <li class="nav-item menu-items">
+        <a class="nav-link" href="/SocialMedia">
+            <span class="menu-icon">
+                <i class="mdi mdi-face"></i>
+            </span>
+            <span class="menu-title">Sosyal Medya Hesapları</span>
+        </a>
+    </li>
+    <li class="nav-item menu-items">
+        <a class="nav-link" href="/Testimonial">
+            <span class="menu-icon">
+                <i class="mdi mdi-contact-mail"></i>
+            </span>
+            <span class="menu-title">Referanslar</span>
+        </a>
+    </li>
+    <li class="nav-item menu-items">
+        <a class="nav-link" href="/About">
+            <span class="menu-icon">
+                <i class="mdi mdi-contacts"></i>
+            </span>
+            <span class="menu-title">Hakkımda</span>
+        </a>
+    </li>
+    <li class="nav-item menu-items">
+        <a class="nav-link" href="/Feature">
+            <span class="menu-icon">
+                <i class="mdi mdi-contacts"></i>
+            </span>
+            <span class="menu-title">Öne Çıkanlar</span>
+        </a>
+    </li>
+    <li class="nav-item menu-items">
+        <a class="nav-link" data-toggle="collapse" href="#auth" aria-expanded="false" aria-controls="auth">
+            <span class="menu-icon">
+                <i class="mdi mdi-security"></i>
+            </span>
+            <span class="menu-title">Şifre ve Güvenlik</span>
+            <i class="menu-arrow"></i>
+        </a>
+        <div class="collapse" id="auth">
+            <ul class="nav flex-column sub-menu">
+                <li class="nav-item"> <a class="nav-link" href="~/corona-free-dark-bootstrap-admin-template-1.0.0/template/pages/samples/blank-page.html"> Blank Page </a></li>
+                <li class="nav-item"> <a class="nav-link" href="~/corona-free-dark-bootstrap-admin-template-1.0.0/template/samples/error-404.html"> 404 </a></li>
+                <li class="nav-item"> <a class="nav-link" href="~/corona-free-dark-bootstrap-admin-template-1.0.0/template/pages/samples/error-500.html"> 500 </a></li>
+                <li class="nav-item"> <a class="nav-link" href="~/corona-free-dark-bootstrap-admin-template-1.0.0/template/pages/samples/login.html"> Login </a></li>
+                <li class="nav-item"> <a class="nav-link" href="~/corona-free-dark-bootstrap-admin-template-1.0.0/template/pages/samples/register.html"> Register </a></li>
+            </ul>
+        </div>
+    </li>
+    <li class="nav-item menu-items">
+        <a class="nav-link" href="http://www.bootstrapdash.com/demo/corona-free/jquery/documentation/documentation.html">
+            <span class="menu-icon">
+                <i class="mdi mdi-file-document-box"></i>
+            </span>
+            <span class="menu-title">Dökümanlar</span>
+        </a>
+    </li>*@
+</ul>

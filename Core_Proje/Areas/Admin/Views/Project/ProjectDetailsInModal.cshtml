@@ -1,0 +1,39 @@
+﻿@*@model Core_Proje.Areas.Admin.Models.EditProjectViewModel*@
+@using Core_Proje.Areas.Admin.Models
+@model EditProjectViewModel
+
+@using (Html.BeginForm("ProjectDetailsInModal", "Project", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <div class="col-md-12 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Proje: @Html.DisplayFor(x=>x.ProjectName) </h4>
+                <form class="forms-sample">
+                    @Html.HiddenFor(x=> x.ProjectID)
+                    <div class="form-group">
+                        <label>ilerleme durumu</label>
+                        <input type="text" asp-for="Progress" class="form-control text-light">
+                    </div>
+                    <div class="form-group">
+                        <label>gider tutarı</label>
+                        <input type="text" asp-for="Expence" class="form-control text-light">
+                    </div>
+                    <div class="form-group">
+                        <label>ücret</label>
+                        <input type="text" asp-for="Price" class="form-control text-light">
+                    </div>
+                    <div class="form-group">
+                        <label>Resim Seç</label><br />
+                        <input type="file" asp-for="ProjectImage">
+                    </div>
+                    <div>
+                        <label>Projeyi Onayla</label>
+                        @Html.CheckBoxFor(x=>x.IsComfirmed, new {id="IsComfirmed"})
+                    </div>
+                    <button id='modalClose' type="submit" class="btn btn-outline-primary btn-sm" data-bs-dismiss="modal">Kaydet</button>
+                </form>
+            </div>
+        </div>
+    </div>
+}
+

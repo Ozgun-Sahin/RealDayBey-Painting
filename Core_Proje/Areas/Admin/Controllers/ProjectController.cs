@@ -99,6 +99,7 @@ namespace Core_Proje.Areas.Admin.Controllers
             model.Expence = value.Expence;
             model.ProjectImageURL = value.ProjectImage;
             model.IsComfirmed = value.IsComfirmed;
+            model.Showcase = value.Showcase;
 
             return PartialView(model);
         }
@@ -126,6 +127,7 @@ namespace Core_Proje.Areas.Admin.Controllers
             project.Expence = p.Expence;
             project.CompletionDate = DateTime.Now;
             project.IsComfirmed = p.IsComfirmed;
+            project.Showcase = p.Showcase;
             //project.IsComfirmed = true;
 
             projectManager.TUpdate(project);

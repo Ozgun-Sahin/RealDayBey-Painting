@@ -50,7 +50,7 @@ namespace Core_Proje.Areas.Admin.Controllers
             return PartialView(testimonial);
         }
 
-        [HttpPost]
+        [HttpPost("{id}")]
         public IActionResult TestimonialDetailsInModal(Testimonial testimonial)
         {
             TestimonialManager.TUpdate(testimonial);

@@ -25,17 +25,19 @@
             <form class="forms-sample">
                 @Html.HiddenFor(x=>x.TestimonialID)
                 @Html.HiddenFor(x=>x.ImageUrl)
+                @Html.HiddenFor(x=>x.Comment)
+                @Html.HiddenFor(x=>x.ClientName)
                 <div class="card-header">
-                    @*@Html.DisplayFor(x => x.ClientName, new { @class = "form-control" })*@
-                    @Model.ClientName
+                    @Html.DisplayFor(x => x.ClientName, new { @class = "form-control" })
+                    @*@Model.ClientName*@
                 </div>
                 @*<div class="form-group">
             <label>Başlık</label>
             @Html.TextBoxFor(x => x.Title, new { @class = "form-control" })
             </div>*@
                 <div class="card-body">
-                    @*@Html.DisplayFor(x => x.Comment, new { @class = "form-control" })*@
-                    @Model.Comment
+                    @Html.DisplayFor(x => x.Comment, new { @class = "form-control" })
+                    @* @Model.Comment*@
                 </div>
                 <div class="form-group card-body">
                     <label>Onayla</label>

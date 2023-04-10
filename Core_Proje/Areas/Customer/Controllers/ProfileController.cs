@@ -10,9 +10,9 @@ namespace Core_Proje.Areas.Customer.Controllers
     [Route("Customer/[controller]/[action]")]
     public class ProfileController : Controller
     {
-        private readonly UserManager<ClientUser> _userManager;
+        private readonly UserManager<User> _userManager;
 
-        public ProfileController(UserManager<ClientUser> userManager)
+        public ProfileController(UserManager<User> userManager)
         {
             _userManager = userManager;
         }

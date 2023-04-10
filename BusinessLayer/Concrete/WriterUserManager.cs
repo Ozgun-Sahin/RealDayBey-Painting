@@ -15,37 +15,37 @@ namespace BusinessLayer.Concrete
             _writerUserDal = writerUserDal;
         }
 
-        public void TAdd(ClientUser t)
+        public void TAdd(User t)
         {
             throw new NotImplementedException();
         }
 
-        public void TDelete(ClientUser t)
+        public void TDelete(User t)
         {
             throw new NotImplementedException();
         }
 
-        public ClientUser TGetById(int id)
+        public User TGetById(int id)
         {
             throw new NotImplementedException();
         }
 
-        public List<ClientUser> TGetList()
+        public List<User> TGetList()
         {
             return _writerUserDal.GetList();
         }
 
-        public List<ClientUser> TGetListByFilter(string p)
+        public List<User> TGetListByFilter(string p)
         {
             throw new NotImplementedException();
         }
 
-        public List<ClientUser> TGetListByFilter(int p)
+        public List<User> TGetListByFilter(int p)
         {
             throw new NotImplementedException();
         }
 
-        public void TUpdate(ClientUser t)
+        public void TUpdate(User t)
         {
             throw new NotImplementedException();
         }

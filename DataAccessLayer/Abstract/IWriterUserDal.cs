@@ -5,7 +5,7 @@ using System.Text;
 
 namespace DataAccessLayer.Abstract
 {
-    public interface IWriterUserDal :IGenericDal<ClientUser>
+    public interface IWriterUserDal :IGenericDal<User>
     {
 
     }

@@ -15,9 +15,9 @@ namespace Core_Proje.Customer.Writer.Controllers
     {
         WriterMessageManager writerMessageManager = new WriterMessageManager(new EFWriterMessageDal());
 
-        private readonly UserManager<ClientUser> _userManager;
+        private readonly UserManager<User> _userManager;
 
-        public MessageController(UserManager<ClientUser> userManager)
+        public MessageController(UserManager<User> userManager)
         {
             _userManager = userManager;
         }

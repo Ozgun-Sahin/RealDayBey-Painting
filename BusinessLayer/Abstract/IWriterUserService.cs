@@ -5,7 +5,7 @@ using System.Text;
 
 namespace BusinessLayer.Abstract
 {
-    public interface IWriterUserService : IGenericServices<ClientUser>
+    public interface IWriterUserService : IGenericServices<User>
     {
     }
 }

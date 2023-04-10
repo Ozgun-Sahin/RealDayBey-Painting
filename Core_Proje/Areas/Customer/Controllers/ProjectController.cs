@@ -20,9 +20,9 @@ namespace Core_Proje.Areas.Customer.Controllers
         ProjectManager projectManager = new ProjectManager(new EFProjectDal());
         ServiceManager serviceManager = new ServiceManager(new EFServicesDal());
 
-        private readonly UserManager<ClientUser> _userManager;
+        private readonly UserManager<User> _userManager;
 
-        public ProjectController(UserManager<ClientUser> userManager)
+        public ProjectController(UserManager<User> userManager)
         {
             _userManager = userManager;
         }

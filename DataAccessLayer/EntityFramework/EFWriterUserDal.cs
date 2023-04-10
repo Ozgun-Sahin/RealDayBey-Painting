@@ -7,7 +7,7 @@ using System.Text;
 
 namespace DataAccessLayer.EntityFramework
 {
-    public class EFWriterUserDal : GenericRepository<ClientUser> , IWriterUserDal
+    public class EFWriterUserDal : GenericRepository<User> , IWriterUserDal
     {
 
     }

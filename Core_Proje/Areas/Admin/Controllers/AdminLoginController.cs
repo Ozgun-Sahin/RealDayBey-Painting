@@ -8,9 +8,9 @@ namespace Core_Proje.Areas.Admin.Controllers
     [Route("Admin/[controller]/[action]/")]
     public class AdminLoginController : Controller
     {
-        private readonly SignInManager<ClientUser> _signInManager;
+        private readonly SignInManager<User> _signInManager;
 
-        public AdminLoginController(SignInManager<ClientUser> signInManager)
+        public AdminLoginController(SignInManager<User> signInManager)
         {
             _signInManager = signInManager;
         }

@@ -9,9 +9,9 @@ namespace Core_Proje.ViewComponents.Dashboard
     {
         Context c = new Context();
 
-        private readonly UserManager<ClientUser> _userManager;
+        private readonly UserManager<User> _userManager;
 
-        public StatisticsDashboard2(UserManager<ClientUser> userManager)
+        public StatisticsDashboard2(UserManager<User> userManager)
         {
             _userManager = userManager;
         }

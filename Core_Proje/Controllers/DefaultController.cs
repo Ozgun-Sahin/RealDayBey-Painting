@@ -10,9 +10,9 @@ namespace Core_Proje.Controllers
     [AllowAnonymous]
     public class DefaultController : Controller
     {
-        private readonly UserManager<ClientUser> _userManager;
+        private readonly UserManager<User> _userManager;
 
-        public DefaultController(UserManager<ClientUser> userManager)
+        public DefaultController(UserManager<User> userManager)
         {
             _userManager = userManager;
         }

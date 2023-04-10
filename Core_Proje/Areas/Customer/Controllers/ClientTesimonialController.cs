@@ -13,9 +13,9 @@ namespace Core_Proje.Areas.Customer.Controllers
         TestimonialManager testimonialManager = new TestimonialManager(new EFTestimonialDal());
 
 
-        private readonly UserManager<ClientUser> _userManager;
+        private readonly UserManager<User> _userManager;
 
-        public ClientTesimonialController(UserManager<ClientUser> userManager)
+        public ClientTesimonialController(UserManager<User> userManager)
         {
             _userManager = userManager;
         }

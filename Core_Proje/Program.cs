@@ -9,7 +9,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddDbContext<Context>();
-builder.Services.AddIdentity<ClientUser, Role>().AddEntityFrameworkStores<Context>();
+builder.Services.AddIdentity<User, Role>().AddEntityFrameworkStores<Context>();
 builder.Services.AddControllersWithViews();
 
 

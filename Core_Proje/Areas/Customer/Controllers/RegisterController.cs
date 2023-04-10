@@ -11,9 +11,9 @@ namespace Core_Proje.Areas.Customer.Controllers
     [Route("Customer/[controller]/[action]")]
     public class RegisterController : Controller
     {
-        private readonly UserManager<ClientUser> _userManager;
+        private readonly UserManager<User> _userManager;
 
-        public RegisterController(UserManager<ClientUser> userManager)
+        public RegisterController(UserManager<User> userManager)
         {
             _userManager = userManager;
         }
@@ -28,7 +28,7 @@ namespace Core_Proje.Areas.Customer.Controllers
         public async Task<IActionResult> Index(UserRegisterViewModel p)
         {
 
-            ClientUser wrtr = new ClientUser()
+            User wrtr = new User()
             {
                 Name = p.Name,
                 Surname = p.Surname,

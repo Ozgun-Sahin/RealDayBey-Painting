@@ -5,7 +5,7 @@ using System.Text;
 
 namespace EntitiyLayer.Concrete
 {
-    public class ClientUser :IdentityUser<int>
+    public class User :IdentityUser<int>
     {
         public string Name { get; set; }
         public string Surname { get; set; }

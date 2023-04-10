@@ -8,6 +8,6 @@ namespace EntitiyLayer.Concrete
     public class WriterRole :IdentityUserRole<int>
     {
         public virtual Role Role { get; set; }
-        public virtual ClientUser ClientUser { get; set; }
+        public virtual User ClientUser { get; set; }
     }
 }

@@ -6,9 +6,9 @@ namespace Core_Proje.Areas.Customer.ViewComponents
 {
     public class Navbar :ViewComponent
     {
-        private readonly UserManager<ClientUser> _userManager;
+        private readonly UserManager<User> _userManager;
 
-        public Navbar(UserManager<ClientUser> userManager)
+        public Navbar(UserManager<User> userManager)
         {
             _userManager = userManager;
         }

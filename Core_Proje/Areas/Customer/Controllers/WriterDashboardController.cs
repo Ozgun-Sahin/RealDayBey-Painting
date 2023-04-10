@@ -10,9 +10,9 @@ namespace Core_Proje.Areas.Customer.Controllers
     [Route("Customer/[controller]/[action]/")]
     public class WriterDashboardController : Controller
     {
-        private readonly UserManager<ClientUser> _userManager;
+        private readonly UserManager<User> _userManager;
 
-        public WriterDashboardController(UserManager<ClientUser> userManager)
+        public WriterDashboardController(UserManager<User> userManager)
         {
             _userManager = userManager;
         }

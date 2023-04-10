@@ -20,7 +20,7 @@ namespace EntitiyLayer.Concrete
         public bool Showcase { get; set; }
         public string Description { get; set; }
         public string ProjectImage { get; set; }
-        public ClientUser ClientUser { get; set; }
+        public User ClientUser { get; set; }
         public int ClientUserID { get; set; }
         public Service Service { get; set; }
         public int ServiceID { get; set; }

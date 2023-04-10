@@ -11,9 +11,9 @@ namespace Core_Proje.Areas.Customer.Controllers
     [Route("Customer/[controller]/[action]")]
     public class LoginController : Controller
     {
-        private readonly SignInManager<ClientUser> _signInManager;
+        private readonly SignInManager<User> _signInManager;
 
-        public LoginController(SignInManager<ClientUser> signInManager)
+        public LoginController(SignInManager<User> signInManager)
         {
             _signInManager = signInManager;
         }

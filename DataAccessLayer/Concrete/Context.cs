@@ -29,6 +29,6 @@ namespace DataAccessLayer.Concrete
         public DbSet<Announcement> Announcements { get; set; }
         public DbSet<WriterMessage> WriterMessages { get; set; }
         public DbSet<Project> Projects { get; set; }
-        public DbSet<WriterRole> writerRoles { get; set; }
+        public DbSet<UserRole> writerRoles { get; set; }
     }
 }

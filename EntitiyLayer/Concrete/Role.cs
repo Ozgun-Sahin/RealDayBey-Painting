@@ -7,6 +7,6 @@ namespace EntitiyLayer.Concrete
 {
     public class Role : IdentityRole<int>
     {
-        public virtual ICollection<WriterRole> WriterRoles { get; set; }
+        public virtual ICollection<UserRole> WriterRoles { get; set; }
     }
 }

@@ -640,21 +640,21 @@ namespace DataAccessLayer.Migrations
                     b.ToTable("AspNetUserTokens");
                 });
 
-            modelBuilder.Entity("EntitiyLayer.Concrete.WriterRole", b =>
+            modelBuilder.Entity("EntitiyLayer.Concrete.UserRole", b =>
                 {
                     b.HasBaseType("Microsoft.AspNetCore.Identity.IdentityUserRole<int>");
 
-                    b.Property<int?>("ClientUserId")
+                    b.Property<int?>("CustomerUserId")
                         .HasColumnType("int");
 
                     b.Property<int?>("RoleId1")
                         .HasColumnType("int");
 
-                    b.HasIndex("ClientUserId");
+                    b.HasIndex("CustomerUserId");
 
                     b.HasIndex("RoleId1");
 
-                    b.HasDiscriminator().HasValue("WriterRole");
+                    b.HasDiscriminator().HasValue("UserRole");
                 });
 
             modelBuilder.Entity("EntitiyLayer.Concrete.Project", b =>
@@ -727,17 +727,17 @@ namespace DataAccessLayer.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("EntitiyLayer.Concrete.WriterRole", b =>
+            modelBuilder.Entity("EntitiyLayer.Concrete.UserRole", b =>
                 {
-                    b.HasOne("EntitiyLayer.Concrete.User", "ClientUser")
+                    b.HasOne("EntitiyLayer.Concrete.User", "CustomerUser")
                         .WithMany("WriterRoles")
-                        .HasForeignKey("ClientUserId");
+                        .HasForeignKey("CustomerUserId");
 
                     b.HasOne("EntitiyLayer.Concrete.Role", "Role")
                         .WithMany("WriterRoles")
                         .HasForeignKey("RoleId1");
 
-                    b.Navigation("ClientUser");
+                    b.Navigation("CustomerUser");
 
                     b.Navigation("Role");
                 });

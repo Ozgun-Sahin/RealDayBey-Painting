@@ -5,7 +5,7 @@ using System.Text;
 
 namespace EntitiyLayer.Concrete
 {
-    public class UserRole :IdentityUserRole<int>
+    public class UserAuth :IdentityUserRole<int>
     {
         public virtual Role Role { get; set; }
         public virtual User CustomerUser { get; set; }

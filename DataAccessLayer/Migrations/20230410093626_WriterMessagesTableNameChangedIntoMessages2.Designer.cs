@@ -4,14 +4,16 @@ using DataAccessLayer.Concrete;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace DataAccessLayer.Migrations
 {
     [DbContext(typeof(Context))]
-    partial class ContextModelSnapshot : ModelSnapshot
+    [Migration("20230410093626_WriterMessagesTableNameChangedIntoMessages2")]
+    partial class WriterMessagesTableNameChangedIntoMessages2
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -613,7 +615,7 @@ namespace DataAccessLayer.Migrations
                     b.ToTable("AspNetUserTokens");
                 });
 
-            modelBuilder.Entity("EntitiyLayer.Concrete.UserAuth", b =>
+            modelBuilder.Entity("EntitiyLayer.Concrete.UserRole", b =>
                 {
                     b.HasBaseType("Microsoft.AspNetCore.Identity.IdentityUserRole<int>");
 
@@ -627,7 +629,7 @@ namespace DataAccessLayer.Migrations
 
                     b.HasIndex("RoleId1");
 
-                    b.HasDiscriminator().HasValue("UserAuth");
+                    b.HasDiscriminator().HasValue("UserRole");
                 });
 
             modelBuilder.Entity("EntitiyLayer.Concrete.Project", b =>
@@ -700,14 +702,14 @@ namespace DataAccessLayer.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("EntitiyLayer.Concrete.UserAuth", b =>
+            modelBuilder.Entity("EntitiyLayer.Concrete.UserRole", b =>
                 {
                     b.HasOne("EntitiyLayer.Concrete.User", "CustomerUser")
-                        .WithMany("UserAuths")
+                        .WithMany("Roles")
                         .HasForeignKey("CustomerUserId");
 
                     b.HasOne("EntitiyLayer.Concrete.Role", "Role")
-                        .WithMany("UserAuths")
+                        .WithMany("Roles")
                         .HasForeignKey("RoleId1");
 
                     b.Navigation("CustomerUser");
@@ -717,12 +719,12 @@ namespace DataAccessLayer.Migrations
 
             modelBuilder.Entity("EntitiyLayer.Concrete.Role", b =>
                 {
-                    b.Navigation("UserAuths");
+                    b.Navigation("Roles");
                 });
 
             modelBuilder.Entity("EntitiyLayer.Concrete.User", b =>
                 {
-                    b.Navigation("UserAuths");
+                    b.Navigation("Roles");
                 });
 #pragma warning restore 612, 618
         }

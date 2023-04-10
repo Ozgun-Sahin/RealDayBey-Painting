@@ -25,8 +25,8 @@ namespace Core_Proje.ViewComponents.Dashboard
 
             ViewBag.ConfirmedProjects = c.Projects.Where(x => x.IsComfirmed == true).Count();
             ViewBag.PendingProjects = c.Projects.Where(x => x.IsComfirmed == false).Count();
-            ViewBag.RecievedMessages = c.WriterMessages.Where(x => x.RecieverUserName == adminUserName).Count();
-            ViewBag.SentMessages = c.WriterMessages.Where(x => x.SenderUserName == adminUserName).Count();
+            ViewBag.RecievedMessages = c.Messages.Where(x => x.RecieverUserName == adminUserName).Count();
+            ViewBag.SentMessages = c.Messages.Where(x => x.SenderUserName == adminUserName).Count();
 
             return View();  
         }

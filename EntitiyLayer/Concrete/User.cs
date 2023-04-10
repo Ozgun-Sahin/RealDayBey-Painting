@@ -11,6 +11,6 @@ namespace EntitiyLayer.Concrete
         public string Surname { get; set; }
         public string ImageUrl { get; set; }
 
-        public virtual ICollection<UserRole> WriterRoles { get; set; }
+        public virtual ICollection<UserAuth> UserAuths { get; set; }
     }
 }

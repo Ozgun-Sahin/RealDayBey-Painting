@@ -5,7 +5,7 @@ using System.Text;
 
 namespace DataAccessLayer.Abstract
 {
-    public interface IWriterMessageDal : IGenericDal<WriterMessage>
+    public interface IWriterMessageDal : IGenericDal<Message>
     {
     }
 }

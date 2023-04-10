@@ -58,7 +58,7 @@ namespace Core_Proje.Customer.Writer.Controllers
         [HttpGet]
         public IActionResult MessageDetails(int id)
         {
-            WriterMessage writerMessage = writerMessageManager.TGetById(id);
+            Message writerMessage = writerMessageManager.TGetById(id);
 
             return View(writerMessage);
 
@@ -68,7 +68,7 @@ namespace Core_Proje.Customer.Writer.Controllers
         [HttpGet]
         public IActionResult ReceiverMessageDetails(int id)
         {
-            WriterMessage writerMessage = writerMessageManager.TGetById(id);
+            Message writerMessage = writerMessageManager.TGetById(id);
 
             return View(writerMessage);
 
@@ -88,7 +88,7 @@ namespace Core_Proje.Customer.Writer.Controllers
         [Route("")]
         [Route("SendMessage")]
         [HttpPost]
-        public async Task<IActionResult> SendMessage(WriterMessage p)
+        public async Task<IActionResult> SendMessage(Message p)
         {
             var value = await _userManager.FindByNameAsync(User.Identity.Name);
             string mail = value.Email;

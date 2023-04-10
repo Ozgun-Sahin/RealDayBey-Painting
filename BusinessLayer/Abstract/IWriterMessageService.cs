@@ -5,9 +5,9 @@ using System.Text;
 
 namespace BusinessLayer.Abstract
 {
-    public interface IWriterMessageService: IGenericServices<WriterMessage>
+    public interface IWriterMessageService: IGenericServices<Message>
     {
-        List<WriterMessage> GetListSenderMessage(string p);
-        List<WriterMessage> GetListReceiverMessage(string p);
+        List<Message> GetListSenderMessage(string p);
+        List<Message> GetListReceiverMessage(string p);
     }
 }

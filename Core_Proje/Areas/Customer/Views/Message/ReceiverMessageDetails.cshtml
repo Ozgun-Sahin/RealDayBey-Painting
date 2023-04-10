@@ -1,4 +1,4 @@
-﻿@model EntitiyLayer.Concrete.WriterMessage
+﻿@model EntitiyLayer.Concrete.Message
 @{
     ViewData["Title"] = "MessageDetails";
     Layout = "~/Views/Shared/_WriterLayout.cshtml";
@@ -7,7 +7,7 @@
 <h1>Mesaj Detayları</h1>
 <form class="form-form">
     @Html.Label("ID")
-    @Html.HiddenFor(x=>x.WriterMessageID)
+    @Html.HiddenFor(x=>x.MessageID)
     <br />
     @Html.Label("Alıcı Adı")
     @Html.TextBoxFor(x=>x.RecieverUserName, new{@class="form-control"})

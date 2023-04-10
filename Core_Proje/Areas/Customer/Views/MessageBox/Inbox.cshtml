@@ -1,6 +1,6 @@
 ﻿@using EntitiyLayer.Concrete
 @*@model List<WriterMessage>*@
-@model IEnumerable<WriterMessage>
+@model IEnumerable<Message>
 @{
     ViewData["Title"] = "Inbox";
     Layout = "~/Views/Shared/_WriterLayout.cshtml";
@@ -26,10 +26,10 @@
                         {
 
                             <tr>
-                                <th>@item.WriterMessageID</th>
+                                <th>@item.MessageID</th>
                                 <td>@item.Subject</td>
                                 <td>@(((DateTime)item.Date).ToString("dd-MMM-yyyy"))</td>
-                                <td><a href="#" class="btn btn-outline-primary btn-sm" data-target="/Customer/MessageBox/MessageDetailsInModal/@item.WriterMessageID">Detaylar</a></td>
+                                <td><a href="#" class="btn btn-outline-primary btn-sm" data-target="/Customer/MessageBox/MessageDetailsInModal/@item.MessageID">Detaylar</a></td>
                             </tr>
 
                         }

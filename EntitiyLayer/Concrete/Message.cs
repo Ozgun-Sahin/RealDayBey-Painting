@@ -4,9 +4,9 @@ using System.Text;
 
 namespace EntitiyLayer.Concrete
 {
-    public class WriterMessage
+    public class Message
     {
-        public int WriterMessageID { get; set; }
+        public int MessageID { get; set; }
         public string SenderUserName { get; set; }
         public string SenderFullName { get; set; }
         public string RecieverUserName { get; set; }

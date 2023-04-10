@@ -51,7 +51,7 @@ namespace Core_Proje.Areas.Admin.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> SendMessage(WriterMessage p)
+        public async Task<IActionResult> SendMessage(Message p)
         {
             ClaimsPrincipal Admin = User;
             var admin = await _userManager.GetUserAsync(Admin);

@@ -39,7 +39,7 @@ namespace Core_Proje.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> SendMessage(WriterMessage p)
+        public async Task<IActionResult> SendMessage(Message p)
         {
             //MessageManager _messageManager = new MessageManager(new EFMessageDal());
             //p.Date = Convert.ToDateTime(DateTime.Now.ToShortDateString());

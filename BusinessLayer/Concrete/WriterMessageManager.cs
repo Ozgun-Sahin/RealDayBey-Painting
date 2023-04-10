@@ -16,47 +16,47 @@ namespace BusinessLayer.Concrete
             _writerMessageDal = writerMessageDal;
         }
 
-        public List<WriterMessage> GetListReceiverMessage(string p)
+        public List<Message> GetListReceiverMessage(string p)
         {
             return _writerMessageDal.GetByFilter(x => x.RecieverUserName == p);
         }
 
-        public List<WriterMessage> GetListSenderMessage(string p)
+        public List<Message> GetListSenderMessage(string p)
         {
             return _writerMessageDal.GetByFilter(x => x.SenderUserName == p);
         }
 
-        public void TAdd(WriterMessage t)
+        public void TAdd(Message t)
         {
             _writerMessageDal.Insert(t);
         }
 
-        public void TDelete(WriterMessage t)
+        public void TDelete(Message t)
         {
             _writerMessageDal.Delete(t);
         }
 
-        public WriterMessage TGetById(int id)
+        public Message TGetById(int id)
         {
             return _writerMessageDal.GetByID(id);
         }
 
-        public List<WriterMessage> TGetList()
+        public List<Message> TGetList()
         {
             throw new NotImplementedException();
         }
 
-        public List<WriterMessage> TGetListByFilter(string p)
+        public List<Message> TGetListByFilter(string p)
         {
             throw new NotImplementedException();
         }
 
-        public List<WriterMessage> TGetListByFilter(int p)
+        public List<Message> TGetListByFilter(int p)
         {
             throw new NotImplementedException();
         }
 
-        public void TUpdate(WriterMessage t)
+        public void TUpdate(Message t)
         {
             throw new NotImplementedException();
         }

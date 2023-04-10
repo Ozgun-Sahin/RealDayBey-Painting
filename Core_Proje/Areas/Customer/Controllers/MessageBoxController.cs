@@ -57,7 +57,7 @@ namespace Core_Proje.Areas.Customer.Controllers
         [Route("")]
         [Route("SendMessage")]
         [HttpPost]
-        public async Task<IActionResult> SendMessage(WriterMessage p)
+        public async Task<IActionResult> SendMessage(Message p)
         {
             ClaimsPrincipal currentUser = this.User;
 

@@ -1,5 +1,5 @@
 ﻿@using EntitiyLayer.Concrete
-@model IEnumerable<WriterMessage>
+@model IEnumerable<Message>
 @{
     ViewData["Title"] = "Outbox";
     Layout = "~/Views/Shared/_NewAdminLayout.cshtml";
@@ -28,11 +28,11 @@
                         {
 
                             <tr>
-                                <th>@item.WriterMessageID</th>
+                                <th>@item.MessageID</th>
                                 <th>@item.RecieverFullName</th>
                                 <td>@item.Subject</td>
                                 <td>@(((DateTime)item.Date).ToString("dd-MMM-yyyy"))</td>
-                                <td><a href="#" class="btn btn-outline-warning btn-sm" data-target="/Admin/AdminMessageBox/MessageDetailsInModal/@item.WriterMessageID">Detaylar</a></td>
+                                <td><a href="#" class="btn btn-outline-warning btn-sm" data-target="/Admin/AdminMessageBox/MessageDetailsInModal/@item.MessageID">Detaylar</a></td>
                             </tr>
 
                         }

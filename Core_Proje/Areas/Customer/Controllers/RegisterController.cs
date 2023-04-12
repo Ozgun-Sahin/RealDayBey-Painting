@@ -48,10 +48,10 @@ namespace Core_Proje.Areas.Customer.Controllers
             }
 
 
-
             if (p.Password == p.ConfirmPassword && p.Password !=null)
             {
                 var result = await _userManager.CreateAsync(wrtr, p.Password);
+                await _userManager.AddToRoleAsync(wrtr, "Customer");
 
                 if (result.Succeeded)
                 {
@@ -65,6 +65,8 @@ namespace Core_Proje.Areas.Customer.Controllers
                     }
                 }
             }
+
+            
 
             return View(p);
         }

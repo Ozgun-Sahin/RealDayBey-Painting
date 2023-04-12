@@ -11,7 +11,7 @@ namespace Core_Proje.Areas.Admin.Controllers
     [Route("Admin/[controller]/[action]/")]
     public class AdminMessageBoxController : Controller
     {
-        WriterMessageManager writerMessageManager = new WriterMessageManager(new EFWriterMessageDal());
+        MessageManager writerMessageManager = new MessageManager(new EFMessageDal());
 
         private readonly UserManager<User> _userManager;
 

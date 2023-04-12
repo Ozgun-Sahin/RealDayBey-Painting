@@ -47,7 +47,7 @@ namespace Core_Proje.Controllers
             //_messageManager.TAdd(p);
            
 
-            WriterMessageManager _writerMessageManager = new WriterMessageManager(new EFWriterMessageDal());
+            MessageManager _writerMessageManager = new MessageManager(new EFMessageDal());
 
             var admin = await _userManager.GetUsersInRoleAsync("Admin");
             p.RecieverFullName = admin.FirstOrDefault().Name + " " + admin.FirstOrDefault().Surname;

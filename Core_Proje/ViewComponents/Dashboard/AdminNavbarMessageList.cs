@@ -7,7 +7,7 @@ namespace Core_Proje.ViewComponents.Dashboard
 {
     public class AdminNavbarMessageList : ViewComponent
     {
-        WriterMessageManager writerMessageManager = new WriterMessageManager(new EFWriterMessageDal());
+        MessageManager writerMessageManager = new MessageManager(new EFMessageDal());
         public IViewComponentResult Invoke()
         {
             string p = "admin@mail.com";

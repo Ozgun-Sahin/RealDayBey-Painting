@@ -13,7 +13,7 @@ namespace Core_Proje.Customer.Writer.Controllers
     [Route("Customer/Message")]
     public class MessageController : Controller
     {
-        WriterMessageManager writerMessageManager = new WriterMessageManager(new EFWriterMessageDal());
+        MessageManager writerMessageManager = new MessageManager(new EFMessageDal());
 
         private readonly UserManager<User> _userManager;
 

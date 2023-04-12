@@ -11,7 +11,7 @@ namespace Core_Proje.Areas.Customer.Controllers
     [Route("Customer/MessageBox")]
     public class MessageBoxController : Controller
     {
-        WriterMessageManager writerMessageManager = new WriterMessageManager(new EFWriterMessageDal());
+        MessageManager writerMessageManager = new MessageManager(new EFMessageDal());
 
         private readonly UserManager<User> _userManager;
 

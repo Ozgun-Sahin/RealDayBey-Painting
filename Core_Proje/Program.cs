@@ -2,6 +2,7 @@ using DataAccessLayer.Concrete;
 using EntitiyLayer.Concrete;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc.Authorization;
 using System.Net;
 
@@ -9,7 +10,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddDbContext<Context>();
-builder.Services.AddIdentity<User, Role>().AddEntityFrameworkStores<Context>();
+builder.Services.AddIdentity<User, Role>().AddEntityFrameworkStores<Context>();  
 builder.Services.AddControllersWithViews();
 
 
@@ -26,8 +27,9 @@ builder.Services.ConfigureApplicationCookie(options =>
     options.LoginPath = "/Customer/Login/Index/";
 });
 
-var app = builder.Build();
 
+var app = builder.Build();
+ 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
 {
@@ -56,5 +58,8 @@ app.UseEndpoints(endpoints =>
       pattern: "{area:exists}/{controller=Default}/{action=Index}/{id?}"
     );
 });
+
+
+
 
 app.Run();

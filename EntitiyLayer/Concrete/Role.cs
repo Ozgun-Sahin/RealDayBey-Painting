@@ -7,6 +7,8 @@ namespace EntitiyLayer.Concrete
 {
     public class Role : IdentityRole<int>
     {
+        
+
         public virtual ICollection<UserAuth> UserAuths { get; set; }
     }
 }

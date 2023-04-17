@@ -4,13 +4,16 @@ using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc.Authorization;
+using Microsoft.EntityFrameworkCore;
+using System.Drawing.Text;
 using System.Net;
+
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddDbContext<Context>();
-builder.Services.AddIdentity<User, Role>().AddEntityFrameworkStores<Context>();  
+builder.Services.AddIdentity<User, Role>().AddRoles<Role>().AddEntityFrameworkStores<Context>();
 builder.Services.AddControllersWithViews();
 
 
@@ -50,6 +53,24 @@ app.UseAuthorization();
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Default}/{action=Index}/{id?}");
+
+
+
+
+using (var scope = app.Services.CreateScope())
+{
+    var roleManager = scope.ServiceProvider.GetRequiredService<RoleManager<Role>>();
+
+    var roles = new[] { "Admin2", "Customer2" };
+
+    foreach (var role in roles)
+    {
+        if (!await roleManager.RoleExistsAsync(role))
+            await roleManager.CreateAsync(new Role() { Name = role });
+    }
+}
+
+
 
 app.UseEndpoints(endpoints =>
 {

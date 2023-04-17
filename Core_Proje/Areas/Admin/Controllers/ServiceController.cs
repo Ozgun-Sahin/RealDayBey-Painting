@@ -103,8 +103,24 @@ namespace Core_Proje.Areas.Admin.Controllers
 
 
         [HttpPost]
-        public IActionResult AddServiceInModal(Service service)
+        public async Task<IActionResult> AddServiceInModal (AddServiceModel p)
         {
+            Service service = new Service()
+            {
+                Title = p.Title,
+            };
+
+            if (p.ServiceIcon !=null)
+            {
+                var resource = Directory.GetCurrentDirectory();
+                var extension = Path.GetExtension(p.ServiceIcon.FileName);
+                var imageName = Guid.NewGuid() + extension;
+                var saveLocation = resource + "/wwwroot/Template/images/services/" + imageName;
+                var stream = new FileStream(saveLocation, FileMode.Create);
+                await p.ServiceIcon.CopyToAsync(stream);
+                service.ImageUrl = imageName;
+            }
+
             serviceManager.TAdd(service);
             return RedirectToAction("ServiceIndex");
         }

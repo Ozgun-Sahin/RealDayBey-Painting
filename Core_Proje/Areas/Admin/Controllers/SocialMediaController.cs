@@ -1,7 +1,9 @@
 ﻿using BusinessLayer.Concrete;
+using Core_Proje.Areas.Admin.Models;
 using DataAccessLayer.EntityFramework;
 using EntitiyLayer.Concrete;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 
 namespace Core_Proje.Areas.Admin.Controllers
@@ -31,6 +33,7 @@ namespace Core_Proje.Areas.Admin.Controllers
             return RedirectToAction("SocialMediaIndex");
         }
 
+        [HttpGet("{id}")]
         public IActionResult DeleteSocialMedia(int id)
         {
             var value = socialMediaManager.TGetById(id);
@@ -67,6 +70,34 @@ namespace Core_Proje.Areas.Admin.Controllers
             return RedirectToAction("SocialMediaIndex");
         }
 
+        [HttpGet]
+        public IActionResult AddSocialMediaInModal()
+        {
+            string[] icons = { "fab fa-github", "fab fa-linkedin", "fab fa-facebook", "fab fa-instagram" };
+
+            List<string> ikonlar = new List<string>() { "fab fa-github", "fab fa-linkedin", "fab fa-facebook", "fab fa-instagram" };
+
+            SelectListItem ikonlar2 = new SelectListItem() { Text = "face", Value =1.ToString() };
+
+            ViewBag.Icons = ikonlar2;
+
+            return PartialView();
+        }
+
+        [HttpPost]
+        public IActionResult AddSocialMediaInModal(AddSocialMediaModel p)
+        {
+            SocialMedia socialMedia = new SocialMedia()
+            {
+                Name = p.Name,
+                Icon = p.Icon,
+                Url = p.Url
+            };
+
+            socialMediaManager.TAdd(socialMedia);
+
+            return RedirectToAction("SocialMediaIndex");
+        }
 
     }
 }

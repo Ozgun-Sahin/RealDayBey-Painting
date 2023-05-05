@@ -29,6 +29,7 @@
                                 <td>@item.SocialMediaID</td>
                                 <td>@item.Name</td>
                                 @*<td><a href="/SocialMedia/EditSocialMedia/@item.SocialMediaID" class="btn btn-outline-warning">Güncelle</a></td>*@
+                                <td><a class="btn btn-outline-danger btn-sm" href="/Admin/SocialMedia/DeleteSocialMedia/@item.SocialMediaID" id="DeleteBtn" onclick="return confirm('Silmek istediğinize emin misiniz?');"><i class="ni ni-fat-remove"></i> Sil</a></td>
                                 <td><a href="#" class="btn btn-outline-warning btn-sm" data-target="/Admin/SocialMedia/EditSocialMediaInModal/@item.SocialMediaID">Düzenle</a></td>
                             </tr>
 
@@ -38,6 +39,7 @@
                 </table>
             </div>
             <br />
+            <a href="#" class="btn btn-outline-success btn-sm" data-target="/Admin/SocialMedia/AddSocialMediaInModal">Yeni Hesap Ekle</a>
         </div>
     </div>
 </div>

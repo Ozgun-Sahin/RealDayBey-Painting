@@ -1,14 +1,17 @@
 ﻿using BusinessLayer.Concrete;
 using DataAccessLayer.EntityFramework;
 using EntitiyLayer.Concrete;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using System.Data;
 using System.Security.Claims;
 
 namespace Core_Proje.Areas.Admin.Controllers
 {
     [Area("Admin")]
     [Route("Admin/[controller]/[action]/")]
+    [Authorize(Roles = "Admin2")]
     public class AdminMessageBoxController : Controller
     {
         MessageManager writerMessageManager = new MessageManager(new EFMessageDal());

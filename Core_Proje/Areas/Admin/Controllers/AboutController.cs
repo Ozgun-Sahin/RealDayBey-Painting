@@ -1,12 +1,15 @@
 ﻿using BusinessLayer.Concrete;
 using DataAccessLayer.EntityFramework;
 using EntitiyLayer.Concrete;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using System.Data;
 
 namespace Core_Proje.Areas.Admin.Controllers
 {
     [Area("Admin")]
     [Route("Admin/[controller]/[action]/")]
+    [Authorize(Roles = "Admin2")]
     public class AboutController : Controller
     {
         AboutManager aboutManager = new AboutManager(new EFAboutDal());

@@ -1,5 +1,6 @@
 ﻿using BusinessLayer.Concrete;
 using DataAccessLayer.EntityFramework;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Core_Proje.Areas.Admin.Controllers
@@ -8,6 +9,7 @@ namespace Core_Proje.Areas.Admin.Controllers
     {
         [Area("Admin")]
         [Route("Admin/[controller]/[action]/")]
+        [Authorize(Roles ="Admin2")]
         public IActionResult DashboardIndex()
         {
             ProjectManager projectManager = new ProjectManager(new EFProjectDal());

@@ -2,14 +2,17 @@
 using Core_Proje.Areas.Admin.Models;
 using DataAccessLayer.EntityFramework;
 using EntitiyLayer.Concrete;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
+using System.Data;
 
 namespace Core_Proje.Areas.Admin.Controllers
 {
     [Area("Admin")]
     [Route("Admin/[controller]/[action]/")]
+    [Authorize(Roles = "Admin2")]
     public class SocialMediaController : Controller
     {
         SocialMediaManager socialMediaManager = new SocialMediaManager(new EFSocialMediaDal());

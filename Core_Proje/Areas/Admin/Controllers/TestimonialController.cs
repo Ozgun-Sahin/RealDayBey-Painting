@@ -1,13 +1,16 @@
 ﻿using BusinessLayer.Concrete;
 using DataAccessLayer.EntityFramework;
 using EntitiyLayer.Concrete;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using System.Data;
 
 namespace Core_Proje.Areas.Admin.Controllers
 {
     [Area("Admin")]
     [Route("Admin/[controller]/[action]/")]
+    [Authorize(Roles = "Admin2")]
     public class TestimonialController : Controller
     {
         TestimonialManager TestimonialManager = new TestimonialManager(new EFTestimonialDal());

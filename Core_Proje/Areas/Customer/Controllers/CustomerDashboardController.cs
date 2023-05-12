@@ -8,11 +8,11 @@ namespace Core_Proje.Areas.Customer.Controllers
 {
     [Area("Customer")]
     [Route("Customer/[controller]/[action]/")]
-    public class WriterDashboardController : Controller
+    public class CustomerDashboardController : Controller
     {
         private readonly UserManager<User> _userManager;
 
-        public WriterDashboardController(UserManager<User> userManager)
+        public CustomerDashboardController(UserManager<User> userManager)
         {
             _userManager = userManager;
         }

@@ -33,8 +33,7 @@ namespace Core_Proje.Areas.Customer.Controllers
 
                 if (result.Succeeded)
                 {
-                    //return RedirectToAction("Index", "Profile", new { area = "Writer" });
-                    return RedirectToAction("DashboardIndex", "WriterDashboard");
+                    return RedirectToAction("DashboardIndex", "CustomerDashboard");
                 }
                 else
                 {

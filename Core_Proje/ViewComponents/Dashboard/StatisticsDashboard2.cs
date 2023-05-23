@@ -18,7 +18,7 @@ namespace Core_Proje.ViewComponents.Dashboard
 
         public async Task<IViewComponentResult> InvokeAsync()
         {
-            var admin = await _userManager.GetUsersInRoleAsync("Admin2");
+            var admin = await _userManager.GetUsersInRoleAsync("Admin");
 
             string adminUserName = admin.FirstOrDefault().UserName;
             

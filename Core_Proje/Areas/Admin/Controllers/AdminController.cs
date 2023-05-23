@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Core_Proje.Areas.Admin.Controllers
 {
-    [Authorize(Roles = "Admin2")]
+    [Authorize(Roles = "Admin")]
     public class AdminController : Controller
     {
         public PartialViewResult PartialSideBar()

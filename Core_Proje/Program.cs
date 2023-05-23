@@ -61,7 +61,7 @@ using (var scope = app.Services.CreateScope())
 {
     var roleManager = scope.ServiceProvider.GetRequiredService<RoleManager<Role>>();
 
-    var roles = new[] { "Admin2", "Customer2" };
+    var roles = new[] { "Admin", "Customer" };
 
     foreach (var role in roles)
     {
@@ -69,6 +69,36 @@ using (var scope = app.Services.CreateScope())
             await roleManager.CreateAsync(new Role() { Name = role });
     }
 }
+
+using (var scope = app.Services.CreateScope())
+{
+    var userManager = scope.ServiceProvider.GetRequiredService<UserManager<User>>();
+
+    string email = "admin@admin.com";
+    string password = "Bok060155013!";
+
+    if (await userManager.FindByEmailAsync(email) == null)
+    {
+        var user = new User();
+
+        
+        user.UserName = email;
+        user.Email = email;
+        user.SecurityStamp = Guid.NewGuid().ToString();
+
+        //user.EmailConfirmed = true;
+        
+
+        
+        await userManager.CreateAsync(user, password);
+
+        await userManager.AddToRoleAsync(user, "Admin");
+    }
+
+
+}
+
+
 
 
 

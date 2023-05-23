@@ -10,7 +10,7 @@ namespace Core_Proje.Areas.Admin.Controllers
 {
     [Area("Admin")]
     [Route("Admin/[controller]/[action]/")]
-    [Authorize(Roles = "Admin2")]
+    [Authorize(Roles = "Admin")]
     public class ProjectController : Controller
     {
         ProjectManager projectManager = new ProjectManager(new EFProjectDal());

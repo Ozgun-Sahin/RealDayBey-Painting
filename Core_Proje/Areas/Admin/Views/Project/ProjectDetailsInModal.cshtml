@@ -30,10 +30,14 @@
                         <label>Projeyi Onayla</label>
                         @Html.CheckBoxFor(x=>x.IsComfirmed, new {id="IsComfirmed"})
                     </div>
-                    <div>
-                        <label>Portföyde Göster</label>
-                        @Html.CheckBoxFor(x=>x.Showcase, new {id="IsComfirmed"})
-                    </div>
+
+                    @if (Model.Progress == 100)
+                    {
+                        <div>
+                            <label>Portföyde Göster</label>
+                            @Html.CheckBoxFor(x=>x.Showcase, new {id="IsComfirmed"})
+                        </div>
+                    }
                     <button id='modalClose' type="submit" class="btn btn-outline-primary btn-sm" data-bs-dismiss="modal">Kaydet</button>
                 </form>
             </div>

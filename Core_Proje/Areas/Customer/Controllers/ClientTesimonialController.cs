@@ -1,6 +1,8 @@
 ﻿using BusinessLayer.Concrete;
+using BusinessLayer.ValidationRules;
 using DataAccessLayer.EntityFramework;
 using EntitiyLayer.Concrete;
+using FluentValidation.Results;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 
@@ -34,6 +36,8 @@ namespace Core_Proje.Areas.Customer.Controllers
         [HttpPost]
         public async Task<IActionResult> AddTestimony(Testimonial p)
         {
+            TestimonialValidator validations = new TestimonialValidator();
+
             var value = await _userManager.FindByNameAsync(User.Identity.Name);
 
             string fullName = value.Name + " " + value.Surname;
@@ -41,11 +45,23 @@ namespace Core_Proje.Areas.Customer.Controllers
             p.ClientName = fullName;
             p.ImageUrl = "/userimage/" + value.ImageUrl;
 
-            testimonialManager.TAdd(p);
+            ValidationResult results = validations.Validate(p);
 
-            return RedirectToAction("DashboardIndex", "WriterDashboard");
+            if (results.IsValid)
+            {
+                testimonialManager.TAdd(p);
+
+                return RedirectToAction("DashboardIndex", "CustomerDashboard");
+            }
+            else
+            {
+                foreach (var item in results.Errors)
+                {
+                    ModelState.AddModelError(item.PropertyName, item.ErrorMessage);
+                }
+            }
+
+            return View();  
         }
-
-
     }
 }

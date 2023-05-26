@@ -46,12 +46,25 @@ namespace Core_Proje.Areas.Customer.Controllers
 
             user.Name = p.Name;
             user.Surname = p.Surname;
-            user.PasswordHash = _userManager.PasswordHasher.HashPassword(user, p.Password);
-            var result = await _userManager.UpdateAsync(user);
 
-            if (result.Succeeded)
+            if (p.Password == p.PasswordConfirm && p.Password!=null)
             {
-                return RedirectToAction("Index", "Default");
+                user.PasswordHash = _userManager.PasswordHasher.HashPassword(user, p.Password);
+
+                var result = await _userManager.UpdateAsync(user);
+
+                if (result.Succeeded)
+                {
+                    return RedirectToAction("Index", "Default");
+                }
+                else
+                {
+                    foreach (var item in result.Errors)
+                    {
+                        ModelState.AddModelError("", item.Description);
+                    }
+                }
+
             }
 
             return View();

@@ -1,8 +1,10 @@
 ﻿using BusinessLayer.Concrete;
+using BusinessLayer.ValidationRules;
 using Core_Proje.Areas.Customer.Models;
 using DataAccessLayer.Concrete;
 using DataAccessLayer.EntityFramework;
 using EntitiyLayer.Concrete;
+using FluentValidation.Results;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.AspNetCore.Mvc;
@@ -42,6 +44,10 @@ namespace Core_Proje.Areas.Customer.Controllers
         {
             var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
 
+            ProjectValidator validations = new ProjectValidator();
+
+            Context c = new Context();
+
             Project newProject = new Project()
             {
                 ClientUserID = Convert.ToInt32(userId),
@@ -52,9 +58,26 @@ namespace Core_Proje.Areas.Customer.Controllers
                 CreationDate = DateTime.Now
             };
 
-            projectManager.TAdd(newProject);
+            ValidationResult results = validations.Validate(newProject);
 
-            return RedirectToAction("DashboardIndex", "WriterDashboard");
+            if (results.IsValid)
+            {
+                projectManager.TAdd(newProject);
+
+                return RedirectToAction("DashboardIndex", "CustomerDashboard");
+            }
+            else
+            {
+                foreach (var item in results.Errors)
+                {
+                    ModelState.AddModelError(item.PropertyName, item.ErrorMessage);
+                }
+            }
+
+            ViewBag.Services = c.Services.Select(x => new SelectListItem() { Text = x.Title, Value = x.ServiceID.ToString() }).ToList();
+
+            return View();
+            
         }
 
         [HttpGet]

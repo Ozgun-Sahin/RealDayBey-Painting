@@ -15,12 +15,14 @@
             <form class="form-form" method="post">
                 @Html.Label("Proje Başlığı")
                 @Html.TextBoxFor(x=>x.ProjectName, new{@class="form-control"})
+                @Html.ValidationMessageFor(x=> x.ProjectName)
                 <br />
                 @Html.Label("Proje Tipi")
                 @Html.DropDownListFor(x=> x.ServiceID, ((List<SelectListItem>)ViewBag.Services) , new { @class = "btn btn-primary btn-sm dropdown-toggle" })
                 <br />
                 @Html.Label("Açıklama")
                 @Html.TextAreaFor(x=>x.Description, 10, 3, new{@class="form-control"})
+                @Html.ValidationMessageFor(x=>x.Description)
                 <br />
                 <button class="btn btn-primary btn-sm">Gönder</button>
             </form>

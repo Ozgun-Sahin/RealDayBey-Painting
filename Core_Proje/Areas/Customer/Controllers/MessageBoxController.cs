@@ -1,6 +1,9 @@
 ﻿using BusinessLayer.Concrete;
+using BusinessLayer.ValidationRules;
 using DataAccessLayer.EntityFramework;
 using EntitiyLayer.Concrete;
+using FluentValidation.Results;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using System.Security.Claims;
@@ -61,6 +64,8 @@ namespace Core_Proje.Areas.Customer.Controllers
         {
             ClaimsPrincipal currentUser = this.User;
 
+            CustomerMessageValidator validations = new CustomerMessageValidator();
+
             string userName = _userManager.GetUserName(currentUser);
 
             var admin = await _userManager.GetUsersInRoleAsync("Admin");
@@ -76,10 +81,25 @@ namespace Core_Proje.Areas.Customer.Controllers
             p.RecieverUserName = admin.FirstOrDefault().UserName;
             p.SenderUserName = user.UserName;
 
-           
-            writerMessageManager.TAdd(p);
+            ValidationResult results = validations.Validate(p);
 
-            return RedirectToAction("Inbox");
+            if (results.IsValid)
+            {
+                writerMessageManager.TAdd(p);
+
+                return RedirectToAction("Inbox");
+            }
+            else
+            {
+                foreach (var item in results.Errors)
+                {
+                    ModelState.AddModelError(item.PropertyName, item.ErrorMessage);
+                }
+            }
+            
+            return View();
+           
+            
         }
 
         //Modal

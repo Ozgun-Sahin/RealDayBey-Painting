@@ -1,7 +1,9 @@
 ﻿using BusinessLayer.Concrete;
+using BusinessLayer.ValidationRules;
 using Core_Proje.Areas.Admin.Models;
 using DataAccessLayer.EntityFramework;
 using EntitiyLayer.Concrete;
+using FluentValidation.Results;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -69,8 +71,30 @@ namespace Core_Proje.Areas.Admin.Controllers
         [HttpPost("{id}")]
         public IActionResult EditSocialMediaInModal(SocialMedia p)
         {
-            socialMediaManager.TUpdate(p);
-            return RedirectToAction("SocialMediaIndex");
+            SocialMediaValidator validations = new SocialMediaValidator();
+
+
+            ValidationResult results = validations.Validate(p);
+
+            if (results.IsValid)
+            {
+                socialMediaManager.TUpdate(p);
+
+                return RedirectToAction("SocialMediaIndex");
+            }
+            else
+            {
+                foreach (var item in results.Errors)
+                {
+                    ModelState.AddModelError(item.PropertyName, item.ErrorMessage);
+                }
+            }
+
+            return View();
+
+
+            //socialMediaManager.TUpdate(p);
+            //return RedirectToAction("SocialMediaIndex");
         }
 
         [HttpGet]
@@ -90,16 +114,56 @@ namespace Core_Proje.Areas.Admin.Controllers
         [HttpPost]
         public IActionResult AddSocialMediaInModal(AddSocialMediaModel p)
         {
+            
             SocialMedia socialMedia = new SocialMedia()
             {
-                Name = p.Name,
                 Icon = p.Icon,
                 Url = p.Url
             };
 
-            socialMediaManager.TAdd(socialMedia);
+            if (p.Icon == "fab fa-github")
+            {
+                socialMedia.Name = "Github";
+            }
 
-            return RedirectToAction("SocialMediaIndex");
+            if (p.Icon == "fab fa-linkedin")
+            {
+                socialMedia.Name = "LinkedIn";
+            }
+            if (p.Icon == "fab fa-facebook")
+            {
+                socialMedia.Name = "Facebook";
+            }
+            if (p.Icon == "fab fa-instagram")
+            {
+                socialMedia.Name = "Instagram";
+            }
+            if (p.Icon == "fa fa-link")
+            {
+                socialMedia.Name = "Diğer";
+            }
+
+
+            SocialMediaValidator validations = new SocialMediaValidator();
+
+
+            ValidationResult results = validations.Validate(socialMedia);
+
+            if (results.IsValid)
+            {
+                socialMediaManager.TAdd(socialMedia);
+
+                return RedirectToAction("SocialMediaIndex");
+            }
+            else
+            {
+                foreach (var item in results.Errors)
+                {
+                    ModelState.AddModelError(item.PropertyName, item.ErrorMessage);
+                }
+            }
+
+            return View();
         }
 
     }

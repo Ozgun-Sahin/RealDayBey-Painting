@@ -1,7 +1,9 @@
 ﻿using BusinessLayer.Concrete;
+using BusinessLayer.ValidationRules;
 using Core_Proje.Areas.Admin.Models;
 using DataAccessLayer.EntityFramework;
 using EntitiyLayer.Concrete;
+using FluentValidation.Results;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Data;
@@ -29,8 +31,26 @@ namespace Core_Proje.Areas.Admin.Controllers
         [HttpPost]
         public IActionResult AddService(Service service)
         {
-            serviceManager.TAdd(service);
-            return RedirectToAction("ServiceIndex");
+            ServiceValidator validations = new ServiceValidator();
+
+            ValidationResult results = validations.Validate(service);
+
+            if (results.IsValid)
+            {
+                serviceManager.TAdd(service);
+                return RedirectToAction("ServiceIndex");
+            }
+            else
+            {
+                foreach(var item in results.Errors)
+                {
+                    ModelState.AddModelError(item.PropertyName, item.ErrorMessage);
+                }
+            }
+
+            return View();
+
+            
         }
 
         [HttpGet("{id}")]
@@ -94,8 +114,26 @@ namespace Core_Proje.Areas.Admin.Controllers
 
             service.Title = p.Title;
 
-            serviceManager.TUpdate(service);
-            return RedirectToAction("ServiceIndex");
+
+            ServiceValidator validations = new ServiceValidator();
+
+            ValidationResult results = validations.Validate(service);
+
+            if (results.IsValid)
+            {
+                serviceManager.TUpdate(service);
+                return RedirectToAction("ServiceIndex");
+            }
+            else
+            {
+                foreach (var item in results.Errors)
+                {
+                    ModelState.AddModelError("", item.ErrorMessage);
+                }
+            }
+
+            return View();
+
         }
 
         [HttpGet]
@@ -124,8 +162,25 @@ namespace Core_Proje.Areas.Admin.Controllers
                 service.ImageUrl = imageName;
             }
 
-            serviceManager.TAdd(service);
-            return RedirectToAction("ServiceIndex");
+            ServiceValidator validations = new ServiceValidator();
+
+            ValidationResult results = validations.Validate(service);
+
+            if (results.IsValid)
+            {
+                serviceManager.TAdd(service);
+                return RedirectToAction("ServiceIndex");
+            }
+            else
+            {
+                foreach (var item in results.Errors)
+                {
+                    ModelState.AddModelError("", item.ErrorMessage);
+                }
+            }
+
+            return View();
+
         }
 
     }

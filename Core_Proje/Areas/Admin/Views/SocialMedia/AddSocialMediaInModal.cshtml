@@ -25,6 +25,7 @@
                     <br>
                     @Html.Label("Url")
                     @Html.TextBoxFor(x=>x.Url, new {@class = "form-control text-light"})
+                    <span asp-validation-for="Url" class="text-danger"></span>
                     <br>
                     <button id='modalClose' type="submit" class="btn btn-outline-primary btn-sm" data-bs-dismiss="modal">Kaydet</button>
                 </form>

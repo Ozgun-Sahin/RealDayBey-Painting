@@ -1,6 +1,8 @@
 ﻿using BusinessLayer.Concrete;
+using BusinessLayer.ValidationRules;
 using DataAccessLayer.EntityFramework;
 using EntitiyLayer.Concrete;
+using FluentValidation.Results;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Data;
@@ -22,10 +24,26 @@ namespace Core_Proje.Areas.Admin.Controllers
         }
 
         [HttpPost]
-        public IActionResult Index(Contact contact)
+        public IActionResult ContactSubplaceIndex(Contact contact)
         {
-            contactManager.TUpdate(contact);
-            return RedirectToAction("DashboardIndex", "Dashboard");
+            ContactValidator validations = new ContactValidator();
+
+            ValidationResult results = validations.Validate(contact);
+
+            if (results.IsValid)
+            {
+                contactManager.TUpdate(contact);
+                return RedirectToAction("DashboardIndex", "Dashboard");
+            }
+            else
+            {
+                foreach (var item in results.Errors)
+                {
+                    ModelState.AddModelError(item.PropertyName, item.ErrorMessage);
+                }
+            }
+
+            return View();
 
         }
     }

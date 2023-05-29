@@ -1,9 +1,15 @@
-﻿namespace Core_Proje.Areas.Admin.Models
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace Core_Proje.Areas.Admin.Models
 {
     public class EditServiceModel
     {
         public int ServiceID { get; set; }
+
+        [Required(ErrorMessage = "Lütfen Başlık Giriniz")]
         public string Title { get; set; }
+
+        [Required(ErrorMessage = "Lütfen Resim Seçiniz")]
         public IFormFile? ServiceIcon { get; set; }
 
     }

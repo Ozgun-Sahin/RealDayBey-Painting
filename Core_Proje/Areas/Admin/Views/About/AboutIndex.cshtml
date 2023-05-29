@@ -6,7 +6,7 @@
 <div>
     <h4 class="card-title"> Hakkımda </h4>
 </div>
-@using (Html.BeginForm("Index", "About", FormMethod.Post))
+@using (Html.BeginForm("AboutIndex", "About", FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
     <div class="row">
         <div class="col-6 grid-margin stretch-card">
@@ -14,13 +14,14 @@
                 <div class="card-body">
                     <form class="forms-sample">
                         @Html.HiddenFor(x=>x.AboutID)
-@*                        <div class="form-group">
-                            <label>ID</label>
-                            @Html.TextBoxFor(x=> x.AboutID, new {@class="form-control"})
-                        </div>*@
+                        @*                        <div class="form-group">
+                    <label>ID</label>
+                    @Html.TextBoxFor(x=> x.AboutID, new {@class="form-control"})
+                    </div>*@
                         <div class="form-group">
                             <label>Başlık</label>
                             @Html.TextBoxFor(x=> x.Title, new {@class="form-control text-light"})
+                            @Html.ValidationMessageFor(x=>x.Title)
                         </div>
                         <div class="form-group">
                             <label>Email</label>
@@ -30,13 +31,20 @@
                             <label>Telefon</label>
                             @Html.TextBoxFor(x=> x.Phone, new {@class="form-control text-light"})
                         </div>
+                        @*<div class="form-group">
+                    <label>Görsel URL</label>
+                    @Html.TextBoxFor(x=> x.ImageUrl, new {@class="form-control text-light"})
+                    </div>*@
                         <div class="form-group">
-                            <label>Görsel URL</label>
-                            @Html.TextBoxFor(x=> x.ImageUrl, new {@class="form-control text-light"})
+                            <label>Resim Seç</label>
+                            <br />
+                            <input type="file" asp-for="ImageUrl">
+                            @Html.ValidationMessageFor(x=>x.ImageUrl)
                         </div>
                         <div class="form-group">
                             <label>Açıklama</label>
                             @Html.TextAreaFor(x=> x.Description,6,3, new {@class="form-control text-light"})
+                            @Html.ValidationMessageFor(x=>x.Description)
                         </div>
                         <button type="submit" class="btn btn-outline-primary">Kaydet</button>
                     </form>

@@ -12,6 +12,7 @@
                     <br />
                     @Html.Label("Hizmet")
                     @Html.TextBoxFor(x=>x.Title, new {@class="form-control text-light"})
+                    <span asp-validation-for="Title" class="text-danger"></span>
                     <br />
                     @*<label>İkon</label>
                     @Html.TextBoxFor(x=>x., new {@class="form-control"})
@@ -19,6 +20,7 @@
                     <label>Resim Seç</label>
                     <br />
                     <input type="file" asp-for="ServiceIcon">
+                    <span asp-validation-for="ServiceIcon" class="text-danger"></span>
                     <br />
                     <br />
                     <button id='modalClose' type="submit" class="btn btn-outline-primary btn-sm" data-bs-dismiss="modal">Kaydet</button>

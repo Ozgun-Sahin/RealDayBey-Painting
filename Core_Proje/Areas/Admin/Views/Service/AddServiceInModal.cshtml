@@ -1,6 +1,7 @@
 ﻿@model Core_Proje.Areas.Admin.Models.AddServiceModel
 
 
+
 <div class="card-header border-0">
     <h4 class="mb-0">Hizmet Ekleme</h4>
 </div>
@@ -14,10 +15,12 @@
                     <br />
                     @Html.Label("Başlık")
                     @Html.TextBoxFor(x=>x.Title, new {@class="form-control text-light"})
+                    <span asp-validation-for="Title" class="text-danger"></span>
                     <br />
                     <label>Resim Seç</label>
                     <br />
                     <input type="file" asp-for="ServiceIcon">
+                    <span asp-validation-for="ServiceIcon" class="text-danger"></span>
                     <br />
                     <br />
                     <button id='modalClose' type="submit" class="btn btn-outline-primary btn-sm" data-bs-dismiss="modal">Kaydet</button>

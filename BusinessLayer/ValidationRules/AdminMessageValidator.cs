@@ -11,8 +11,8 @@ namespace BusinessLayer.ValidationRules
         public AdminMessageValidator()
         {
             RuleFor(x => x.RecieverFullName).NotNull().WithMessage("Böyle bir kullanıcı bulunamadı");
-            RuleFor(x => x.MessageContent).NotNull().NotEmpty().WithMessage("Mesaj içeriği boş bırakılamaz");
-            RuleFor(x => x.Subject).NotNull().NotEmpty().WithMessage("Konu boş bırakılamaz");
+            RuleFor(x => x.MessageContent).NotEmpty().WithMessage("Mesaj içeriği boş bırakılamaz");
+            RuleFor(x => x.Subject).NotEmpty().WithMessage("Konu boş bırakılamaz");
         }
     }
 }

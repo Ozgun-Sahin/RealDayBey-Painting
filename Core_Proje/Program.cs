@@ -74,6 +74,7 @@ using (var scope = app.Services.CreateScope())
 {
     var userManager = scope.ServiceProvider.GetRequiredService<UserManager<User>>();
 
+    string userName = "Admin";
     string email = "admin@admin.com";
     string password = "Admin060155013!";
 
@@ -82,7 +83,7 @@ using (var scope = app.Services.CreateScope())
         var user = new User();
 
         
-        user.UserName = email;
+        user.UserName = userName;
         user.Email = email;
         user.SecurityStamp = Guid.NewGuid().ToString();
 

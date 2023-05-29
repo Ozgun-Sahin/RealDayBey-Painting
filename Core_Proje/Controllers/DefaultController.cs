@@ -4,6 +4,7 @@ using EntitiyLayer.Concrete;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using System.Security.Claims;
 
 namespace Core_Proje.Controllers
 {
@@ -17,8 +18,14 @@ namespace Core_Proje.Controllers
             _userManager = userManager;
         }
 
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
+            ClaimsPrincipal currentUser = this.User;
+
+            var user = await _userManager.GetUserAsync(currentUser);
+
+            ViewBag.User = user;
+
             return View();
         }
 

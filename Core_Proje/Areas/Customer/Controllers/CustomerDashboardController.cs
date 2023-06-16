@@ -20,7 +20,15 @@ namespace Core_Proje.Areas.Customer.Controllers
         public async Task<IActionResult> DashboardIndex()
         {
             var value = await _userManager.FindByNameAsync(User.Identity.Name);
-            
+
+            var roles = await _userManager.GetRolesAsync(value);
+
+            var role = roles.FirstOrDefault();
+
+            if (role == "Admin")
+            {
+                return Redirect("/Admin/Dashboard/DashboardIndex");
+            }
 
             ViewBag.v = value.Name + " "+ value.Surname;
 

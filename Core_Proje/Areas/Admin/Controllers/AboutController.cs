@@ -24,7 +24,18 @@ namespace Core_Proje.Areas.Admin.Controllers
             ViewBag.v1 = "Düzenleme";
             ViewBag.v2 = "Hakkımda";
             ViewBag.v3 = "Düzenleme";
-            var value = aboutManager.TGetById(1);
+            var about = aboutManager.TGetById(1);
+
+            AboutEditModel value = new AboutEditModel()
+            {
+                AboutID = 1,
+                Title = about.Title,
+                Description = about.Description,
+                Email = about.Email,
+                Phone = about.Phone,
+                Address = about.Address
+            };
+
             return View(value);
         }
 
@@ -45,6 +56,11 @@ namespace Core_Proje.Areas.Admin.Controllers
                 about.ImageUrl = imageName;
             }
 
+            about.Title = p.Title;
+            about.Description = p.Description;
+            about.Email = p.Email;
+            about.Phone = p.Phone;
+            about.Address = p.Address;
 
 
             AboutValidator validations = new AboutValidator();

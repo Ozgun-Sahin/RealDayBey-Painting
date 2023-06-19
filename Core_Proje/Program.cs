@@ -76,7 +76,9 @@ using (var scope = app.Services.CreateScope())
 
     string userName = "Admin";
     string email = "admin@admin.com";
-    string password = "Admin060155013!";
+    string password = "Admin1234*";
+    string name = "Admin";
+    string surname = "Admin";
 
     if (await userManager.FindByEmailAsync(email) == null)
     {
@@ -85,6 +87,8 @@ using (var scope = app.Services.CreateScope())
         
         user.UserName = userName;
         user.Email = email;
+        user.Name = name;
+        user.Surname = surname;
         user.SecurityStamp = Guid.NewGuid().ToString();
 
         //user.EmailConfirmed = true;

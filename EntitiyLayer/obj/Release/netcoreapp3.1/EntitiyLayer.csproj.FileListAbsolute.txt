@@ -1,0 +1,13 @@
+C:\Users\ozgun\Desktop\NetCoreWebApiProject\Core_Proje\EntitiyLayer\bin\Release\netcoreapp3.1\EntitiyLayer.deps.json
+C:\Users\ozgun\Desktop\NetCoreWebApiProject\Core_Proje\EntitiyLayer\bin\Release\netcoreapp3.1\EntitiyLayer.runtimeconfig.json
+C:\Users\ozgun\Desktop\NetCoreWebApiProject\Core_Proje\EntitiyLayer\bin\Release\netcoreapp3.1\EntitiyLayer.runtimeconfig.dev.json
+C:\Users\ozgun\Desktop\NetCoreWebApiProject\Core_Proje\EntitiyLayer\bin\Release\netcoreapp3.1\EntitiyLayer.dll
+C:\Users\ozgun\Desktop\NetCoreWebApiProject\Core_Proje\EntitiyLayer\bin\Release\netcoreapp3.1\EntitiyLayer.pdb
+C:\Users\ozgun\Desktop\NetCoreWebApiProject\Core_Proje\EntitiyLayer\obj\Release\netcoreapp3.1\EntitiyLayer.csproj.AssemblyReference.cache
+C:\Users\ozgun\Desktop\NetCoreWebApiProject\Core_Proje\EntitiyLayer\obj\Release\netcoreapp3.1\EntitiyLayer.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ozgun\Desktop\NetCoreWebApiProject\Core_Proje\EntitiyLayer\obj\Release\netcoreapp3.1\EntitiyLayer.AssemblyInfoInputs.cache
+C:\Users\ozgun\Desktop\NetCoreWebApiProject\Core_Proje\EntitiyLayer\obj\Release\netcoreapp3.1\EntitiyLayer.AssemblyInfo.cs
+C:\Users\ozgun\Desktop\NetCoreWebApiProject\Core_Proje\EntitiyLayer\obj\Release\netcoreapp3.1\EntitiyLayer.csproj.CoreCompileInputs.cache
+C:\Users\ozgun\Desktop\NetCoreWebApiProject\Core_Proje\EntitiyLayer\obj\Release\netcoreapp3.1\EntitiyLayer.dll
+C:\Users\ozgun\Desktop\NetCoreWebApiProject\Core_Proje\EntitiyLayer\obj\Release\netcoreapp3.1\EntitiyLayer.pdb
+C:\Users\ozgun\Desktop\NetCoreWebApiProject\Core_Proje\EntitiyLayer\obj\Release\netcoreapp3.1\EntitiyLayer.genruntimeconfig.cache

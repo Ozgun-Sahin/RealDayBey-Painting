@@ -11,7 +11,8 @@ namespace DataAccessLayer.Concrete
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("server=DESKTOP-FR4332V; database = CoreProjeDB; integrated security = true");
+            //optionsBuilder.UseSqlServer("server=DESKTOP-FR4332V; database = CoreProjeDB; integrated security = true");
+            optionsBuilder.UseSqlServer("server=DESKTOP-FR4332V; database = RealDayBey; integrated security = true");
         }
 
         public DbSet<About> Abouts { get; set; }

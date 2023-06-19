@@ -47,14 +47,15 @@ namespace Core_Proje.Areas.Customer.Controllers
                 wrtr.ImageUrl = imageName;
             }
 
+            
 
             if (p.Password == p.ConfirmPassword && p.Password !=null)
             {
                 var result = await _userManager.CreateAsync(wrtr, p.Password);
-                await _userManager.AddToRoleAsync(wrtr, "Customer");
-
+                
                 if (result.Succeeded)
                 {
+                    await _userManager.AddToRoleAsync(wrtr, "Customer");
                     return RedirectToAction("Index", "Login");
                 }
                 else
@@ -65,8 +66,6 @@ namespace Core_Proje.Areas.Customer.Controllers
                     }
                 }
             }
-
-            
 
             return View(p);
         }

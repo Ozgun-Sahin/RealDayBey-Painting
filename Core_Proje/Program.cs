@@ -1,3 +1,4 @@
+using BusinessLayer.ValidationRules;
 using DataAccessLayer.Concrete;
 using EntitiyLayer.Concrete;
 using Microsoft.AspNetCore.Authentication.Cookies;
@@ -13,7 +14,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddDbContext<Context>();
-builder.Services.AddIdentity<User, Role>().AddRoles<Role>().AddEntityFrameworkStores<Context>();
+builder.Services.AddIdentity<User, Role>().AddRoles<Role>().AddEntityFrameworkStores<Context>().AddErrorDescriber<CustomIdentityErrorDescriber>();
 builder.Services.AddControllersWithViews();
 
 

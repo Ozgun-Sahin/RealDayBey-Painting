@@ -17,7 +17,8 @@ RealDayBey Painting, ASP.NET MVC 5 ile geliştirdiğim kişisel bir Portfolyo uy
 </table>
 
 Porjeyi lokalde çalıştırmak için Microsoft Sql Server'ın bilgisayarınızda kurulu olması gerekmektedir.
-Projeyi açtıktan sonra Package Manager Console üzerinden önce default proje olarak **DataAccessLayer**'i seçin sonra **update-database** komutunu giriniz.
+Projeyi açtıktan sonra öncelikle **DataAccess** katmanı içindeki Concrete klasöründeki Context.cs dosyasına connection string'i girmeniz gerekmektedir. 
+Sonrasında Package Manager Console üzerinden önce default proje olarak **DataAccessLayer**'i seçin sonra **update-database** komutunu giriniz.
 Bu komut girildikten sonra SQL bağlantısı kurulacak ve bir **Admin** rolüne sahip kullanıcı oluşturulacaktır. 
 (Tüm özellikler denenebilmesi için herhangi bir başka örnek veri yoktur. Bu sebeple ilk etapta Ana Sayfadaki değiştirilebilir alanlar boş gelecektir. Admin Panelinden bu kısımları düzenleyebilirsiniz.)
   

@@ -1,6 +1,8 @@
 ﻿using BusinessLayer.Abstract;
 using DataAccessLayer.Abstract;
+using DataAccessLayer.Concrete;
 using EntitiyLayer.Concrete;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -35,6 +37,17 @@ namespace BusinessLayer.Concrete
         public List<Project> GetListShowCaseProjects()
         {
             return _projectDal.GetByFilter(x => x.Showcase == true);
+        }
+
+        public List<Project> GetListWithUserDatas()
+        {
+            //throw new NotImplementedException();
+
+            Context c = new Context();
+
+            List<Project> projects = c.Projects.Include(x => x.ClientUser).ToList();
+
+            return(projects);
         }
 
         public List<Project> GetListWorkInProgressProject()

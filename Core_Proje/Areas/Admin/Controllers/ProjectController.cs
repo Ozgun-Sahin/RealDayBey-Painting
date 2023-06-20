@@ -17,9 +17,11 @@ namespace Core_Proje.Areas.Admin.Controllers
 
         public IActionResult ProjectIndex()
         {
-            var values = projectManager.TGetList();
+            //var values = projectManager.TGetList();
 
-            return View(values);
+            var values2 = projectManager.GetListWithUserDatas();
+
+            return View(values2);
         }
 
         public IActionResult Portfolio()
@@ -79,6 +81,7 @@ namespace Core_Proje.Areas.Admin.Controllers
             project.Expence = p.Expence;
             project.CompletionDate = DateTime.Now;
             project.IsComfirmed = p.IsComfirmed;
+            project.Description = p.Description;
             //project.IsComfirmed = true;
 
             projectManager.TUpdate(project);
@@ -95,6 +98,7 @@ namespace Core_Proje.Areas.Admin.Controllers
             var value = projectManager.TGetById(id);
 
             EditProjectViewModel model = new EditProjectViewModel();
+
             model.ProjectID = value.ProjectID;
             model.ProjectName = value.ProjectName;
             model.Price = value.Price;
@@ -103,6 +107,7 @@ namespace Core_Proje.Areas.Admin.Controllers
             model.ProjectImageURL = value.ProjectImage;
             model.IsComfirmed = value.IsComfirmed;
             model.Showcase = value.Showcase;
+            model.Description = value.Description;
 
             return PartialView(model);
         }
@@ -131,6 +136,7 @@ namespace Core_Proje.Areas.Admin.Controllers
             project.CompletionDate = DateTime.Now;
             project.IsComfirmed = p.IsComfirmed;
             project.Showcase = p.Showcase;
+            project.Description = p.Description;
             //project.IsComfirmed = true;
 
             projectManager.TUpdate(project);

@@ -4,6 +4,7 @@
 @{
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_NewAdminLayout.cshtml";
+
 }
 
 <div class="row">
@@ -15,6 +16,8 @@
                         <tr>
                             <th >#</th>
                             <th >Proje</th>
+                            <th >Proje Sahibi</th>
+                            <th >Kullanıcı İsmi</th>
                             <th >Ücret</th>
                             <th >Onay Durumu</th>
                             <th >İlerleme Durumu</th>
@@ -37,6 +40,8 @@
                                     </div>
                                 </th>
                                 <td class="budget">@item.ProjectName</td>
+                                <td class="budget">@item.ClientUser.Name @item.ClientUser.Surname</td>
+                                <td class="budget"><img src="~/userimage/@item.ClientUser.ImageUrl" alt="image" /> @item.ClientUser.UserName</td>
                                 <td class="budget">@item.Price</td>
 
                                 @if (item.IsComfirmed==true)

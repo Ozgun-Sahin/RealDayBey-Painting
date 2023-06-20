@@ -12,5 +12,6 @@
         public bool Showcase { get; set; }
         public string ProjectImageURL { get; set; }
         public IFormFile? ProjectImage { get; set; }
-    }
+        public string Description { get; set; }
+}
 }

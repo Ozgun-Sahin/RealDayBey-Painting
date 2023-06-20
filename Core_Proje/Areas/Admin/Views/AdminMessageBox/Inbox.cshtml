@@ -19,6 +19,7 @@
                         <tr>
                             <th>#</th>
                             <th>Gönderen</th>
+                            <th>Kullanıcı İsmi</th>
                             <th>Konu</th>
                             <th>Tarih</th>
                             <th>Detaylar</th>
@@ -32,6 +33,7 @@
                             <tr>
                                 <th>@item.MessageID</th>
                                 <th>@item.SenderFullName</th>
+                                <th>@item.SenderUserName</th>
                                 <td>@item.Subject</td>
                                 <td>@(((DateTime)item.Date).ToString("dd-MMM-yyyy"))</td>
                                 <td><a href="#" class="btn btn-outline-warning btn-sm" data-target="/Admin/AdminMessageBox/MessageDetailsInModal/@item.MessageID">Detaylar</a></td>

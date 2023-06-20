@@ -10,8 +10,7 @@ namespace DataAccessLayer.Concrete
     public class Context : IdentityDbContext<User, Role, int>
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            //optionsBuilder.UseSqlServer("server=DESKTOP-FR4332V; database = CoreProjeDB; integrated security = true");
+        { 
             optionsBuilder.UseSqlServer("server=DESKTOP-FR4332V; database = RealDayBey; integrated security = true");
         }
 

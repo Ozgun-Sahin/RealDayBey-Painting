@@ -30682,6 +30682,11 @@ div.tagsinput span.tag a {
   }
 }
 
+.logo-img {
+    max-width: 100%;
+    height: auto;
+}
+
 /*# sourceMappingURL=../maps/vertical-layout-light/style.css.map */
 
 

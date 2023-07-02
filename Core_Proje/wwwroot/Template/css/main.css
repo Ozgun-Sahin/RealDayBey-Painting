@@ -270,7 +270,31 @@ footer a:not(.nav-link) {
   text-decoration: none;
 }
 
-.logo-img {
-    max-width: 80%;
+
+.header-img {
+    max-width: 55%;
     height: auto;
+}
+
+
+.logo-img {
+    height: auto;
+    max-width: 100%; /* Set a maximum width to ensure the image doesn't exceed the container */
+}
+
+/* Apply different styles for different screen sizes */
+@media (max-width: 768px) {
+    /* Adjust the image size for screens smaller than or equal to 768px */
+    .logo-img {
+        max-width: 80%;
+        height: auto;
+    }
+}
+
+@media (max-width: 576px) {
+    /* Adjust the image size for screens smaller than or equal to 576px */
+    .logo-img {
+        max-width: 140%;
+        height: auto;
+    }
 }

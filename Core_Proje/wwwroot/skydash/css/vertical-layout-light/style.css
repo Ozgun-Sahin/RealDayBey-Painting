@@ -30687,6 +30687,11 @@ div.tagsinput span.tag a {
     height: auto;
 }
 
+.table-cell-content {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+
 /*# sourceMappingURL=../maps/vertical-layout-light/style.css.map */
-
-

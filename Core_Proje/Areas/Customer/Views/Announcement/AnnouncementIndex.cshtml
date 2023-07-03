@@ -11,13 +11,13 @@
         <div class="card-body">
             <h4 class="card-title">Duyurular</h4>
             <div class="table-responsive">
-                <table class="table table-striped">
+                <table class="table table-striped" style="table-layout: fixed;">
                     <thead>
                         <tr>
-                            <th>#</th>
-                            <th>Başlık</th>
-                            <th>Tarih</th>
-                            <th>Detaylar</th>
+                            <th class="d-none d-md-table-cell" style="width: 100px;">#</th>
+                            <th class="d-none d-md-table-cell" style="width: 150px;">Tarih</th>
+                            <th style="width: 120px;">Başlık</th>
+                            <th class="d-none d-md-table-cell" style="width: 150px;">İçerik</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -25,9 +25,10 @@
                         @foreach (var item in Model)
                         {
                             <tr>
-                                <th>@item.ID</th>
-                                <td>@item.Title</td>
-                                <td>@(((DateTime)item.Date).ToString("dd-MMM-yyyy"))</td>
+                                <th class="d-none d-md-table-cell" style="width: 100px;">@item.ID</th>
+                                <td class="d-none d-md-table-cell" style="width: 150px;">@(((DateTime)item.Date).ToString("dd-MMM-yyyy"))</td>
+                                <td class="table-cell-content" style="width: 120px;">@item.Title</td>
+                                <td class="d-none d-md-table-cell table-cell-content" style="width: 150px;">@item.Content</td>
                                 <td><a href="#" class="btn btn-outline-primary btn-sm" data-target="/Customer/Announcement/AnnouncementDetailsInModal/@item.ID">Detaylar</a></td>
                             </tr>
                         }

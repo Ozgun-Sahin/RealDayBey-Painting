@@ -12,12 +12,12 @@
     <div class="col-md-6 grid-margin stretch-card">
         <div class="card bg-default shadow">
             <div class="table-responsive">
-                <table class="table table-hover">
+                <table class="table table-hover" style="table-layout: fixed;">
                     <thead class="thead-dark">
                         <tr>
-                            <th>#</th>
+                            <th class="d-none d-md-table-cell" style="width: 100px;" >#</th>
                             <th>Konu</th>
-                            <th>Tarih</th>
+                            <th class ="d-none d-md-table-cell">Tarih</th>
                             <th>Detaylar</th>
                         </tr>
                     </thead>
@@ -27,9 +27,9 @@
                         {
 
                             <tr>
-                                <th>@item.ID</th>
+                                <th class="d-none d-md-table-cell" style="width: 100px;">@item.ID</th>
                                 <td>@item.Title</td>
-                                <td>@(((DateTime)item.Date).ToString("dd-MMM-yyyy"))</td>
+                                <td class="d-none d-md-table-cell">@(((DateTime)item.Date).ToString("dd-MMM-yyyy"))</td>
                                 <td><a href="#" class="btn btn-outline-warning btn-sm" data-target="/Admin/AdminAnnouncement/AnnouncementDetailsInModal/@item.ID">Detaylar</a></td>
                             </tr>
 

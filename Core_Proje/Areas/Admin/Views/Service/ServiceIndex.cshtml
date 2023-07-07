@@ -10,13 +10,13 @@
 </div>
 
 <div class="row">
-    <div class="col-6 grid-margin stretch-card">
+    <div class="col-md-6 grid-margin stretch-card">
         <div class="card bg-default shadow">
             <div class="table-responsive">
                 <table class="table table-hover">
                     <thead class="thead-dark">
                         <tr>
-                            <th>#</th>
+                            <th class="d-none d-md-table-cell">#</th>
                             <th>Hizmet</th>
                             <th>Sil</th>
                             <th>Düzenle</th>
@@ -26,7 +26,7 @@
                         @foreach (var item in Model)
                         {
                             <tr>
-                                <th scope="row">
+                                <th scope="row" class="d-none d-md-table-cell">
                                     <div class="media align-items-center">
                                         @*<a href="#" class="avatar rounded-circle mr-3">
                                     <img alt="Image placeholder" src="@item.Platform">

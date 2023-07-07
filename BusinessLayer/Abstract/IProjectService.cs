@@ -13,6 +13,7 @@ namespace BusinessLayer.Abstract
         List<Project> GetListProjectsByCreationDate();
         List<Project> GetListShowCaseProjects();
         List<Project> GetListWithUserDatas();
+        List<Project> GetListCompletedProjectWithUserDatas();
 
     }
 }

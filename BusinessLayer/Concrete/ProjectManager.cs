@@ -24,6 +24,15 @@ namespace BusinessLayer.Concrete
             return _projectDal.GetByFilter(x => x.IsComfirmed == true && x.Progress == 100);
         }
 
+        public List<Project> GetListCompletedProjectWithUserDatas()
+        {
+            Context c = new Context();
+
+            List<Project> projects = c.Projects.Where(x => x.IsComfirmed == true && x.Progress == 100).Include(x => x.ClientUser).ToList();
+
+            return (projects);
+        }
+
         public List<Project> GetListPendingProject()
         {
             return _projectDal.GetByFilter(x => x.IsComfirmed == false);

@@ -7,20 +7,30 @@
 
 }
 
+<style>
+        .table-cell-content {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+</style>
+
+
 <div class="row">
     <div class="col">
         <div class="card bg-default shadow">
             <div class="table-responsive">
-                <table class="table table-hover">
+                <table class="table table-hover" style="table-layout: fixed;">
                     <thead class="thead-dark">
                         <tr>
-                            <th >#</th>
-                            <th >Proje</th>
-                            <th >Proje Sahibi</th>
-                            <th >Kullanıcı İsmi</th>
-                            <th >Ücret</th>
-                            <th >Onay Durumu</th>
-                            <th >İlerleme Durumu</th>
+                            <th class="d-none d-md-table-cell" style="width: 100px;">#</th>
+                            <th style="width: 120px;">Proje</th>
+                            <th class="d-none d-md-table-cell">Proje Sahibi</th>
+                            <th class="d-none d-md-table-cell">Kullanıcı İsmi</th>
+                            <th class="d-none d-md-table-cell">Ücret</th>
+                            <th class="d-none d-md-table-cell">Onay Durumu</th>
+                            <th class="d-none d-md-table-cell">İlerleme Durumu</th>
                             <th >Sil</th>
                             <th >Düzenle</th>
                         </tr>
@@ -29,7 +39,7 @@
                         @foreach (var item in Model)
                         {
                             <tr>
-                                <th scope="row">
+                                <th scope="row" class="d-none d-md-table-cell">
                                     <div class="media align-items-center">
                                         @*<a href="#" class="avatar rounded-circle mr-3">
                                     <img alt="Image placeholder" src="@item.Platform">
@@ -39,20 +49,20 @@
                                         </div>
                                     </div>
                                 </th>
-                                <td class="budget">@item.ProjectName</td>
-                                <td class="budget">@item.ClientUser.Name @item.ClientUser.Surname</td>
-                                <td class="budget"><img src="~/userimage/@item.ClientUser.ImageUrl" alt="image" /> @item.ClientUser.UserName</td>
-                                <td class="budget">@item.Price</td>
+                                <td class="budget table-cell-content">@item.ProjectName</td>
+                                <td class="budget d-none d-md-table-cell">@item.ClientUser.Name @item.ClientUser.Surname</td>
+                                <td class="budget d-none d-md-table-cell"><img src="~/userimage/@item.ClientUser.ImageUrl" alt="image" /> @item.ClientUser.UserName</td>
+                                <td class="budget d-none d-md-table-cell">@item.Price</td>
 
                                 @if (item.IsComfirmed==true)
                                 {
-                                    <td class="budget">Onaylandı</td>
+                                    <td class="budget d-none d-md-table-cell" >Onaylandı</td>
                                 }else
                                 {
-                                    <td class="budget">Onay Bekliyor</td>
+                                    <td class="budget d-none d-md-table-cell">Onay Bekliyor</td>
                                 }
-                                
-                                <td>
+
+                                <td class="d-none d-md-table-cell">
                                     <span class="completion mr-2">@item.Progress%</span>
                                     <div>
                                         <div class="progress">
@@ -60,7 +70,7 @@
                                         </div>
                                     </div>
                                 </td>
-                                <td><a class="btn btn-outline-danger" href="/Admin/Project/DeleteProject/@item.ProjectID" id="DeleteBtn" onclick="return confirm('Silmek istediğinize emin misiniz?');"><i class="ni ni-fat-remove"></i>Sil</a></td>
+                                <td><a class="btn btn-outline-danger btn-sm" href="/Admin/Project/DeleteProject/@item.ProjectID" id="DeleteBtn" onclick="return confirm('Silmek istediğinize emin misiniz?');"><i class="ni ni-fat-remove"></i>Sil</a></td>
                                 <td><a href="#" class="btn btn-outline-warning btn-sm" data-target="/Admin/Project/ProjectDetailsInModal/@item.ProjectID">Düzenle</a></td>
                             </tr>
                         }

@@ -9,13 +9,13 @@
     <h4>Sosyal Medya Hesapları</h4>
 </div>
 <div class="row">
-    <div class="col-6 grid-margin stretch-card">
+    <div class="col-md-6 grid-margin stretch-card">
         <div class="card bg-default shadow">
             <div class="table-responsive">
                 <table class="table table-hover">
                     <thead>
                         <tr>
-                            <th>#</th>
+                            <th class="d-none d-md-table-cell">#</th>
                             <th>Hesap</th>
                             <th>Güncelle</th>
                         </tr>
@@ -26,7 +26,7 @@
                         {
 
                             <tr>
-                                <td>@item.SocialMediaID</td>
+                                <td class="d-none d-md-table-cell">@item.SocialMediaID</td>
                                 <td>@item.Name</td>
                                 @*<td><a href="/SocialMedia/EditSocialMedia/@item.SocialMediaID" class="btn btn-outline-warning">Güncelle</a></td>*@
                                 <td><a class="btn btn-outline-danger btn-sm" href="/Admin/SocialMedia/DeleteSocialMedia/@item.SocialMediaID" id="DeleteBtn" onclick="return confirm('Silmek istediğinize emin misiniz?');"><i class="ni ni-fat-remove"></i> Sil</a></td>

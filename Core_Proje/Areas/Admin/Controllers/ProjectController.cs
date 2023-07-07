@@ -26,7 +26,9 @@ namespace Core_Proje.Areas.Admin.Controllers
 
         public IActionResult Portfolio()
         {
-            var values = projectManager.GetListCompletedProject();
+            //var values = projectManager.GetListCompletedProject();
+
+            var values = projectManager.GetListCompletedProjectWithUserDatas();
 
             return View(values);
         }

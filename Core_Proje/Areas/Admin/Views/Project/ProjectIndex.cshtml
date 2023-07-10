@@ -7,15 +7,10 @@
 
 }
 
-<style>
-        .table-cell-content {
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-    }
 
-</style>
-
+<div>
+    <h4>Tüm Projeler</h4>
+</div>
 
 <div class="row">
     <div class="col">
@@ -26,11 +21,11 @@
                         <tr>
                             <th class="d-none d-md-table-cell" style="width: 100px;">#</th>
                             <th style="width: 120px;">Proje</th>
-                            <th class="d-none d-md-table-cell">Proje Sahibi</th>
-                            <th class="d-none d-md-table-cell">Kullanıcı İsmi</th>
-                            <th class="d-none d-md-table-cell">Ücret</th>
-                            <th class="d-none d-md-table-cell">Onay Durumu</th>
-                            <th class="d-none d-md-table-cell">İlerleme Durumu</th>
+                            <th class="d-none d-md-table-cell" style="width: 120px;">Proje Sahibi</th>
+                            <th class="d-none d-md-table-cell table-cell-content">Kullanıcı İsmi</th>
+                            <th class="d-none d-md-table-cell ">Ücret</th>
+                            <th class="d-none d-md-table-cell table-cell-content">Onay Durumu</th>
+                            <th class="d-none d-md-table-cell table-cell-content">İlerleme Durumu</th>
                             <th >Sil</th>
                             <th >Düzenle</th>
                         </tr>
@@ -50,9 +45,9 @@
                                     </div>
                                 </th>
                                 <td class="budget table-cell-content">@item.ProjectName</td>
-                                <td class="budget d-none d-md-table-cell">@item.ClientUser.Name @item.ClientUser.Surname</td>
-                                <td class="budget d-none d-md-table-cell"><img src="~/userimage/@item.ClientUser.ImageUrl" alt="image" /> @item.ClientUser.UserName</td>
-                                <td class="budget d-none d-md-table-cell">@item.Price</td>
+                                <td class="budget d-none d-md-table-cell table-cell-content">@item.ClientUser.Name @item.ClientUser.Surname</td>
+                                <td class="budget d-none d-md-table-cell table-cell-content"><img src="~/userimage/@item.ClientUser.ImageUrl" alt="image" /> @item.ClientUser.UserName</td>
+                                <td class="budget d-none d-md-table-cell table-cell-content">@item.Price</td>
 
                                 @if (item.IsComfirmed==true)
                                 {

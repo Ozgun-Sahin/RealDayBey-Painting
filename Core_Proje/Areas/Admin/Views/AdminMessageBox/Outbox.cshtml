@@ -5,13 +5,6 @@
     Layout = "~/Views/Shared/_NewAdminLayout.cshtml";
 }
 
-<style>
-    .table-cell-content {
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-    }
-</style>
 
 <div>
     <h4>Giden Kutusu</h4>
@@ -24,11 +17,11 @@
                     <thead class="thead-dark">
                         <tr>
                             <th class="d-none d-md-table-cell" style="width: 100px;">#</th>
-                            <th class="d-none d-md-table-cell" style="width: 200px;">Alıcı</th>
-                            <th style="width: 200px;">Kullanıcı İsmi</th>
-                            <th class="d-none d-md-table-cell" style="width: 300px;">Konu</th>
-                            <th class="d-none d-md-table-cell" style="width: 400px;">Mesaj</th>
-                            <th class="d-none d-md-table-cell" style="width: 200px;">Tarih</th>
+                            <th class="d-none d-md-table-cell table-cell-content" style="width: 200px;">Alıcı</th>
+                            <th class="table-cell-content">Kullanıcı İsmi</th>
+                            <th class="d-none d-md-table-cell table-cell-content">Konu</th>
+                            <th class="d-none d-md-table-cell table-cell-content">Mesaj</th>
+                            <th class="d-none d-md-table-cell table-cell-content" >Tarih</th>
                             <th>Detaylar</th>
                         </tr>
                     </thead>
@@ -40,10 +33,10 @@
                             <tr>
                                 <th class="d-none d-md-table-cell">@item.MessageID</th>
                                 <th class="table-cell-content d-none d-md-table-cell">@item.RecieverFullName</th>
-                                <th class="table-cell-content">@item.RecieverUserName</th>
-                                <td class="d-none d-md-table-cell">@item.Subject</td>
+                                <th class="table-cell-content table-cell-content">@item.RecieverUserName</th>
+                                <td class="d-none d-md-table-cell table-cell-content">@item.Subject</td>
                                 <td class="d-none d-md-table-cell table-cell-content">@item.MessageContent</td>
-                                <td class="d-none d-md-table-cell">@(((DateTime)item.Date).ToString("dd-MMM-yyyy"))</td>
+                                <td class="d-none d-md-table-cell table-cell-content">@(((DateTime)item.Date).ToString("dd-MMM-yyyy"))</td>
                                 <td><a href="#" class="btn btn-outline-warning btn-sm" data-target="/Admin/AdminMessageBox/MessageDetailsInModal/@item.MessageID">Detaylar</a></td>
                             </tr>
 

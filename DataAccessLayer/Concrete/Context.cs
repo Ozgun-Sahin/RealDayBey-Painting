@@ -11,7 +11,7 @@ namespace DataAccessLayer.Concrete
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         { 
-            optionsBuilder.UseSqlServer("server=77.245.159.27\\MSSQLSERVER2019;database=RealDayBey;user=necromonas;password=nr1yW050!");
+            optionsBuilder.UseSqlServer("server=DESKTOP-FR4332V; database = RealDayBey; integrated security = true");
         }
 
         public DbSet<About> Abouts { get; set; }

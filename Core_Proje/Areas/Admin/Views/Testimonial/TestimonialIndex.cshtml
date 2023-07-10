@@ -18,15 +18,14 @@
     <h4>Referanslar</h4>
 </div>
 <div class="row ">
-    <div class="col-md-6 grid-margin">
+    <div class="col-md-5 grid-margin">
         <div class="card">
-            <div class="card-body">
                 <div class="table-responsive">
-                    <table class="table" style="table-layout: fixed;">
-                        <thead>
+                    <table class="table table-hover" style="table-layout: fixed;">
+                        <thead class="thead-dark">
                             <tr>
-                                <th style="width: 120px;"> Müşteri </th>
-                                <th class="d-none d-md-table-cell"> Onay Durumu </th>
+                                <th class="table-cell-content"> Müşteri </th>
+                                <th class="d-none d-md-table-cell table-cell-content"> Onay Durumu </th>
                                 <th> Sil </th>
                                 <th> Detaylar </th>
                             </tr>
@@ -42,19 +41,17 @@
                                     </td>
                                     @if (item.IsComfirmed==true)
                                     {
-                                        <td class="d-none d-md-table-cell">Onaylandı</td>
+                                        <td class="d-none d-md-table-cell table-cell-content">Onaylandı</td>
                                     }else
                                     {
-                                        <td class="d-none d-md-table-cell">Onaylanmadı</td>
+                                        <td class="d-none d-md-table-cell table-cell-content">Onaylanmadı</td>
                                     }
-                                    <td> <a href="/Admin/Testimonial/DeleteTestimonial/@item.TestimonialID" class="btn btn-outline-danger btn-sm"> Sil</a>  </td>
                                     <td><a href="#" class="btn btn-outline-warning btn-sm" data-target="/Admin/Testimonial/TestimonialDetailsInModal/@item.TestimonialID">Detaylar</a></td>
                                 </tr>
                             }
                         </tbody>
                     </table>
                 </div>
-            </div>
         </div>
     </div>
 </div>

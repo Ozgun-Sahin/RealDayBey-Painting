@@ -18,9 +18,9 @@
                     <thead>
                         <tr>
                             <th class="d-none d-md-table-cell" style="width: 100px;">#</th>
-                            <th style="width: 120px;">Konu</th>
-                            <th class="d-none d-md-table-cell" style="width: 150px;">Mesaj</th>
-                            <th class="d-none d-md-table-cell" style="width: 200px;">Tarih</th>
+                            <th class="table-cell-content" style="width: 120px;">Konu</th>
+                            <th class="d-none d-md-table-cell table-cell-content" >Mesaj</th>
+                            <th class="d-none d-md-table-cell table-cell-content">Tarih</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -32,7 +32,7 @@
                                 <th class="d-none d-md-table-cell" style="width: 100px;">@item.MessageID</th>
                                 <td class="table-cell-content" style="width: 120px;">@item.Subject</td>
                                 <td class="d-none d-md-table-cell table-cell-content" style="width: 150px;">@item.MessageContent</td>
-                                <td class="d-none d-md-table-cell" style="width: 200px;">@(((DateTime)item.Date).ToString("dd-MMM-yyyy"))</td>
+                                <td class="d-none d-md-table-cell table-cell-content" style="width: 200px;">@(((DateTime)item.Date).ToString("dd-MMM-yyyy"))</td>
                                 <td><a href="#" class="btn btn-outline-primary btn-sm" data-target="/Customer/MessageBox/MessageDetailsInModal/@item.MessageID">Detaylar</a></td>
                             </tr>
                         }

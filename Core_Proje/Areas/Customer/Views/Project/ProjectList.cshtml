@@ -23,10 +23,10 @@
                 <table class="table table-striped " style="table-layout: fixed;">
                     <thead>
                         <tr>
-                            <th class="d-none d-md-table-cell" style="width: 100px;">Proje no:</th>
-                            <th style="width: 120px;">Proje</th>
-                            <th class="d-none d-md-table-cell">Hizmet Tipi</th>
-                            <th class="d-none d-md-table-cell">Durum</th>
+                            <th class="d-none d-md-table-cell" style="width: 90px;">Proje no:</th>
+                            <th class="table-cell-content" >Proje</th>
+                            <th class="d-none d-md-table-cell table-cell-content">Hizmet Tipi</th>
+                            <th class="d-none d-md-table-cell table-cell-content">Durum</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -37,12 +37,12 @@
                             string serviceTitle = service.Title;
 
                             <tr>
-                                <th class="d-none d-md-table-cell" style="width: 100px;">@item.ProjectID</th>
-                                <td class="table-cell-content" style="max-width: 120px;">@item.ProjectName</td>
+                                <th class="d-none d-md-table-cell" style="width: 90px;">@item.ProjectID</th>
+                                <td class="table-cell-content" >@item.ProjectName</td>
                                 <td class="d-none d-md-table-cell table-cell-content">@service.Title</td>
                                 @if (item.IsComfirmed==false)
                                 {
-                                    <td class="d-none d-md-table-cell">Onay Bekliyor</td>
+                                    <td class="d-none d-md-table-cell table-cell-content">Onay Bekliyor</td>
                                 }
                                 else
                                 {

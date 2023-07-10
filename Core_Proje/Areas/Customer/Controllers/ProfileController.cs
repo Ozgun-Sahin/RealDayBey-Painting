@@ -26,6 +26,7 @@ namespace Core_Proje.Areas.Customer.Controllers
             model.Surname = value.Surname;
             model.PictureUrl = value.ImageUrl;
             return View(model);
+
         }
 
         [HttpPost]
@@ -47,19 +48,31 @@ namespace Core_Proje.Areas.Customer.Controllers
             user.Name = p.Name;
             user.Surname = p.Surname;
 
-            if (p.Password == p.PasswordConfirm && p.Password!=null)
+            if (p.NewPassword == p.NewPasswordConfirm && p.NewPassword!=null)
             {
-                user.PasswordHash = _userManager.PasswordHasher.HashPassword(user, p.Password);
+                //user.PasswordHash = _userManager.PasswordHasher.HashPassword(user, p.Password);
 
-                var result = await _userManager.UpdateAsync(user);
+                var result1 = await _userManager.ChangePasswordAsync(user, p.CurrentPassword, p.NewPassword);
 
-                if (result.Succeeded)
+                if (result1.Succeeded)
                 {
-                    return RedirectToAction("Index", "Default");
+                    var result2 = await _userManager.UpdateAsync(user);
+
+                    if (result2.Succeeded)
+                    {
+                        return RedirectToAction("Index", "Default");
+                    }
+                    else
+                    {
+                        foreach (var item in result2.Errors)
+                        {
+                            ModelState.AddModelError("", item.Description);
+                        }
+                    }
                 }
                 else
                 {
-                    foreach (var item in result.Errors)
+                    foreach (var item in result1.Errors)
                     {
                         ModelState.AddModelError("", item.Description);
                     }

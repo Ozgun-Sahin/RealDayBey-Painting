@@ -10,12 +10,15 @@ namespace Core_Proje.Areas.Customer.Models
         public string? Surname { get; set; }
 
         [Required(ErrorMessage = "Lütfen Şifrenizi Giriniz")]
-        public string? Password { get; set; }
+        public string? CurrentPassword { get; set; }
 
-        [Required(ErrorMessage = "Lütfen Şifrenizi Tekrar Giriniz")]
+        [Required(ErrorMessage = "Lütfen Yeni Şifrenizi Giriniz")]
+        public string? NewPassword { get; set; }
 
-        [Compare("Password", ErrorMessage = "Lütfen Şifrenizi doğru giriniz")]
-        public string? PasswordConfirm { get; set; }
+        [Required(ErrorMessage = "Lütfen Yeni Şifrenizi Giriniz")]
+
+        [Compare("NewPassword", ErrorMessage = "Lütfen Şifrenizi doğru giriniz")]
+        public string? NewPasswordConfirm { get; set; }
         public string? PictureUrl { get; set; }
         public IFormFile? Picture { get; set; }
 

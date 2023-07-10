@@ -20,14 +20,19 @@
                     <span asp-validation-for="Surname" class="text-danger"></span>
                 </div>
                 <div class="form-group">
-                    <label for="exampleInputPassword4">Yeni Şifreniz</label>
-                    <input type="password" asp-for="Password" class="form-control" id="exampleInputEmail3" placeholder="Yeni Şifre">
-                    <span asp-validation-for="Password" class="text-danger"></span>
+                    <label for="exampleInputPassword4">Şifreniz</label>
+                    <input type="password" asp-for="CurrentPassword" class="form-control" id="exampleInputEmail3" placeholder="Şifre">
+                    <span asp-validation-for="CurrentPassword" class="text-danger"></span>
                 </div>
                 <div class="form-group">
-                    <label for="exampleInputPassword4">Yeni Şifreniz Tekrar</label>
-                    <input type="password" asp-for="PasswordConfirm" class="form-control" id="exampleInputEmail3" placeholder="Yeni Şifre Tekrar">
-                    <span asp-validation-for="PasswordConfirm" class="text-danger"></span>
+                    <label for="exampleInputPassword4">Yeni Şifre</label>
+                    <input type="password" asp-for="NewPassword" class="form-control" id="exampleInputEmail3" placeholder="Yeni Şifre">
+                    <span asp-validation-for="NewPassword" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword4">Yeni Şifre Tekrar</label>
+                    <input type="password" asp-for="NewPasswordConfirm" class="form-control" id="exampleInputEmail3" placeholder="Yeni Şifre Tekrar">
+                    <span asp-validation-for="NewPasswordConfirm" class="text-danger"></span>
                 </div>
                 <div class="form-group">
                     <label>Resim Seç</label>
@@ -38,6 +43,8 @@
                             <button class="file-upload-browse btn btn-primary" type="button">Yükle</button>
                         </span>
                     </div>*@
+                </div>
+                <div class="text-danger" asp-validation-summary="ModelOnly">
                 </div>
                 <button type="submit" class="btn btn-primary btn-sm mr-2">Güncelle</button>
                 <button class="btn btn-light">İptal</button>

@@ -64,6 +64,15 @@ namespace BusinessLayer.Concrete
             return _projectDal.GetByFilter(x => x.IsComfirmed == true && x.Progress <= 99);
         }
 
+        public Project GetProjectByIdWithUserDatas(int id)
+        {
+            Context c = new Context();
+
+            Project project = c.Projects.Where(x => x.ProjectID == id).Include(x => x.ClientUser).FirstOrDefault();
+
+            return project;
+        }
+
         public void TAdd(Project t)
         {
            _projectDal.Insert(t);

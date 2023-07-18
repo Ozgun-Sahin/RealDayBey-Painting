@@ -1,4 +1,6 @@
-﻿namespace Core_Proje.Areas.Admin.Models
+﻿using EntitiyLayer.Concrete;
+
+namespace Core_Proje.Areas.Admin.Models
 {
     public class EditProjectViewModel
     {
@@ -13,5 +15,6 @@
         public string ProjectImageURL { get; set; }
         public IFormFile? ProjectImage { get; set; }
         public string Description { get; set; }
-}
+        public User ClientUser { get; set; }
+    }
 }

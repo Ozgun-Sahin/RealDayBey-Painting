@@ -9,7 +9,12 @@
     <div class="card-header">
         @Model.Title
     </div>
+    <div class="card-header">
+        @(((DateTime)Model.Date).ToString("dd-MMM-yyyy"))
+    </div>
     <div class="card-body">
         @Model.Content
     </div>
 </div>
+
+

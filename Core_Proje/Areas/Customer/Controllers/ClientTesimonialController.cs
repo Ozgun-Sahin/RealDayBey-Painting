@@ -41,7 +41,9 @@ namespace Core_Proje.Areas.Customer.Controllers
             var value = await _userManager.FindByNameAsync(User.Identity.Name);
 
             string fullName = value.Name + " " + value.Surname;
+            string userName = value.UserName;
 
+            p.ClientUserName = userName;
             p.ClientName = fullName;
             p.ImageUrl = "/userimage/" + value.ImageUrl;
 

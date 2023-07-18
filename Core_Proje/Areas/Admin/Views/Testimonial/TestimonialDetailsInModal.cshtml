@@ -28,8 +28,11 @@
                 @Html.HiddenFor(x=>x.Comment)
                 @Html.HiddenFor(x=>x.ClientName)
                 <div class="card-header">
-                    @Html.DisplayFor(x => x.ClientName, new { @class = "form-control" })
+                    Müşteri: @Html.DisplayFor(x => x.ClientName, new { @class = "form-control" })
                     @*@Model.ClientName*@
+                </div>
+                <div class="card-header">
+                    Kullanıcı İsmi: @Html.DisplayFor(x => x.ClientUserName, new { @class = "form-control" })
                 </div>
                 @*<div class="form-group">
             <label>Başlık</label>
@@ -45,7 +48,7 @@
                     <br>
                     <br>
                     <button id='modalClose' type="submit" class="btn btn-outline-primary" data-bs-dismiss="modal">Kaydet</button>
-                    <td> <a href="/Admin/Testimonial/DeleteTestimonial/@Model.TestimonialID" class="btn btn-outline-danger btn-sm"> Sil</a>  </td>
+                    <td> <a href="/Admin/Testimonial/DeleteTestimonial/@Model.TestimonialID" class="btn btn-outline-danger"> Sil</a>  </td>
                 </div>
             </form>
         </div>

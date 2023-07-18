@@ -14,6 +14,7 @@ namespace BusinessLayer.Abstract
         List<Project> GetListShowCaseProjects();
         List<Project> GetListWithUserDatas();
         List<Project> GetListCompletedProjectWithUserDatas();
+        Project GetProjectByIdWithUserDatas(int id);
 
     }
 }

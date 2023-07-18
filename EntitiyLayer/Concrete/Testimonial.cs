@@ -10,6 +10,7 @@ namespace EntitiyLayer.Concrete
         [Key]
         public int TestimonialID { get; set; }
         public string ClientName { get; set; }
+        public string ClientUserName { get; set; }
         public string? Company { get; set; }
         public string Comment { get; set; }
         public string? ImageUrl { get; set; }

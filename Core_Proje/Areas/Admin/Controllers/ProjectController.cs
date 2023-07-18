@@ -97,7 +97,8 @@ namespace Core_Proje.Areas.Admin.Controllers
         [HttpGet("{id}")]
         public IActionResult ProjectDetailsInModal(int id)
         {
-            var value = projectManager.TGetById(id);
+            //var value = projectManager.TGetById(id);
+            var value = projectManager.GetProjectByIdWithUserDatas(id);
 
             EditProjectViewModel model = new EditProjectViewModel();
 
@@ -110,6 +111,7 @@ namespace Core_Proje.Areas.Admin.Controllers
             model.IsComfirmed = value.IsComfirmed;
             model.Showcase = value.Showcase;
             model.Description = value.Description;
+            model.ClientUser = value.ClientUser;
 
             return PartialView(model);
         }
@@ -119,7 +121,8 @@ namespace Core_Proje.Areas.Admin.Controllers
         {
             int id = p.ProjectID;
 
-            var project = projectManager.TGetById(id);
+            //var project = projectManager.TGetById(id);
+            var project = projectManager.GetProjectByIdWithUserDatas(id);
 
             if (p.ProjectImage != null)
             {
@@ -139,6 +142,7 @@ namespace Core_Proje.Areas.Admin.Controllers
             project.IsComfirmed = p.IsComfirmed;
             project.Showcase = p.Showcase;
             project.Description = p.Description;
+            project.ClientUser = p.ClientUser;  
             //project.IsComfirmed = true;
 
             projectManager.TUpdate(project);

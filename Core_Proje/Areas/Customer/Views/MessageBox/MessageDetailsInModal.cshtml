@@ -7,7 +7,18 @@
 
 <div class="card">
     <div class="card-header">
-        @Model.Subject
+        <div>
+            Konu: @Model.Subject
+        </div>
+        <div>
+            @(((DateTime)Model.Date).ToString("dd-MMM-yyyy"))
+        </div>
+        <div>
+            Gönderen : @Model.SenderUserName
+        </div>
+        <div>
+            Kime : @Model.RecieverUserName
+        </div>
     </div>
     <div class="card-body">
         @Model.MessageContent

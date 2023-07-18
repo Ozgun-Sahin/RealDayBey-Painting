@@ -8,6 +8,8 @@
         <div class="card">
             <div class="card-body">
                 <h4 class="card-title">Proje: @Html.DisplayFor(x=>x.ProjectName) </h4>
+                <h4 class="card-title">Proje Sahibi: @Html.DisplayFor(x=>x.ClientUser.Name) @Html.DisplayFor(x=>x.ClientUser.Surname) </h4>
+                <h4 class="card-title">Kullanıcı İsmi: @Html.DisplayFor(x=>x.ClientUser.UserName) </h4>
                 <form class="forms-sample">
                     @Html.HiddenFor(x=> x.ProjectID)
                     <label>Açıklama</label>

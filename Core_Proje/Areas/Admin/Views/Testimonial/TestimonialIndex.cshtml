@@ -20,38 +20,42 @@
 <div class="row ">
     <div class="col-md-5 grid-margin">
         <div class="card">
-                <div class="table-responsive">
-                    <table class="table table-hover" style="table-layout: fixed;">
-                        <thead class="thead-dark">
-                            <tr>
-                                <th class="table-cell-content"> Müşteri </th>
-                                <th class="d-none d-md-table-cell table-cell-content"> Onay Durumu </th>
-                                <th> Sil </th>
-                                <th> Detaylar </th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            @foreach (var item in Model)
-                            {
+            <div class="table-responsive">
+                <table class="table table-hover" style="table-layout: fixed;">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th class="table-cell-content"> Müşteri </th>
+                            <th class="d-none d-md-table-cell table-cell-content"> Kullanıcı İsmi </th>
+                            <th class="d-none d-md-table-cell table-cell-content"> Onay Durumu </th>
+                            <th> Detaylar </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
 
-                                <tr>
-                                    <td class="table-cell-content">
-                                        <img src="@item.ImageUrl" alt="image"/>
-                                        <span class="pl-2">@item.ClientName</span>
-                                    </td>
-                                    @if (item.IsComfirmed==true)
-                                    {
-                                        <td class="d-none d-md-table-cell table-cell-content">Onaylandı</td>
-                                    }else
-                                    {
-                                        <td class="d-none d-md-table-cell table-cell-content">Onaylanmadı</td>
-                                    }
-                                    <td><a href="#" class="btn btn-outline-warning btn-sm" data-target="/Admin/Testimonial/TestimonialDetailsInModal/@item.TestimonialID">Detaylar</a></td>
-                                </tr>
-                            }
-                        </tbody>
-                    </table>
-                </div>
+                            <tr>
+                                <td class="table-cell-content">
+                                    <img src="@item.ImageUrl" alt="image" />
+                                    <span class="pl-2">@item.ClientName</span>
+                                </td>
+                                <td class="d-none d-md-table-cell table-cell-content">
+                                    @item.ClientUserName
+                                </td>
+                                @if (item.IsComfirmed == true)
+                                {
+                                    <td class="d-none d-md-table-cell table-cell-content">Onaylandı</td>
+                                }
+                                else
+                                {
+                                    <td class="d-none d-md-table-cell table-cell-content">Onaylanmadı</td>
+                                }
+                                <td><a href="#" class="btn btn-outline-warning btn-sm" data-target="/Admin/Testimonial/TestimonialDetailsInModal/@item.TestimonialID">Detaylar</a></td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
         </div>
     </div>
 </div>
@@ -59,19 +63,19 @@
 <!--Deneme Modal'ı-->
 
 <div class="modal fade" id="modelView" tabindex="-1" role="dialog">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                @*<div class="modal-header">
-                <h5 class="modal-title">Modal title</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>*@
+    <div class="modal-dialog">
+        <div class="modal-content">
+            @*<div class="modal-header">
+            <h5 class="modal-title">Modal title</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>*@
 
-                <div class="modal-body">
-                    <!--Modal içeriği-->
-                </div>
-
+            <div class="modal-body">
+                <!--Modal içeriği-->
             </div>
+
         </div>
     </div>
+</div>
 
-    <!--Deneme Modal'ı-->
+<!--Deneme Modal'ı-->
